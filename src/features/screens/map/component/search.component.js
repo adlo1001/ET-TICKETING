@@ -1,7 +1,7 @@
-import React, { useState,useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Searchbar,Text, View,  } from "react-native-paper";
 import styled from "styled-components/native";
-import { MStationsContext } from "../../services/station/mstations.context";
+import { MStationsContext } from "../../../../services/station/mstations.context";
 
 const SearchContainer = styled.View`
   padding: 16px;
@@ -23,21 +23,21 @@ padding: 16px;
 background-color: white;
 `;
 
-
-
-
 export const Search = () => {
   const { keyword, search } = useContext(MStationsContext);
   const [ searchKeyword, setSearchKeyword ] = useState(keyword);
+   
   useEffect(()=>{ setSearchKeyword(keyword)},[keyword]);
+
   return (
     <SearchContainer>
-        <TitleCustom>
+    <TitleCustom>
       et-ticketing
     </TitleCustom>    
       <SearchBarContainer>
         <Searchbar
-          placeholder="From "
+          placeholder="Search for Station "
+          icon="map"
           value={searchKeyword}
           onSubmitEditing={() => {
             search(searchKeyword);
@@ -49,17 +49,6 @@ export const Search = () => {
         
         />
       </SearchBarContainer>
-      <SearchBarContainer>
-        <Searchbar
-          placeholder="To "
-        />
-      </SearchBarContainer>
-      
-    <PickDateContainer>
-      <TitleCustom> Pick-Date </TitleCustom>
-     
-      </PickDateContainer>
-    
     </SearchContainer>
 
   );

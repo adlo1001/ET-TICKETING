@@ -1,5 +1,5 @@
 import {MStationsRequest, MStationsTransform} from "./mstations.service";
-import React from "react";
+import React,{useEffect} from "react";
 
 import {
   useState,
@@ -17,14 +17,17 @@ export const MStationsContextProvider = ({ children }) => {
   const [error, setError] = useState(null);
 
   const onSearch = (searchKeyword) => {
-    console.log(searchKeyword);
     setIsLoading(true);
     setKeyword(setKeyword);
-    if(!searchKeyword.length)
+       
+  };
+ 
+  useEffect(() => {
+    if(!keyword.length)
     { 
       return;
     }
-      MStationsRequest(searchKeyword)
+      MStationsRequest(keyword)
       .then(MStationsTransform)
         .then((result) => {
           setIsLoading(false);
@@ -35,9 +38,10 @@ export const MStationsContextProvider = ({ children }) => {
           setIsLoading(false);
           setError(err);
         });
-    
-  };
- 
+     
+
+  }, [keyword]);
+
   return (
     <MStationsContext.Provider
       value={{

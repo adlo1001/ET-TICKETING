@@ -3,19 +3,18 @@ import React from "react";
 import {Text} from "react-native";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
-import { StationsScreen } from "./src/features/screens/station-info.screen";
-import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SafeArea } from "./src/features/stations/components/utility/safe-area.component";
 import { Ionicons, FontAwesome} from '@expo/vector-icons';
 import { StationsContextProvider } from "./src/services/stations/stations.context";
 import { MStationsContextProvider } from "./src/services/station/mstations.context";
- 
+import { Navigation } from "./src/infrastructure/navigation"; 
 import {
   useFonts as useOswald,
   Oswald_400Regular,
 } from "@expo-google-fonts/oswald";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
+import { FavouritesContextProvider } from "./src/services/favourites/favourites.context";
 
 const TAB_ICON = {
   Trips:"md-bus-outline",
@@ -52,19 +51,13 @@ export default function App() {
   return (
     <>
     <ThemeProvider theme ={theme}>
+      <FavouritesContextProvider>
       <MStationsContextProvider>
       <StationsContextProvider>
-      <NavigationContainer>
-      <Tab.Navigator
-      screenOptions={createScreenOptions}
-      >
-        <Tab.Screen name="Trips" component={StationsScreen} />
-        <Tab.Screen name="Map" component={Map} />
-        <Tab.Screen name="Settings" component={Settings} />
-      </Tab.Navigator>
-    </NavigationContainer>
+     <Navigation/>
     </StationsContextProvider>
     </MStationsContextProvider>
+    </FavouritesContextProvider>
       </ThemeProvider>      
       <ExpoStatusBar style="auto" />
     </>
