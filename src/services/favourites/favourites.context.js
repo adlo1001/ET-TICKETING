@@ -5,13 +5,13 @@ export const FavouritesContext = createContext();
 export const FavouritesContextProvider = ({ children }) => {
   const [favourites, setFavourites] = useState([]);
 
-  const add = (station) => {
-    setFavourites([...favourites, station]);
+  const add = (trip) => {
+    setFavourites([...favourites, trip]);
   };
 
   const remove = (station) => {
     const newFavourites = favourites.filter(
-      (x) => x.placeId !== stations.id
+      (x) => x.placeId !== trip.id
     );
 
     setFavourites(newFavourites);

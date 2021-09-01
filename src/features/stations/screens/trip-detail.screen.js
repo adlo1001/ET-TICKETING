@@ -1,6 +1,6 @@
 import React ,{useState} from "react";
-import { SafeArea } from "../stations/components/utility/safe-area.component";
-import { StationsInfoCard } from "../stations/stations-info-card.component";
+import { SafeArea } from "../components/utility/safe-area.component";
+import { StationsInfoCard } from "../../stations/components/stations-info-card.component";
 import { List } from "react-native-paper";
 import { ScrollView } from "react-native";
  
@@ -37,17 +37,6 @@ return (
           <List.Item title="Burger w/ Fries" />
           <List.Item title="Steak Sandwich" />
           <List.Item title="Mushroom Soup" />
-        </List.Accordion>
-
-        <List.Accordion
-          title="Trip Information"
-          left={(props) => <List.Icon {...props} icon="information-outline" />}
-          expanded={dinnerExpanded}
-          onPress={() => setDinnerExpanded(!dinnerExpanded)}
-        >
-          <List.Item title="Time" />
-          <List.Item title="Arrival Time" />
-          <List.Item title="Onboarding Time" />
         </List.Accordion>
 
         <List.Accordion

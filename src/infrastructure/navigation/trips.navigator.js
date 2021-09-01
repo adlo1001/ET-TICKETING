@@ -6,15 +6,14 @@ import {
   TransitionPresets,
 } from "@react-navigation/stack";
 
-import { StationsScreen as TripScreen } from "../../features/screens/station-info.screen";
-import { TripDetailScreen } from "../../features/screens/trip-detail.screen";
+import { StationsScreen as TripScreen } from "../../features/stations/screens/station-info.screen";
+import { TripDetailScreen } from "../../features/stations/screens/trip-detail.screen";
 
 const TripStack = createStackNavigator();
 
 export const TripsNavigator = () => {
   return (
     <TripStack.Navigator
-      headerMode="none"
       screenOptions={{
         ...TransitionPresets.ModalPresentationIOS,
       }}

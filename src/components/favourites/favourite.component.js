@@ -30,7 +30,7 @@ export const Favourite = (station) => {
         <AntDesign
           name={isFavourite ? "heart" : "hearto"}
           size={24}
-          color={isFavourite ? "blue" : "white"}
+          color={isFavourite ? "green" : "grey"}
         />
       </FavouriteButton>
     );

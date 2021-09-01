@@ -1,7 +1,8 @@
 import {trip,trip1,trip2, trip3,trip4,trip5} from "./mocks.json";
 //import chicago from "./chicago.json";
 import results from "./mocks.json";
-
+import stations from "./stations.json";
+//import users from "./users.json";
 
 export const mocks = {
   "Megenagna 01, Adama 03": results,

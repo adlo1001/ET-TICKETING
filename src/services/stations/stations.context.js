@@ -37,7 +37,6 @@ export const StationsContextProvider = ({ children }) => {
     retrieveStations(mstations);
   }, [mstations]);
  
-  console.log("Hi ....");
   return (
     <StationsContext.Provider
       value={{

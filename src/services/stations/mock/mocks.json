@@ -8,28 +8,28 @@
                 }
           },
           {
-                "trip": {
+                "": {
                       "id":"dfgartiou3",
                       "intialStation": "Merkato Bus Station 01",
                       "finalStation": "Arbaminch 04"
                 }
           },
           {
-                "trip": {
+                "trip2": {
                       "id":"579475jqfwoie",
                       "intialStation": "Merkato Bus Station 00",
                       "finalStation": "Arbaminch 05"
                 }
           },
           {
-                "trip": {
+                "trip3": {
                       "id":"jklfjds93485",
                       "intialStation": "Merkato Bus Station 08",
                       "finalStation": "Arbaminch 06"
                 }
           },
           {
-                "trip": {
+                "trip4": {
                       "id":"ajksldfju5348759",
                       "intialStation": "Merkato Bus Station 07",
                       "finalStation": "Arbaminch 07"

@@ -1,5 +1,5 @@
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {Text} from "react-native";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
@@ -15,28 +15,46 @@ import {
 } from "@expo-google-fonts/oswald";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { FavouritesContextProvider } from "./src/services/favourites/favourites.context";
+import { BookedContextProvider } from "./src/services/booked/booked.context";
+import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
+import * as firebase from "firebase";
 
-const TAB_ICON = {
-  Trips:"md-bus-outline",
-  Settings:"md-settings",
-  Map: "md-map",
+
+
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDi8FwgAlI818nyuW-7WMUWa8BfmmiAAVQ",
+  authDomain: "et-ticketing-6b08a.firebaseapp.com",
+  projectId: "et-ticketing-6b08a",
+  storageBucket: "et-ticketing-6b08a.appspot.com",
+  messagingSenderId: "552968375475",
+  appId: "1:552968375475:web:7fcd30063418bca18eb4c6"
 
 };
 
-const Tab = createBottomTabNavigator();
-const Settings = () => <SafeArea><Text>Settings</Text></SafeArea>;
-const Map = () => <SafeArea><Text>Map</Text></SafeArea>;
- 
-const createScreenOptions =({route})=>{
-  const iconName = TAB_ICON[route.name];
-  return{
-    tabBarIcon:({size, color}) =>(<Ionicons name={iconName} size={size} color={color} />),
-    tabBarActiveTintColor: 'tomato',
-    tabBarInactiveTintColor: 'gray',
-  }
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
 }
 
+
+
 export default function App() {
+  const[isAuthenticated, setIsAuthenticated]=useState(false);
+  useEffect(()=>{
+    
+    setTimeout(() => {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword("adlo1001@test.com", "test1234")
+        .then((user) => {
+          setIsAuthenticated(true);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    }, 2000);
+  },[]);
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
   });
@@ -51,6 +69,8 @@ export default function App() {
   return (
     <>
     <ThemeProvider theme ={theme}>
+    <AuthenticationContextProvider>
+      <BookedContextProvider>
       <FavouritesContextProvider>
       <MStationsContextProvider>
       <StationsContextProvider>
@@ -58,6 +78,8 @@ export default function App() {
     </StationsContextProvider>
     </MStationsContextProvider>
     </FavouritesContextProvider>
+    </BookedContextProvider>
+    </AuthenticationContextProvider>
       </ThemeProvider>      
       <ExpoStatusBar style="auto" />
     </>

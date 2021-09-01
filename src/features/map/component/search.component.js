@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Searchbar,Text, View,  } from "react-native-paper";
+import { Searchbar,Text, View  } from "react-native-paper";
 import styled from "styled-components/native";
-import { MStationsContext } from "../../../../services/station/mstations.context";
+import { MStationsContext } from "../../../services/station/mstations.context";
 
 const SearchContainer = styled.View`
   padding: 16px;
@@ -9,7 +9,7 @@ const SearchContainer = styled.View`
 `;
 
 const SearchBarContainer = styled.View`
-  padding: 16px;
+  padding: 1px;
   background-color: white;
 `;
 
@@ -31,9 +31,6 @@ export const Search = () => {
 
   return (
     <SearchContainer>
-    <TitleCustom>
-      et-ticketing
-    </TitleCustom>    
       <SearchBarContainer>
         <Searchbar
           placeholder="Search for Station "
