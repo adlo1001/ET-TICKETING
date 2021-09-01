@@ -37,6 +37,7 @@ const createScreenOptions = ({ route }) => {
   const iconName = TAB_ICON[route.name];
   
   return {
+    headerShown: false,
     tabBarIcon: ({ size, color }) => (
       <Ionicons name={iconName} options={{headerShown: false}} size={size} color={color} />
     ),
@@ -46,9 +47,10 @@ const createScreenOptions = ({ route }) => {
 export const AppNavigator = () => (
 
     <Tab.Navigator
-    headerMode="none"
+    
       screenOptions={createScreenOptions}
       tabBarOptions={{
+        headerShown:false,
         activeTintColor: "tomato",
         inactiveTintColor: "gray",
       }}
