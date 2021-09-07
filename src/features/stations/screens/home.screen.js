@@ -33,7 +33,6 @@ export const HomeScreen = ({navigation} ) => {
     icon="lock-open-outline"
     mode="contained"
     onPress={() => onLogout()}
-  
     > Log out </LogoutButton>}
 
     {isLoading&&(

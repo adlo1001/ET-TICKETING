@@ -1,39 +1,38 @@
 {
     "results": [
           {
-                "trip": {
-                      "id":"12341234",
-                      "intialStation": "Megenagna 01",
-                      "finalStation": "Adama 03"
+                "station": {
+                  "id": 37,
+                  "stationName": "Megenagna 2",
+                  "city": "Addis Ababa",
+                  "region": "Addis Ababa",
+                  "subcity": "Yeka",
+                  "description": "Megenagna near Lem Hotel",
+                  "provice": null
                 }
           },
           {
-                "": {
-                      "id":"dfgartiou3",
-                      "intialStation": "Merkato Bus Station 01",
-                      "finalStation": "Arbaminch 04"
+                "station": {
+                  "id": 38,
+                  "stationName": "Merkato 1",
+                  "city": "Addis Ababa",
+                  "region": "Addis Ababa",
+                  "subcity": "Addis Ketema",
+                  "description": "Autobus Tera - Merkato",
+                  "provice": null
                 }
           },
           {
-                "trip2": {
-                      "id":"579475jqfwoie",
-                      "intialStation": "Merkato Bus Station 00",
-                      "finalStation": "Arbaminch 05"
-                }
-          },
-          {
-                "trip3": {
-                      "id":"jklfjds93485",
-                      "intialStation": "Merkato Bus Station 08",
-                      "finalStation": "Arbaminch 06"
-                }
-          },
-          {
-                "trip4": {
-                      "id":"ajksldfju5348759",
-                      "intialStation": "Merkato Bus Station 07",
-                      "finalStation": "Arbaminch 07"
+                "station": {
+                  "id": 39,
+                  "stationName": "Lam Beret",
+                  "city": "Addis Ababa",
+                  "region": "Addis Ababa",
+                  "subcity": "Yeka",
+                  "description": "Megenagna Lam Beret",
+                  "provice": null
                 }
           }
+         
     ]
 }

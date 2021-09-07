@@ -9,6 +9,7 @@ import { FavouriteBarHolder } from "../../../components/favourites/fouvarites-ba
 import { Spacer } from "../../../features/stations/components/spacer/spacer.component";
 import { FavouritesContext } from "../../../services/favourites/favourites.context";
 import { FavouritesBar } from "../../../components/favourites/fouvarites-bar.component";
+import {FadeInView} from "../../../components/animations/fade.animation";
 
 
 
@@ -63,27 +64,28 @@ export const StationsScreen = ({navigation} ) => {
     </FavouritesContainer>
     
     {isToggled&&<FavouritesBar favourites={favourites} onNavigate={navigation.navigate} />}
-
-  
-
+    
+    
     <TripList 
     data= {stations}
+    
     renderItem={({item}) => {
       return (
            <TouchableOpacity
               onPress={() => navigation.navigate("TripDetail",{station:item},)}
             >
               <Spacer position="bottom" size="large">
-                <StationsInfoCard station ={item} />
+               <StationsInfoCard station ={item} />
               </Spacer>
             </TouchableOpacity>
 
         );}}
       keyExtractor ={(item) =>item.name}
-    />   
+    />  
 
   </SafeArea>
 );
 };
+
 
 

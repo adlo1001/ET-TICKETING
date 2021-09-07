@@ -3,6 +3,7 @@ import {Text} from "../../../components/typography/text-component";
 import { StationCard,Info,Open, StationCardTitle,StationCardCover, Rating, Section, SectionEnd,Address  } from "../components/stations-info-card.styles";
 import {Favourite} from "../../../components/favourites/favourite.component";
 import {Book} from "../../../components/booked/book.component";
+import { SvgXml } from "react-native-svg";
 
 export const StationsInfoCard = ({ station = {} }) => {
   const {
@@ -22,14 +23,14 @@ export const StationsInfoCard = ({ station = {} }) => {
       <Favourite/>
       <StationCardTitle
         key={name}
-        title="Trips"
+        title="Trip"
         subtitle="Bus Transportation"
       />
       <StationCardCover source={{ uri: photos[0] }} />
       <Info>
       <Text variant="label" >{name}</Text>
         <Section>
-          {/*<Rating>
+         {{/*<Rating>
             {Platform.OS != 'web' ? (
               ratingArray.map((_, i) => (
                 <SvgXml key={`star-${id}-${i}`} xml={star} width={20} height={20} />
@@ -37,7 +38,7 @@ export const StationsInfoCard = ({ station = {} }) => {
             ) : (
               <Rating>???</Rating>
             )}
-          </Rating> */}
+          </Rating> */}}
 
           <SectionEnd>
           <Book/>
@@ -47,7 +48,7 @@ export const StationsInfoCard = ({ station = {} }) => {
           </SectionEnd> 
         </Section>
       </Info>
-     {/* <Address>Some Address in Ethiopia</Address>*/}
+     {{/* <Address>Some Address in Ethiopia</Address>*/}}
     </StationCard>
   );
 };
