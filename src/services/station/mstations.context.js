@@ -11,7 +11,7 @@ import {
 export const MStationsContext = createContext();
 
 export const MStationsContextProvider = ({ children }) => {
-  const [keyword, setKeyword] = useState("trip");
+  const [keyword, setKeyword] = useState("trip1");
   const [stations, setStations] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -27,13 +27,12 @@ export const MStationsContextProvider = ({ children }) => {
     { 
       return;
     }
-
-      MStationsRequest(keyword.toLocaleLowerCase())
+      MStationsRequest(keyword)
       .then(MStationsTransform)
         .then((result) => {
           setIsLoading(false);
           setStations(result);
-      
+          
         })
         .catch((err) => {
           setIsLoading(false);

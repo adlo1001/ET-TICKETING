@@ -13,19 +13,21 @@ export const TripDetailScreen = ({route})=>{
     const [dinnerExpanded, setDinnerExpanded] = useState(false);
     const [finalStationExpanded, setFinalStationExpanded] = useState(false);  
 
-const {trip} = route.params;
+const trip = route.params.station;
+
 return (
     <SafeArea>
-        <StationsInfoCard station={trip}/>
+        <StationsInfoCard station={trip} />
         <ScrollView >
         <List.Accordion
-          title="Initial Station"
+          title="Boarding Station"
           left={(props) => <List.Icon {...props} icon="bus-marker" />}
           expanded={initialStationExpanded}
           onPress={() => setInitialStationExpanded(!initialStationExpanded)}
         >
-          <List.Item title="City" />
-          <List.Item title="Region" />
+          <List.Item title={trip.route.initialStation.stationName +"-"+trip.route.initialStation.description}  />
+          <List.Item title={trip.route.initialStation.city}/>
+          <List.Item title={trip.tripPeriod +" hours"} />
         </List.Accordion>
 
         <List.Accordion
@@ -40,13 +42,13 @@ return (
         </List.Accordion>
 
         <List.Accordion
-          title="Final Station"
+          title="Destination "
           left={(props) => <List.Icon {...props} icon="bus-marker" />}
           expanded={finalStationExpanded}
           onPress={() => setFinalStationExpanded(!finalStationExpanded)}
         >
-          <List.Item title="City" />
-          <List.Item title="Region" />
+         <List.Item title={trip.route.finalStation.stationName +"-"+trip.route.finalStation.description}  />
+         <List.Item title="Arrival time:" />
         </List.Accordion>
       </ScrollView>
 

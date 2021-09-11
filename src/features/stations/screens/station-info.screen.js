@@ -1,3 +1,4 @@
+
 import React ,{useContext, useState} from "react";
 import styled from "styled-components/native";
 import { FlatList, TouchableOpacity, View, } from "react-native";
@@ -9,7 +10,6 @@ import { FavouriteBarHolder } from "../../../components/favourites/fouvarites-ba
 import { Spacer } from "../../../features/stations/components/spacer/spacer.component";
 import { FavouritesContext } from "../../../services/favourites/favourites.context";
 import { FavouritesBar } from "../../../components/favourites/fouvarites-bar.component";
-import {FadeInView} from "../../../components/animations/fade.animation";
 
 
 
@@ -45,15 +45,16 @@ export const StationsScreen = ({navigation} ) => {
 
   const {isLoading, error, stations} = useContext(StationsContext);
   const [isToggled, setIsToggled] = useState(false);
-
+  
+  
+ 
   return (
+
   <SafeArea >
     {isLoading&&(
     <LoadingContainer>
     <Loading  animating={true} color={Colors.blue300}/>
-
     </LoadingContainer>
-
     )}
     <FavouritesContainer>
       <FavouriteBarHolder 
@@ -64,28 +65,23 @@ export const StationsScreen = ({navigation} ) => {
     </FavouritesContainer>
     
     {isToggled&&<FavouritesBar favourites={favourites} onNavigate={navigation.navigate} />}
-    
-    
     <TripList 
     data= {stations}
-    
     renderItem={({item}) => {
       return (
            <TouchableOpacity
               onPress={() => navigation.navigate("TripDetail",{station:item},)}
             >
               <Spacer position="bottom" size="large">
-               <StationsInfoCard station ={item} />
+                <StationsInfoCard station ={item} navigation={navigation}/>
               </Spacer>
             </TouchableOpacity>
 
         );}}
       keyExtractor ={(item) =>item.name}
-    />  
-
+    />   
   </SafeArea>
 );
 };
-
 
 

@@ -4,7 +4,6 @@ import { TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 import { MStationsContext } from "../../../services/station/mstations.context";
 import { AntDesign } from "@expo/vector-icons";
-import { FadeInView } from "../../../components/animations/fade.animation";
 
 const SearchContainer = styled.View`
   padding: 16px; {/*16px*/}
@@ -16,7 +15,7 @@ const SearchContainer = styled.View`
 `;
 
 const TitleCustom=styled.Text`
-color:${(props) => props.theme.colors.ui.quaternary};
+color:${(props) => props.theme.colors.text.inverse};
 text-align: center;
 padding-left:0px;
 padding-bottom:20px;
@@ -33,9 +32,9 @@ export const Search = (isFavouritesToggled, onFavouritesToggled) => {
   return (
     <SearchContainer>
 
-     <TitleCustom>
+      <TitleCustom>
      Where to travel?
-    </TitleCustom>
+    </TitleCustom> 
         <Searchbar
           placeholder="I want to go to..."
           value={searchKeyword}

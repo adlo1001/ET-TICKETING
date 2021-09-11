@@ -18,23 +18,40 @@ left:50%;
 const Loading = styled(ActivityIndicator)`
 margin-left:-25px;
 `;
+const Container = styled(View)`
+top:50px;
+width:100%;
+height:100%;
+justify-content: center;
+
+background-color:${(props) => props.theme.colors.brand.primary};
+
+`;
 
 
-
-export const HomeScreen = ({navigation} ) => {
+export const SettingsScreen = ({navigation} ) => {
   const {isLoading, error, stations} = useContext(StationsContext);
   const {isAuthenticated, onLogout} = useContext(AuthenticationContext);
   
 
   return (
-    <AccountBackground>
-    {isLoading&&(
-    <LoadingContainer>
-    <Loading  animating={true} color={Colors.blue300}/>
-    </LoadingContainer>
-    )}
-    <Search/>
-    </AccountBackground>
+<SafeArea>
+    <Container>
+    {isAuthenticated&&<LogoutButton 
+    icon="lock-open-outline"
+    mode="contained"
+    onPress={() => onLogout()}
+  
+    > Log out </LogoutButton>}
+
+   {!isAuthenticated&&<LogoutButton
+    icon="lock-open-outline"
+    mode="contained"
+    onPress={() => navigation.navigate("Login")}
+  
+    > Login </LogoutButton>}
+    
+    </Container></SafeArea>
   
 );
 };

@@ -33,12 +33,9 @@ export const StationsContextProvider = ({ children }) => {
         });
     }, 2000);
   };
-
-  
   useEffect(() => {
     retrieveStations(mstations);
   }, [mstations]);
- 
  
   return (
     <StationsContext.Provider
@@ -51,5 +48,4 @@ export const StationsContextProvider = ({ children }) => {
       {children}
     </StationsContext.Provider>
   );
-  
 };

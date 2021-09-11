@@ -7,9 +7,13 @@ import { SafeArea } from "../../features/stations/components/utility/safe-area.c
 
 import { TripsNavigator } from "./trips.navigator";
 import { MapScreen } from "../../features/map/screen/map.screen";
+import { PayNavigator } from "../../infrastructure/navigation/payments.navigator";
 import { HomeScreen } from "../../features/stations/screens/home.screen";
 import {AccountScreen} from "../../features/account/screens/account.screen";
+import { PaymentScreen } from "../../features/stations/screens/payment.screen";
 import {AccountNavigator} from "../../infrastructure/navigation/account.navigator";
+import { SettingsScreen } from "../../features/stations/screens/settings.screen";
+import { PaymentScreen2 } from "../../components/pay/pay.component";
 
 const Tab = createBottomTabNavigator();
 
@@ -18,6 +22,7 @@ const TAB_ICON = {
     Tickets:"md-cart-outline",
     'My Page':"md-person-circle-outline",
     Map: "md-map",
+    Settings:"md-settings-outline",
     Help:"md-help-circle-outline",  
   };
   
@@ -59,7 +64,7 @@ export const AppNavigator = () => (
       <Tab.Screen name="Tickets" component={TripsNavigator} />
       <Tab.Screen name="My Page" component={AccountNavigator} />
       <Tab.Screen name="Map" component={MapScreen} />
-      <Tab.Screen name="Help"  component={Settings} />
+      <Tab.Screen name="Settings"  component={SettingsScreen} />
     </Tab.Navigator>
 
 );

@@ -17,6 +17,7 @@
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/stack": "^6.0.7",
     "camelize": "^1.0.0",
+    "emailjs-com": "^3.2.0",
     "expo": "~42.0.1",
     "expo-font": "~9.2.1",
     "expo-google-fonts": "^0.0.0",
