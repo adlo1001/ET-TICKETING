@@ -5,7 +5,7 @@ import {
   createContext,
   useEffect,
   useMemo,
-} from "react";
+} from "react"; 
 import { useContext } from "react/cjs/react.development";
 import { MStationsContext } from "../station/mstations.context";
 
@@ -18,14 +18,15 @@ export const StationsContextProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const mstations = useContext(MStationsContext);
 
-  const retrieveStations = () => {
+  const retrieveStations = (mstat) => {
     setIsLoading(true);
+    setStations([]);
     setTimeout(() => {
-      stationsRequest()
-      .then(stationsTransform)
+      stationsRequest(mstat)
         .then((results) => {
           setIsLoading(false);
           setStations(results);
+          //console.log(results);
         })  
         .catch((err) => {
           setIsLoading(false);
@@ -34,7 +35,9 @@ export const StationsContextProvider = ({ children }) => {
     }, 2000);
   };
   useEffect(() => {
-    retrieveStations(mstations);
+    //const infoString =`${mstations.keyword}`;
+    retrieveStations(mstations.keyword);
+
   }, [mstations]);
  
   return (

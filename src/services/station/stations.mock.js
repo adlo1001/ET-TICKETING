@@ -1,9 +1,9 @@
 export const stations= {
-"trip":{
-      "results": 
+"results":{
+      "trip": 
       [
         {
-            "id": 37,
+            "id": 377583478534,
             "stationName": "Megenagna 2",
             "city": "Addis Ababa",
             "region": "Addis Ababa",

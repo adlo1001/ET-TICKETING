@@ -24,10 +24,10 @@ background-color: white;
 `;
 
 export const Search = () => {
-  const { keyword, search } = useContext(MStationsContext);
+  //const { keyword, search } = useContext(MStationsContext);
   const [ searchKeyword, setSearchKeyword ] = useState(keyword);
    
-  useEffect(()=>{ setSearchKeyword(keyword)},[keyword]);
+  //useEffect(()=>{ setSearchKeyword(keyword)},[keyword]);
 
   return (
     <SearchContainer>

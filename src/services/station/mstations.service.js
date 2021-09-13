@@ -3,12 +3,14 @@ import camelize from "camelize";
 
 
   export const MStationsRequest=(searchTerm)=>{
+   
     return new Promise((resolve, reject)=>{
       const stationMock= stations[searchTerm];
-        if(!stationMock) {
+      console.log("KeyWord____________>"+searchTerm);
+        if(!stations) {
             reject("Not Found");
         }
-        resolve(stationMock);
+        resolve(stations);
 
     });   
 
@@ -22,4 +24,5 @@ const [intialStation, finalStation] = trip;
 return {intialStation, finalStation};
 
 };
+
 

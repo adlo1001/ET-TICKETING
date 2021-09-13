@@ -6,7 +6,9 @@ import stations from "./stations.json";
 
 export const mocks = {
   "Megenagna 01, Adama 03": results,
-  "Merkato Bus Station 01, Arbaminch 01": trip,
+  "Merkato Bus Station 01, Arbaminch 01": trip2,
+  "me, ar": trip1,
+  "Megenagna 01, Adama 03": trip,
   //"Merkato Bus Station 01, Arbaminch 02": trip3,
   //"Merkato Bus Station 01, Arbaminch 03": trip4,
  // "Merkato Bus Station 01, Arbaminch 04": trip1,

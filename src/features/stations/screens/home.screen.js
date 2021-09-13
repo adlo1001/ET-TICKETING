@@ -5,7 +5,7 @@ import { FlatList, TouchableOpacity, View, } from "react-native";
 import { SafeArea } from "../components/utility/safe-area.component";
 import  {StationsContext}  from "../../../services/stations/stations.context";
 import { ActivityIndicator, Colors } from 'react-native-paper';
-import { Search } from "./search.component";
+import {Search} from "./search.component";
 import { AccountBackground } from "../../account/components/account.styles";
 import { LogoutButton } from "../../account/components/account.styles";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";

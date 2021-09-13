@@ -28,7 +28,11 @@ font-size: ${(props) => props.theme.fontSizes.h4};
 export const Search = (isFavouritesToggled, onFavouritesToggled) => {
   const { keyword, search } = useContext(MStationsContext);
   const [ searchKeyword, setSearchKeyword ] = useState(keyword);
-  useEffect(()=>{ setSearchKeyword(keyword)},[keyword]);
+  //useEffect(()=>{ setSearchKeyword(keyword)},[keyword]);
+  useEffect(()=>{ search(searchKeyword);   
+  },[]);
+
+
   return (
     <SearchContainer>
 
@@ -39,10 +43,12 @@ export const Search = (isFavouritesToggled, onFavouritesToggled) => {
           placeholder="I want to go to..."
           value={searchKeyword}
           onSubmitEditing={() => {
+            console.log("KeyWord_>"+searchKeyword);
             search(searchKeyword);
           }}
           onChangeText={(text) => {
             setSearchKeyword(text);
+          
             }}
 
         /> 

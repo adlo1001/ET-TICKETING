@@ -20,7 +20,7 @@ margin-left:-25px;
 
 const CusTextInput = styled(TextInput)`
 width:100%
-background-color:${(props) => props.theme.colors.brand.primary};
+background-color:${(props) => props.theme.colors.bg.primary};
 color:${(props) => props.theme.colors.ui.tertiary};
 `;
 
