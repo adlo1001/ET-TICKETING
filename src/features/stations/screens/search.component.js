@@ -5,6 +5,7 @@ import styled from "styled-components/native";
 import { MStationsContext } from "../../../services/station/mstations.context";
 import { AntDesign } from "@expo/vector-icons";
 
+
 const SearchContainer = styled.View`
   padding: 16px; {/*16px*/}
   padding-top:130px; {/*130px*/}
@@ -38,7 +39,7 @@ export const Search = (isFavouritesToggled, onFavouritesToggled) => {
 
       <TitleCustom>
      Where to travel?
-    </TitleCustom> 
+    </TitleCustom>
         <Searchbar
           placeholder="I want to go to..."
           value={searchKeyword}

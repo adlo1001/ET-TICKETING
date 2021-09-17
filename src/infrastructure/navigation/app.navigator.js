@@ -14,6 +14,7 @@ import { PaymentScreen } from "../../features/stations/screens/payment.screen";
 import {AccountNavigator} from "../../infrastructure/navigation/account.navigator";
 import { SettingsScreen } from "../../features/stations/screens/settings.screen";
 import { PaymentScreen2 } from "../../components/pay/pay.component";
+import { TripInfoScreen } from "../../features/stations/components/trip-info.component";
 
 const Tab = createBottomTabNavigator();
 
@@ -65,6 +66,7 @@ export const AppNavigator = () => (
       <Tab.Screen name="My Page" component={AccountNavigator} />
       <Tab.Screen name="Map" component={MapScreen} />
       <Tab.Screen name="Settings"  component={SettingsScreen} />
+      <Tab.Screen name="Help"  component={TripInfoScreen} />
     </Tab.Navigator>
 
 );

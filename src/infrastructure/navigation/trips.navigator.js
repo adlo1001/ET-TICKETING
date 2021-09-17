@@ -12,6 +12,7 @@ import { PaymentScreen } from "../../features/stations/screens/payment.screen";
 import { Book } from "../../components/booked/book.component";
 import {PayNavigator} from "../navigation/payments.navigator";
 import { PaymentScreen2 } from "../../components/pay/pay.component";
+import { DateTimePicker } from "../../features/stations/components/date-time-picker.component";
 
 const TripStack = createStackNavigator();
 
@@ -39,6 +40,8 @@ export const TripsNavigator = () => {
         name="PaymentScreen2"
         component={PaymentScreen2}
       />
+   
+      
     </TripStack.Navigator>
   );
 };

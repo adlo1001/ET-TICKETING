@@ -5,7 +5,7 @@ import { ScrollView, View,Text } from "react-native";
 import { Spacer } from "../../features/stations/components/spacer/spacer.component";
 import styled from "styled-components/native";
 import {AuthButton} from "../../features/account/components/account.styles"
-
+import { CustDateTimePicker } from "../../features/stations/components/date-time-picker.component";
 
 const PaymentContainer = styled(View)`
 height:100%
@@ -57,6 +57,7 @@ return (
     </Spacer>
      <PaymentButtonContainer>
        <Spacer>
+       <CustDateTimePicker/>
  <AuthButton
     icon="check-box-outline"
     size={24}
@@ -64,10 +65,12 @@ return (
     onPress={() => {
     console.log("Pressed!");
     }}
-  /></Spacer>
+  />
+  
+  </Spacer>
   </PaymentButtonContainer>
  </PaymentContainer>
-     
+    
     </SafeArea>
 );
  };

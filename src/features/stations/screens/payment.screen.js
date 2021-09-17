@@ -6,6 +6,7 @@ import { Spacer } from "../components/spacer/spacer.component";
 import styled from "styled-components/native";
 import { useNavigation } from '@react-navigation/native';
 import { PaymentScreen2 } from "../../../components/pay/pay.component";
+import { CustDateTimePicker } from "../components/date-time-picker.component";
 
 
 const PaymentContainer = styled(View)`
@@ -90,6 +91,7 @@ return (
   /></Spacer>
   </PaymentButtonContainer>
  </PaymentContainer>
+ <CustDateTimePicker/>
     </SafeArea>
 );
  };
