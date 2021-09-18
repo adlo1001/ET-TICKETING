@@ -9,8 +9,8 @@ import camelize from "camelize";
    
      const mock=mocks["Megenagna 01, Adama 03"];
      const _mock = mocks["me, ar"];
-     console.log(trip);
-     console.log(_mock);
+    // console.log(trip);
+     //console.log(_mock);
     // const mock = mocks["Megenagna 01, Adama 03"];
     
         if(!mock  ) {

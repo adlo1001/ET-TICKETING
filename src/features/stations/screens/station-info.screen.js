@@ -56,14 +56,7 @@ export const StationsScreen = ({navigation} ) => {
     <Loading  animating={true} color={Colors.blue300}/>
     </LoadingContainer>
     )}
-    <FavouritesContainer>
-      <FavouriteBarHolder 
-      isFavouritesToggled={isToggled} 
-      onFavouritesToggle={()=> setIsToggled(!isToggled)} >
-      </FavouriteBarHolder>
-      {isToggled && <FavouritesBar/>}
-    </FavouritesContainer>
-    
+   
     {isToggled&&<FavouritesBar favourites={favourites} onNavigate={navigation.navigate} />}
     <TripList 
     data= {stations}

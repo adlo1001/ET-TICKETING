@@ -7,6 +7,7 @@ import styled from "styled-components/native";
 import { useNavigation } from '@react-navigation/native';
 import { PaymentScreen2 } from "../../../components/pay/pay.component";
 import { CustDateTimePicker } from "../components/date-time-picker.component";
+import { colors } from "../../../infrastructure/theme/colors";
 
 
 const PaymentContainer = styled(View)`
@@ -26,7 +27,6 @@ color:${(props) => props.theme.colors.ui.tertiary};
 `;
 
 const PaymentButtonContainer = styled(View)`
-
 padding-left:10px;
 background-color:${(props) => props.theme.colors.bg.primary};
 ;
@@ -54,44 +54,58 @@ return (
           <CusTextInput
          label="Name"
          value={name}
-         underlineColor={(props) => props.theme.colors.brand.primary}
+         underlineColor={colors.brand.primary}
+         selectionColor={colors.brand.primary}
+         outlineColor={colors.brand.primary}
          onChangeText={name => setName(name)}
     /></Spacer>
     <Spacer>
           <CusTextInput
          label="Father's Name"
          value={fname}
+         underlineColor={colors.brand.primary}
+         selectionColor={colors.brand.primary}
+         outlineColor={colors.brand.primary}
          onChangeText={fname => setFname(fname)}
     /></Spacer><Spacer>
           <CusTextInput
          label="Phone"
          value={phone}
+         underlineColor={colors.brand.primary}
+         selectionColor={colors.brand.primary}
+         outlineColor={colors.brand.primary}
          onChangeText={phone => setPhone(phone)}
     /></Spacer><Spacer>
          <CusTextInput
          label="Email"
          value={email}
+         underlineColor={colors.brand.primary}
+         selectionColor={colors.brand.primary}
+         outlineColor={colors.brand.primary}
          onChangeText={email => setEmail(email)}
     /></Spacer><Spacer>
         <CusTextInput
          label="Number of Passengers"
          value={noPass}
+         underlineColor={colors.brand.primary}
+         selectionColor={colors.brand.primary}
+         outlineColor={colors.brand.primary}
          onChangeText={noPass => setNoPass(noPass)}
 /></Spacer>
      <PaymentButtonContainer>
        <Spacer>
  <IconButton
     icon="cart-arrow-right"  
-    color={Colors.blue300}
-    size={50}
+    color={colors.brand.primary}
+    size={48}
     onPress={() => {
+      
     navigation.navigate(PaymentScreen2);
 
     }}
   /></Spacer>
   </PaymentButtonContainer>
  </PaymentContainer>
- <CustDateTimePicker/>
     </SafeArea>
 );
  };

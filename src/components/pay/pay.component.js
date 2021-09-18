@@ -1,26 +1,41 @@
 import React ,{useState} from "react";
 import { SafeArea } from "../../features/stations/components/utility/safe-area.component";
 import { List,TextInput,Card, Button, Colors,ActivityIndicator  } from "react-native-paper";
+import {Text as CusTextOther} from "../../components/typography/text-component";
 import { ScrollView, View,Text } from "react-native";
 import { Spacer } from "../../features/stations/components/spacer/spacer.component";
 import styled from "styled-components/native";
-import {AuthButton} from "../../features/account/components/account.styles"
-import { CustDateTimePicker } from "../../features/stations/components/date-time-picker.component";
+import {AuthButton} from "../../features/account/components/account.styles";
+import {CustDateTimePicker} from "./date-time-picker.component";
+
 
 const PaymentContainer = styled(View)`
 height:100%
 padding:10px;
 background-color:${(props) => props.theme.colors.bg.primary};
-;
 `;
 const Loading = styled(ActivityIndicator)`
 margin-left:-25px;
+`;
+
+const CusTextOtherOther = styled(CusTextOther)`
+padding:10px;
 `;
 
 const CusText = styled.Text`
 width:100%
 background-color:${(props) => props.theme.colors.bg.primary};
 padding:10px;
+font-size:${(props) => props.theme.fontSizes.h5};
+
+`;
+const CusTextTitle = styled.Text`
+width:100%
+background-color:${(props) => props.theme.colors.bg.primary};
+padding:10px;
+font-size:${(props) => props.theme.fontSizes.h5};
+font-weight:${(props) => props.theme.fontWeights.bold};
+
 `;
 
 const PaymentButtonContainer = styled(View)`
@@ -46,18 +61,25 @@ export const PaymentScreen2 = ()=>{
 
 return (
     <SafeArea>
-      <PaymentContainer>
+
       <Spacer>
-          <CusText>Success! </CusText></Spacer>
+          <CusTextTitle >Success! </CusTextTitle></Spacer>
     <Spacer>
-    <CusText>You have Booked! 
+    <CusTextTitle>You have Booked!!!
+  
+    </CusTextTitle>
+    <CusTextOtherOther variant="label">
       An SMS and EMAIL contianing ticket number and all your trip informamtion has been sent. 
-      Booking will be invalid two hours from now. Remeber any tickets bought within two hours of boarding are not guarnteed.
-    </CusText>
-    </Spacer>
-     <PaymentButtonContainer>
+      If not paid, booking will be invalid two hours from now. 
+    
+    </CusTextOtherOther>
+    <CusTextOtherOther variant="error" >
+     Remeber any tickets bought within two hours of boarding are not guaranteed.
+    
+    </CusTextOtherOther>
+    </Spacer> 
+     <PaymentButtonContainer>  
        <Spacer>
-       <CustDateTimePicker/>
  <AuthButton
     icon="check-box-outline"
     size={24}
@@ -65,12 +87,8 @@ return (
     onPress={() => {
     console.log("Pressed!");
     }}
-  />
-  
-  </Spacer>
+  /></Spacer>
   </PaymentButtonContainer>
- </PaymentContainer>
-    
     </SafeArea>
 );
  };

@@ -1,18 +1,18 @@
 import React, { useContext } from "react";
 import styled from "styled-components/native";
 import { AntDesign } from "@expo/vector-icons";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity,View } from "react-native";
 
 import { BookedContext } from "../../services/booked/booked.context";
 import { useNavigation } from '@react-navigation/native';
 import { PaymentScreen } from "../../features/stations/screens/payment.screen";
 import { TripDetailScreen } from "../../features/stations/screens/trip-detail.screen";
 import { PayNavigator } from "../../infrastructure/navigation/payments.navigator";
+import {IconButton} from  "react-native-paper";
+import { colors } from "../../infrastructure/theme/colors";
 
-const BookButton = styled(TouchableOpacity)`
-
-
-  right: 120px;
+const BookContainer = styled(View)`
+  right: 150px;
   bottom:25px;
   z-index: 9;
   
@@ -28,14 +28,15 @@ export const Book = (trip) => {
 
     
     return (
-      <BookButton
-      onPress={() =>navigation.navigate(PaymentScreen)}
-      >  
-        <AntDesign
-          name={isBooked ? "shoppingcart" : "shoppingcart"}
-          size={32}
-          color={isBooked ? "red" : "grey"}
-        />
-      </BookButton>
+    <BookContainer>
+      <IconButton
+      icon="cart-arrow-right"  
+      color={colors.brand.primary}
+      size={48}
+      onPress={() => {
+      navigation.navigate(PaymentScreen);
+  
+      }}/></BookContainer>
+      
     );
   };

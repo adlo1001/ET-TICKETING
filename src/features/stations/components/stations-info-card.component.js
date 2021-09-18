@@ -30,7 +30,7 @@ export const StationsInfoCard = ({ station = {} , navigation}) => {
   return (
     
     <StationCard elevation={2} >
-      <Favourite/>
+      
       <StationCardTitle
         key={name}
         title={"From: "+station.route.initialStation.city +" To: "+ station.route.finalStation.city}
@@ -38,17 +38,11 @@ export const StationsInfoCard = ({ station = {} , navigation}) => {
       />
       <StationCardCover source={{ uri: "https://www.safaribay.net/wp-content/uploads/2020/04/Zemen-Bus-Ethiopia..jpg" }} />
       <Info>
-      <Text variant="label" >{station.priceAdults+" Birr"}</Text>
+      <Text variant="label" >Price:{station.priceAdults+" Birr"}</Text>
+      <Text variant="label" >Onboarding: {   new Date(station.initialTime).toLocaleTimeString('en-US',{ hour: '2-digit', minute: '2-digit' }) +"  "+ new Date(station.initialTime).toLocaleDateString('en-GB')}
+      
+      </Text>
         <Section>
-          {/*<Rating>
-            {Platform.OS != 'web' ? (
-              ratingArray.map((_, i) => (
-                <SvgXml key={`star-${id}-${i}`} xml={star} width={20} height={20} />
-              ))
-            ) : (
-              <Rating>???</Rating>
-            )}
-          </Rating> */}
 
           <SectionEnd>
           

@@ -6,6 +6,7 @@ import { Text } from "react-native";
 import { SafeArea } from "../../features/stations/components/utility/safe-area.component";
 
 import { TripsNavigator } from "./trips.navigator";
+import { TripsNavigator2 } from "./trips.navigator-2";
 import { MapScreen } from "../../features/map/screen/map.screen";
 import { PayNavigator } from "../../infrastructure/navigation/payments.navigator";
 import { HomeScreen } from "../../features/stations/screens/home.screen";
@@ -61,7 +62,7 @@ export const AppNavigator = () => (
         inactiveTintColor: "gray",
       }}
     >
-      <Tab.Screen name="Trips" component={HomeScreen} />
+      <Tab.Screen name="Trips" component={TripsNavigator2} />
       <Tab.Screen name="Tickets" component={TripsNavigator} />
       <Tab.Screen name="My Page" component={AccountNavigator} />
       <Tab.Screen name="Map" component={MapScreen} />

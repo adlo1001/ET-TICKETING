@@ -10,14 +10,15 @@ import { StationsScreen as TripScreen } from "../../features/stations/screens/st
 import { TripDetailScreen } from "../../features/stations/screens/trip-detail.screen";
 import { PaymentScreen } from "../../features/stations/screens/payment.screen";
 import { Book } from "../../components/booked/book.component";
-import {PayNavigator} from "../navigation/payments.navigator";
+import {PayNavigator} from "./payments.navigator";
 import { PaymentScreen2 } from "../../components/pay/pay.component";
 import { DateTimePicker } from "../../features/stations/components/date-time-picker.component";
 import { TripInfoScreen } from "../../features/stations/components/trip-info.component";
+import { HomeScreen } from "../../features/stations/screens/home.screen";
 
 const TripStack = createStackNavigator();
 
-export const TripsNavigator = () => {
+export const TripsNavigator2 = () => {
   return (
     <TripStack.Navigator
       screenOptions={{
@@ -26,6 +27,14 @@ export const TripsNavigator = () => {
       
     >
       <TripStack.Screen
+        name="Home"
+        component={HomeScreen}
+      />
+     <TripStack.Screen
+        name="TripInfo"
+        component={TripInfoScreen}
+      />
+        <TripStack.Screen
         name="Trip"
         component={TripScreen}
       />

@@ -28,12 +28,7 @@ export const HomeScreen = ({navigation} ) => {
 
   return (
     <AccountBackground>
-    {isLoading&&(
-    <LoadingContainer>
-    <Loading  animating={true} color={Colors.blue300}/>
-    </LoadingContainer>
-    )}
-    <Search/>
+    <Search navigation={navigation} initalStation="Addis Ababa" finalStation="Unknown location"/>
     </AccountBackground>
   
 );

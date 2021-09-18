@@ -1,9 +1,12 @@
 import React ,{useState} from "react";
-import { List,TextInput,Card, Button, Colors,ActivityIndicator, IconButton  } from "react-native-paper";
+import { SafeArea } from "../../features/stations/components/utility/safe-area.component";
+import { List,TextInput,Card, Button, Colors,ActivityIndicator  } from "react-native-paper";
 import { ScrollView, View,Text,  Platform } from "react-native";
+import { Spacer } from "../../features/stations/components/spacer/spacer.component";
 import styled from "styled-components/native";
+import {AuthButton} from "../../features/account/components/account.styles"
 import DateTimePicker from '@react-native-community/datetimepicker';
-import {colors} from "../../../infrastructure/theme/colors";
+import {colors} from "../../infrastructure/theme/colors";
 
 
 const PaymentContainer = styled(View)`
@@ -30,58 +33,30 @@ background-color:${(props) => props.theme.colors.bg.primary};
 `;
 
 export const CustButton = styled(Button).attrs({
-  color: colors.brand.secondary,
+  color: colors.brand.secondary
 })`
-  padding: ${(props) => props.theme.space[3]};
-  right:10px;
+  padding: ${(props) => props.theme.space[2]};
+  background-color:${(props) => props.theme.colors.brand.primary};
+  width:100%;
+  top: 10px;
+  right: 10px;
   left:10px;
-
-`;
-
-
-export const MDateTimePicker = styled(DateTimePicker).attrs({
-  color: Colors.red100, 
-  
-})`
-  padding: ${(props) => props.theme.space[4]};
   z-index: 9;
-  right:10px;
-  left:10px;
-  margin-left:auto;
-  margin-right:auto;
-  width:40%
-  background-color:${(props) => props.theme.colors.bg.secondary};
+  
 
-`;
-
-export const Section = styled.View`
-flex-direction:row;
-align-items:center;
-margin-left:auto;
-margin-right:auto;
-`;
-
-const DateShow=styled.Text`
-color:${(props) => props.theme.colors.text.primary};
-text-align: center;
-padding-left:0px;
-padding-bottom:20px;
-background-color:rgba(255,255,255,0.1);
-font-weight:${(props) => props.theme.fontWeights.bold};
 `;
 
 export const CustDateTimePicker = ()=>{
-  const [date, setDate] = useState(new Date());
+
+  
+  const [date, setDate] = useState(new Date(1598051730000));
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
-  const [tmp, setTmp] = useState(new String (new Date()));
 
- 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
     setShow(Platform.OS === 'ios');
     setDate(currentDate);
-    setTmp(currentDate.toString());
   };
 
 
@@ -100,25 +75,28 @@ export const CustDateTimePicker = ()=>{
 
 return (
       <View>
-      <View> 
-        <Section>
-      <IconButton icon="calendar" size={24} />
-      <MDateTimePicker
+      <View>
+        <CustButton 
+        icon="camera"
+        size={24}
+          mode="contained" onPress={showDatepicker} > Choose Departure Date</CustButton>
+      </View>
+      
+      {show && (
+        <Spacer>
+        <DateTimePicker
           testID="dateTimePicker"
           value={date}
+          
           mode={mode}
           is24Hour={true}
           display="default"
-          margin-left="auto"
-          margin-right= "auto"
           onChange={onChange}
-        /></Section>
-      <DateShow>Departure Date: {tmp}</DateShow>
-        
-
-        </View>
-        
+          style={{flex:1, padding:40, left:100}}
+        /></Spacer>
+      )}
     </View>
 
 );
  };
+
