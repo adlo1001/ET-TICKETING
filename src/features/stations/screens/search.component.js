@@ -1,4 +1,4 @@
-import React, { useState,useContext, useEffect } from "react";
+import React, { useState,useContext,useCallback, useEffect } from "react";
 import { Searchbar,Text, View,Button } from "react-native-paper";
 import { TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
@@ -7,6 +7,8 @@ import { AntDesign } from "@expo/vector-icons";
 import { Avatar } from 'react-native-paper';
 import {TripInfoScreen} from "../../stations/components/trip-info.component";
 import { useNavigation } from '@react-navigation/native';
+import { StationsInfoCard } from "../components/stations-info-card.component";
+import { CompactStationInfo } from "./compact-station-info.screen";
 
 const SearchBarBar = styled(Searchbar)`
  margin-left:auto;
@@ -46,15 +48,29 @@ background-color:${(props) => props.theme.colors.brand.primary};
 `;
 
 export const Search = (isFavouritesToggled, onFavouritesToggled) => {
-  const { keyword, search } = useContext(MStationsContext);
+  
+  const { keyword, search ,mstations,type, stationList } = useContext(MStationsContext);
   const [ searchKeyword, setSearchKeyword ] = useState(keyword);
-  //useEffect(()=>{ setSearchKeyword(keyword)},[keyword]);
+  const [destinationQuery, setDestinationQuery] = useState("");
   const navigation= useNavigation();
-  useEffect(()=>{ search(searchKeyword);   
-  },[]);
 
 
-  return (
+    useEffect(()=>{ search(searchKeyword);type();
+    },[]);
+  
+  
+    const filteredStations = stationList.filter(
+      item => {
+        return (
+          item.stationName.toLowerCase().includes(searchKeyword.toLowerCase()) ||
+          item.city.toLowerCase().includes(searchKeyword.toLowerCase()) ||
+          item.subcity.toLowerCase().includes(searchKeyword.toLowerCase())
+        )
+      }
+    )
+
+    return (
+    
     <SearchContainer>
 
 <FrontImage  size={64}  />
@@ -67,18 +83,23 @@ export const Search = (isFavouritesToggled, onFavouritesToggled) => {
           value={searchKeyword}
           autoCapitalize="none"
           onSubmitEditing={() => {
-            console.log("KeyWord_>"+searchKeyword);
+            if (searchKeyword!=""){
             search(searchKeyword);
             navigation.push('TripInfoScreen', {
               finalStation: searchKeyword,initialStation:'Addis Ababa'});
-           
+            }
           }}
           onChangeText={(text) => {
             setSearchKeyword(text);
-          
             }}
 
         /> 
+
+    {filteredStations
+          .map(station => (
+      <CompactStationInfo station={station}/>))
+      }
+
     </SearchContainer>
 
   );

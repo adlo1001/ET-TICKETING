@@ -1,5 +1,5 @@
-import {MStationsRequest, MStationsTransform} from "./mstations.service";
-import React,{useEffect} from "react";
+import {MStationsRequest,MStationsRequest2, MStationsTransform} from "./mstations.service";
+import React,{useEffect,useCallback} from "react";
 
 import {
   useState,
@@ -15,6 +15,7 @@ export const MStationsContextProvider = ({ children }) => {
   const [mstations, setMStations] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [stationList, setStationList]=useState([]);
 
   const onSearch = (searchKeyword) => {
     setIsLoading(true);
@@ -23,8 +24,9 @@ export const MStationsContextProvider = ({ children }) => {
     MStationsRequest(keyword.toLowerCase())
       .then((result) => {
         setIsLoading(false);
-        setStations(result);
-    
+        setMStations(result);
+        console.log("Keyword11111" + keyword);
+      
       })
       .catch((err) => {
         setIsLoading(false);
@@ -33,7 +35,28 @@ export const MStationsContextProvider = ({ children }) => {
    
        
   };
+
+  const onType = () =>  {
+    MStationsRequest2()
+      .then((result) => {
+        setStationList(result);
+        console.log("OnType");
+      
+      })
+      .catch((err) => {
+        console.log(err);
+      });
    
+       
+  };
+   
+  const fetchData=useCallback(()=>{
+    fetch('./stations.json')
+    .then(response =>response.json())
+    .then(data=>
+      {setStationList(data)}).catch((err)=>{console.log(err);})
+  
+    },[]);
 
 
 
@@ -45,6 +68,8 @@ export const MStationsContextProvider = ({ children }) => {
         error,
         search: onSearch,
         keyword,
+        type: onType,
+        stationList,
       }}
     >
       {children}
