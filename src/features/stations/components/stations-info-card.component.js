@@ -46,7 +46,6 @@ export const StationsInfoCard = ({ station = {} , navigation}) => {
 
           <SectionEnd>
           
-          
           <Book station={station} navigation={navigation}/>
              {isSeatAvailable && (
               <Text variant="error"> SEAT AVAILABLE </Text>

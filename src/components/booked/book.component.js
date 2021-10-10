@@ -12,8 +12,8 @@ import {IconButton} from  "react-native-paper";
 import { colors } from "../../infrastructure/theme/colors";
 
 const BookContainer = styled(View)`
-  right: 150px;
-  bottom:25px;
+  right: 160px;
+  bottom:20px;
   z-index: 9;
   
 `;
