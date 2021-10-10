@@ -11,12 +11,13 @@ import { LogoutButton } from "../../account/components/account.styles";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 
 const LoadingContainer = styled(View)`
-position:absolute;
+
 top:50%;
 left:50%;
 `;
 const Loading = styled(ActivityIndicator)`
-margin-left:-25px;
+padding-bottom:450px;
+
 `;
 
 
@@ -27,9 +28,12 @@ export const HomeScreen = ({navigation} ) => {
   
 
   return (
+    
     <AccountBackground>
+    {isLoading&&<Loading color={Colors.blue800} />}
     <Search navigation={navigation} initalStation="Addis Ababa" finalStation="Unknown location"/>
     </AccountBackground>
+  
   
 );
 };

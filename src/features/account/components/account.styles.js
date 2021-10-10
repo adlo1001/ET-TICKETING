@@ -36,11 +36,10 @@ export const LogoutButton = styled(Button).attrs({
   color: colors.brand.secondary
 })`
   padding: ${(props) => props.theme.space[2]};
-  position: absolute;
   background-color:rgba(255,255,255,0.1);
-  top: 10px;
-  right: 10px;
-  z-index: 9;
+ margin-left:auto;
+ margin-right:auto; 
+ 
   
 
 `;
