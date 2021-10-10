@@ -22,7 +22,6 @@ export const MStationsRequest2=()=>{
   return new Promise((resolve, reject)=>{
     const stationMock= mocks["allstations"];
       if(!stationMock) {
-          console.log('Not Found');
           reject("Not Found");
       }
 

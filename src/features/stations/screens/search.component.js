@@ -14,8 +14,8 @@ const SearchBarBar = styled(Searchbar)`
  margin-left:auto;
  margin-right:auto;
  width:100%;
+ border-radius:25px;
 `;
-
 
 const SearchContainer = styled.View`
   padding: 16px; {/*16px*/}
@@ -25,6 +25,7 @@ const SearchContainer = styled.View`
   height:100%;
   width:100%;
 `;
+
 
 const TitleCustom=styled.Text`
 color:${(props) => props.theme.colors.text.inverse};
@@ -36,6 +37,31 @@ font-weight:${(props) => props.theme.fontWeights.bold};
 font-size: ${(props) => props.theme.fontSizes.h4};
 `;
 
+const FrontImageHolder1 = styled.View`
+ 
+  background-color:red;
+  padding:1px; 
+  border-radius:75px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+const FrontImageHolder2 = styled.View`
+ 
+  background-color:yellow;
+  padding:1px; 
+  border-radius:75px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+const FrontImageHolder3 = styled.View`
+ 
+  background-color:green;
+  padding:1px; 
+  border-radius:75px;
+  margin-left: auto;
+  margin-right: auto;
+`;
 
 const FrontImage = styled(Avatar.Image).attrs({
   source:require('../../../../assets/splash_old.png'),
@@ -44,7 +70,6 @@ const FrontImage = styled(Avatar.Image).attrs({
 margin-left: auto;
 margin-right: auto;
 background-color:${(props) => props.theme.colors.brand.primary};
-
 `;
 
 export const Search = (isFavouritesToggled, onFavouritesToggled) => {
@@ -72,8 +97,10 @@ export const Search = (isFavouritesToggled, onFavouritesToggled) => {
     return (
     
     <SearchContainer>
-
-<FrontImage  size={64}  />
+      <FrontImageHolder3 >
+      <FrontImageHolder2 >
+<FrontImageHolder1 >
+    <FrontImage  size={64}  /></FrontImageHolder1></FrontImageHolder2></FrontImageHolder3>
 
       <TitleCustom>
      Where to travel?

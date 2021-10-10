@@ -5,13 +5,10 @@ import camelize from "camelize";
 //const trip="Megenagna 01, Adama 03";
   export const stationsRequest=(trip)=>{
     return new Promise((resolve, reject)=>{
-     // const mock= mocks["Megenagna 01, Adama 03"];
-   
+  
      const mock=mocks["Megenagna 01, Adama 03"];
      const _mock = mocks["me, ar"];
-    // console.log(trip);
-     //console.log(_mock);
-    // const mock = mocks["Megenagna 01, Adama 03"];
+
     
         if(!mock  ) {
             reject("Not Found");

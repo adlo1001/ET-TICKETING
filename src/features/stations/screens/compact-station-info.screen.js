@@ -43,23 +43,20 @@ export const CompactStationInfo = ({ station}) => {
   return (
     <Item>
       {/*<Image source={{ uri: station.photos[0] }} /> */}
-      
       <TouchableOpacity onPress={() =>{
-        //setIsItemSelected(!isItemSelected); 
+        setIsItemSelected(!isItemSelected); 
         setSearchKeyword(station.stationName);
         search(searchKeyword);
-      
         navigation.push('TripInfoScreen', {
-          finalStation: searchKeyword,initialStation:'Addis Ababa'});
+          finalStation: station.stationName,initialStation:'Addis Ababa'});
       
       }
         }>
-      {isItemSelected ? <Text center variant="label" numberOfLines={3}>
+      {isItemSelected ? <Text center variant="label2" numberOfLines={3}>
         {station.stationName}  
-      </Text>: <Text center variant="caption" numberOfLines={2}>
+      </Text>: <Text center variant="label" numberOfLines={3}>
         {station.stationName}  
       </Text>}
-      
       </TouchableOpacity>
     </Item>
   );

@@ -24,9 +24,7 @@ export const MStationsContextProvider = ({ children }) => {
     MStationsRequest(keyword.toLowerCase())
       .then((result) => {
         setIsLoading(false);
-        setMStations(result);
-        console.log("Keyword11111" + keyword);
-      
+        setMStations(result);   
       })
       .catch((err) => {
         setIsLoading(false);
@@ -40,7 +38,7 @@ export const MStationsContextProvider = ({ children }) => {
     MStationsRequest2()
       .then((result) => {
         setStationList(result);
-        console.log("OnType");
+
       
       })
       .catch((err) => {

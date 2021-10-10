@@ -98,9 +98,7 @@ export const TripInfoScreen = ({navigation,route} ) => {
   const {isLoading, error, stations} = useContext(StationsContext);
   const [isToggled, setIsToggled] = useState(false);
  
-  console.log("Hi ....................................................");
-  console.log("InitialSation" +initialStation);
-  console.log("finalStation" +finalStation);
+
   return (
   
   <SafeArea >

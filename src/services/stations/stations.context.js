@@ -26,7 +26,6 @@ export const StationsContextProvider = ({ children }) => {
         .then((results) => {
           setIsLoading(false);
           setStations(results);
-          //console.log(results);
         })  
         .catch((err) => {
           setIsLoading(false);
@@ -35,7 +34,6 @@ export const StationsContextProvider = ({ children }) => {
     }, 2000);
   };
   useEffect(() => {
-    //const infoString =`${mstations.keyword}`;
     retrieveStations(mstations.keyword);
 
   }, [mstations]);
