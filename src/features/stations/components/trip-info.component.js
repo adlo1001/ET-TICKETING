@@ -4,7 +4,7 @@ import styled from "styled-components/native";
 import { FlatList, TouchableOpacity, View} from "react-native";
 import { StationsInfoCard } from "../../stations/components/stations-info-card.component";
 import { SafeArea } from "../components/utility/safe-area.component";
-import  {StationsContext}  from "../../../services/stations/stations.context";
+import  {TripsContext}  from "../../../services/stations/stations.context";
 import { ActivityIndicator, Colors } from 'react-native-paper';
 import { Spacer } from "../../../features/stations/components/spacer/spacer.component";
 import {Card, Button, Text,TextInput} from "react-native-paper";
@@ -12,7 +12,7 @@ import { colors } from "../../../infrastructure/theme/colors";
 import { CustDateTimePicker } from "./date-time-picker.component";
 import {PaymentScreen} from "../screens/payment.screen";
 import { StationsScreen as TripScreen } from "../../../features/stations/screens/station-info.screen";
-
+import {Search} from "../screens/search.component-2";
 
 const TitleCustom=styled.Text`
 color:red;
@@ -95,44 +95,33 @@ export const TripInfoScreen = ({navigation,route} ) => {
 
   const [initialStation, setInitialStation] = React.useState(route.params.initialStation);
   const [finalStation, setFinalStation] = React.useState(route.params.finalStation);
-  const {isLoading, error, stations} = useContext(StationsContext);
+  const {isLoading, error, stations} = useContext(TripsContext);
   const [isToggled, setIsToggled] = useState(false);
  
-
   return (
   
   <SafeArea >
       
     <FirstContainer>
-   
-    <CusTextInput 
-        label="From ..."
-        value={initialStation}
-        selectionColor={colors.brand.primary}
-        outlineColor={colors.brand.primary} 
-        underlineColor={colors.brand.primary} 
-        
-    /></FirstContainer>
+       <Search _station="boarding"
+       val={initialStation}
+       />
+    </FirstContainer>
 
-    <SecondContainer>
-   
-      <CusTextInput
-       label="To ..."
-       value={finalStation}
-       selectionColor={colors.brand.primary}
-       outlineColor={colors.brand.primary} 
-       underlineColor={colors.brand.primary} 
-       onChangeText={finalStation => setFinalStation(finalStation)}
-    />
-   
-
-
+    <SecondContainer> 
+    <Search _station="destination" 
+    val={finalStation}/>
     </SecondContainer>
 
 
 <CustDateTimePicker/>
 <ThirdContainer>
-<ChooseButton onPress={()=>navigation.navigate('Trip')}>Find Transportation</ChooseButton></ThirdContainer>
+<ChooseButton onPress={()=>{
+ if(finalStation!=null)
+  if(initialStation!=null)
+  navigation.navigate('Trip',{destination:finalStation,boarding:initialStation})}}>Find Transportation
+</ChooseButton>
+</ThirdContainer>
   </SafeArea>
 );
 };

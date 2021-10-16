@@ -1,6 +1,7 @@
 import { stations } from "./stations.mock";
 import camelize from "camelize";
 import { mocks } from "../stations/mock";
+import { useState,useCallback } from "react";
 
 
   export const MStationsRequest=(searchTerm)=>{
@@ -18,18 +19,28 @@ import { mocks } from "../stations/mock";
 };
 
 export const MStationsRequest2=()=>{
+  const fetchdata=useCallback(()=>{
+    const[data, setData] = useState(null);
+    const[err,setErr] = useState();
+    fetch('http://192.168.1.66:8080/stations')
+    .then(response =>response.json())
+    .then(data=>
+      {setData(data)}).catch((error)=>setErr(error));
+  
+    },[]);
    
   return new Promise((resolve, reject)=>{
-    const stationMock= mocks["allstations"];
-      if(!stationMock) {
+
+      if(!data) {
           reject("Not Found");
       }
 
-      resolve(stationMock);
+      resolve(data);
 
   });   
 
 };
+
 
 
 

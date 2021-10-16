@@ -1,36 +1,51 @@
-import {stationsRequest, stationsTransform} from "./stations.service";
+import {stationsRequest,tripsRequest, stationsTransform} from "./stations.service";
 import React from "react";
 import {
   useState,
   createContext,
-  useEffect,
-  useMemo,
+  useCallback,
+  useContext,
+  useEffect
 } from "react"; 
-import { useContext } from "react/cjs/react.development";
 import { MStationsContext } from "../station/mstations.context";
+import { colors } from "../../infrastructure/theme/colors";
 
 
-export const StationsContext = createContext();
+export const TripsContext = createContext();
 
-export const StationsContextProvider = ({ children }) => {
-  const [stations, setStations] = useState([]);
+export const TripsContextProvider = ({ children }) => {
+  const [trips, setTrips] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const mstations = useContext(MStationsContext);
+  const[data, setData] = useState(null);
+
 
   const retrieveStations = (mstat) => {
     setIsLoading(true);
-    setStations([]);
+    setTrips([]);
     setTimeout(() => {
-      stationsRequest(mstat)
+      if(mstat=="trip") stationsRequest(mstat)
         .then((results) => {
           setIsLoading(false);
-          setStations(results);
+          setTrips(results);
         })  
         .catch((err) => {
           setIsLoading(false);
           setError(err);
         });
+        else
+        tripsRequest()
+          .then((results) => {
+            setIsLoading(false);
+            setTrips(results);
+            
+        
+          })  
+          .catch((err) => {
+            setIsLoading(false);
+            setError(err)
+          });
     }, 2000);
   };
   useEffect(() => {
@@ -38,15 +53,36 @@ export const StationsContextProvider = ({ children }) => {
 
   }, [mstations]);
  
+
+
+    const tripsRequest=useCallback(()=>{
+      fetch('http://192.168.1.67:8080/trips')
+      .then(response =>response.json())
+      .then(data=>
+        {setData(data)}).catch((error)=>setError(error));
+        return new Promise((resolve, reject)=>{
+          console.log(data);
+          if(!data) {
+              reject("Not Found");
+          }
+          resolve(data);
+  
+      });  
+
+      },[]);
+   useEffect(()=>{tripsRequest()},[]);
+  
+  
+
   return (
-    <StationsContext.Provider
+    <TripsContext.Provider
       value={{
-        stations,
+        trips,
         isLoading,
         error,
       }}
     >
       {children}
-    </StationsContext.Provider>
+    </TripsContext.Provider>
   );
 };

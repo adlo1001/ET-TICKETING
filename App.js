@@ -6,7 +6,7 @@ import { theme } from "./src/infrastructure/theme";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SafeArea } from "./src/features/stations/components/utility/safe-area.component";
 import { Ionicons, FontAwesome} from '@expo/vector-icons';
-import { StationsContextProvider } from "./src/services/stations/stations.context";
+import { TripsContextProvider } from "./src/services/stations/stations.context";
 import { MStationsContextProvider } from "./src/services/station/mstations.context";
 import { Navigation } from "./src/infrastructure/navigation"; 
 import {
@@ -73,9 +73,9 @@ export default function App() {
       <BookedContextProvider>
       <FavouritesContextProvider>
       <MStationsContextProvider>
-      <StationsContextProvider>
+      <TripsContextProvider>
      <Navigation/>
-    </StationsContextProvider>
+    </TripsContextProvider>
     </MStationsContextProvider>
     </FavouritesContextProvider>
     </BookedContextProvider>

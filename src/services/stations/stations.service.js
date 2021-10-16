@@ -1,11 +1,11 @@
 import { mocks } from "./mock";
-import React,{useState} from "react";
+import React,{useState,useCallback, useEffect} from "react";
 import camelize from "camelize";
 
 //const trip="Megenagna 01, Adama 03";
   export const stationsRequest=(trip)=>{
+
     return new Promise((resolve, reject)=>{
-  
      const mock=mocks["Megenagna 01, Adama 03"];
      const _mock = mocks["me, ar"];
 
@@ -14,12 +14,15 @@ import camelize from "camelize";
             reject("Not Found");
         }
         else if(trip==="trip")
-        resolve(mock);
+        resolve(_mock);
         else resolve(_mock);
 
     });   
 
 };
+
+
+
 export const stationsTransform = ({ results = [] }) => {
   const mappedResults = results.map((stations) => {
     return {

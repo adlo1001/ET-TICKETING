@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 import {Button, StyleSheet} from "react-native";
 import { FlatList, TouchableOpacity, View, } from "react-native";
 import { SafeArea } from "../components/utility/safe-area.component";
-import  {StationsContext}  from "../../../services/stations/stations.context";
+import  {TripsContext}  from "../../../services/stations/stations.context";
 import { ActivityIndicator, Colors } from 'react-native-paper';
 import {Search} from "./search.component"
 import { AccountBackground } from "../../account/components/account.styles";
@@ -23,7 +23,7 @@ padding-bottom:450px;
 
 
 export const HomeScreen = ({navigation} ) => {
-  const {isLoading, error, stations} = useContext(StationsContext);
+  const {isLoading, error, stations} = useContext(TripsContext);
   const {isAuthenticated, onLogout} = useContext(AuthenticationContext);
   
 

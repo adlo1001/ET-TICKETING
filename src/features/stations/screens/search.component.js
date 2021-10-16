@@ -71,16 +71,23 @@ margin-left: auto;
 margin-right: auto;
 background-color:${(props) => props.theme.colors.brand.primary};
 `;
+const Item = styled.View`
+  padding: 10px;
+  max-width: 120px;
+  align-items: center;
+`;
 
 export const Search = (isFavouritesToggled, onFavouritesToggled) => {
   
   const { keyword, search ,mstations,type, stationList } = useContext(MStationsContext);
   const [ searchKeyword, setSearchKeyword ] = useState(keyword);
   const [destinationQuery, setDestinationQuery] = useState("");
+  const [isShown, setIsShown] = useState(false);
+  const [isItemSelected, setIsItemSelected]= useState(false);
   const navigation= useNavigation();
 
 
-    useEffect(()=>{ search(searchKeyword);type();
+    useEffect(()=>{ search(searchKeyword,1);type();
     },[]);
   
   
@@ -111,20 +118,40 @@ export const Search = (isFavouritesToggled, onFavouritesToggled) => {
           autoCapitalize="none"
           onSubmitEditing={() => {
             if (searchKeyword!=""){
-            search(searchKeyword);
+            search(searchKeyword,1);
             navigation.push('TripInfoScreen', {
               finalStation: searchKeyword,initialStation:'Addis Ababa'});
             }
           }}
           onChangeText={(text) => {
+            setIsShown(true);
             setSearchKeyword(text);
             }}
 
         /> 
 
-    {filteredStations
+   
+   {filteredStations
           .map(station => (
-      <CompactStationInfo station={station}/>))
+      isShown&&
+      <Item>
+      {/*<Image source={{ uri: station.photos[0] }} /> */}
+      <TouchableOpacity onPress={() =>{
+        setIsItemSelected(!isItemSelected); 
+        setSearchKeyword(station.stationName);
+       setIsShown(false);
+      }
+        }>
+      {isItemSelected ? <Text center variant="label2" numberOfLines={3}>
+        {station.stationName}  
+      </Text>: <Text center variant="label" numberOfLines={3}>
+        {station.stationName}  
+      </Text>}
+      </TouchableOpacity>
+    </Item>
+      
+      
+      ))
       }
 
     </SearchContainer>

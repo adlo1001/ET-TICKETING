@@ -17,7 +17,7 @@ const trip = route.params.station;
 
 return (
     <SafeArea>
-        <StationsInfoCard station={trip} />
+        <StationsInfoCard trips={trip} />
         <ScrollView >
         <List.Accordion
           title="Boarding Station"

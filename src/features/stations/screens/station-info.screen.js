@@ -4,7 +4,7 @@ import styled from "styled-components/native";
 import { FlatList, TouchableOpacity, View, } from "react-native";
 import { StationsInfoCard } from "../../stations/components/stations-info-card.component";
 import { SafeArea } from "../components/utility/safe-area.component";
-import  {StationsContext}  from "../../../services/stations/stations.context";
+import  {TripsContext}  from "../../../services/stations/stations.context";
 import { ActivityIndicator, Colors } from 'react-native-paper';
 import { FavouriteBarHolder } from "../../../components/favourites/fouvarites-bar.component";
 import { Spacer } from "../../../features/stations/components/spacer/spacer.component";
@@ -41,15 +41,15 @@ margin-left:-25px;
 `;
 
 
-export const StationsScreen = ({navigation} ) => {
+export const StationsScreen = ({navigation, route} ) => {
 
-  const {isLoading, error, stations} = useContext(StationsContext);
+  const {isLoading, error, trips} = useContext(TripsContext);
   const [isToggled, setIsToggled] = useState(false);
-  
-  
- 
-  return (
+  const [initialStation, setInitialStation] = React.useState(route.params.initialStation);
+  const [finalStation, setFinalStation] = React.useState(route.params.finalStation);
 
+  //console.log(trips);
+  return (
   <SafeArea >
     {isLoading&&(
     <LoadingContainer>
@@ -59,14 +59,14 @@ export const StationsScreen = ({navigation} ) => {
    
     {isToggled&&<FavouritesBar favourites={favourites} onNavigate={navigation.navigate} />}
     <TripList 
-    data= {stations}
+    data= {trips}
     renderItem={({item}) => {
       return (
            <TouchableOpacity
               onPress={() => navigation.navigate("TripDetail",{station:item},)}
             >
               <Spacer position="bottom" size="large">
-                <StationsInfoCard station ={item} navigation={navigation}/>
+                <StationsInfoCard trips ={item} navigation={navigation}/>
               </Spacer>
             </TouchableOpacity>
 

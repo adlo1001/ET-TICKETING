@@ -27,7 +27,7 @@ const Item = styled.View`
 
 const isAndroid = Platform.OS === "android";
 
-export const CompactStationInfo = ({ station}) => {
+export const CompactStationInfo = ({ station, id}) => {
   const Image = isAndroid ? CompactWebview : CompactImage;
   const [isItemSelected, setIsItemSelected]= useState(false);
   const { keyword, search } = useContext(MStationsContext);
@@ -36,8 +36,8 @@ export const CompactStationInfo = ({ station}) => {
 
 
 
-    useEffect(()=>{ search(searchKeyword);
-    },[]);
+  //  useEffect(()=>{ search(searchKeyword);
+   // },[]);
   
 
   return (
@@ -47,9 +47,11 @@ export const CompactStationInfo = ({ station}) => {
         setIsItemSelected(!isItemSelected); 
         setSearchKeyword(station.stationName);
         search(searchKeyword);
-        navigation.push('TripInfoScreen', {
+      if(id==1)  navigation.push('TripInfoScreen', {
           finalStation: station.stationName,initialStation:'Addis Ababa'});
-      
+      else if(id==2) {console.log("Init:"+station.stationName)}
+      else if(id==3)  {console.log("Dest:"+station.stationName)}
+          
       }
         }>
       {isItemSelected ? <Text center variant="label2" numberOfLines={3}>
