@@ -25,9 +25,13 @@ return (
           expanded={initialStationExpanded}
           onPress={() => setInitialStationExpanded(!initialStationExpanded)}
         >
-          <List.Item title={trip.route.initialStation.stationName +"-"+trip.route.initialStation.description}  />
-          <List.Item title={trip.route.initialStation.city}/>
-          <List.Item title={trip.tripPeriod +" hours"} />
+          <List.Item title={trip.trip.route.initialStation.stationName +"-"+trip.trip.route.initialStation.description}  />
+          <List.Item title={trip.trip.route.initialStation.city}/>
+          <List.Item title={"Trip Period: "+trip.trip.tripPeriod +" hours"} />
+          <List.Item title=
+          { "Boarding Time:"+  new Date(trip.trip.finalTime).toLocaleTimeString('en-US',{ hour: '2-digit', minute: '2-digit' }) +"  "+ new Date(trip.trip.finalTime).toLocaleDateString('en-GB')} 
+        />
+          
         </List.Accordion>
 
         <List.Accordion
@@ -47,8 +51,10 @@ return (
           expanded={finalStationExpanded}
           onPress={() => setFinalStationExpanded(!finalStationExpanded)}
         >
-         <List.Item title={trip.route.finalStation.stationName +"-"+trip.route.finalStation.description}  />
-         <List.Item title="Arrival time:" />
+         <List.Item title={trip.trip.route.finalStation.stationName +"-"+trip.trip.route.finalStation.description}  />
+         <List.Item title=
+          { "Arrival:"+  new Date(trip.trip.finalTime).toLocaleTimeString('en-US',{ hour: '2-digit', minute: '2-digit' }) +"  "+ new Date(trip.trip.finalTime).toLocaleDateString('en-GB')} 
+        />
         </List.Accordion>
       </ScrollView>
 

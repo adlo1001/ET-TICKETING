@@ -1,0 +1,1830 @@
+[
+  {
+    "id": 92,
+    "trans": null,
+    "route": {
+      "id": 1,
+      "routeName": "103",
+      "description": "Addis Ababa to Arba Minch via Shashemene",
+      "initialStation": {
+        "id": 3,
+        "stationName": "Megenagna 2",
+        "city": "Addis Ababa",
+        "region": "Addis Ababa",
+        "province": null,
+        "subcity": "Yeka",
+        "description": "Megenagna near Lem Hotel",
+        "provice": null
+      },
+      "subStation1": {
+        "id": 4,
+        "stationName": "DebreZiet",
+        "city": "DebreZiet",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "DebreZiet",
+        "description": "DebreZiet",
+        "provice": null
+      },
+      "subStation2": {
+        "id": 5,
+        "stationName": "Mojo",
+        "city": "Mojo",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Mojo",
+        "description": "Mojo",
+        "provice": null
+      },
+      "subStation3": {
+        "id": 6,
+        "stationName": "Zeway",
+        "city": "Zeway",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Zeway",
+        "description": "Zeway",
+        "provice": null
+      },
+      "subStation4": {
+        "id": 7,
+        "stationName": "Shashemene",
+        "city": "Shashemene",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Shashemene",
+        "description": "Shashemene",
+        "provice": null
+      },
+      "subStation5": {
+        "id": 8,
+        "stationName": "Alaba",
+        "city": "Alaba",
+        "region": "SNNPR",
+        "province": null,
+        "subcity": "Alaba",
+        "description": "Alaba",
+        "provice": null
+      },
+      "finalStation": {
+        "id": 2,
+        "stationName": "Arba Minch",
+        "city": "Arba Minch",
+        "region": "SNNPR",
+        "province": "Gamo",
+        "subcity": "Arba Minch",
+        "description": "Arba Mich Bus Station",
+        "provice": "Gamo"
+      }
+    },
+    "tripPackage": [],
+    "initialTime": "2014-01-01T12:00:00.000+00:00",
+    "finalTime": null,
+    "tripPeriod": 6,
+    "refreshmentBegin": null,
+    "refreshmentEnd": null,
+    "tripStatus": null,
+    "transportationMode": null,
+    "numberOfPassenger": 100
+  },
+  {
+    "id": 93,
+    "trans": null,
+    "route": {
+      "id": 1,
+      "routeName": "103",
+      "description": "Addis Ababa to Arba Minch via Shashemene",
+      "initialStation": {
+        "id": 3,
+        "stationName": "Megenagna 2",
+        "city": "Addis Ababa",
+        "region": "Addis Ababa",
+        "province": null,
+        "subcity": "Yeka",
+        "description": "Megenagna near Lem Hotel",
+        "provice": null
+      },
+      "subStation1": {
+        "id": 4,
+        "stationName": "DebreZiet",
+        "city": "DebreZiet",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "DebreZiet",
+        "description": "DebreZiet",
+        "provice": null
+      },
+      "subStation2": {
+        "id": 5,
+        "stationName": "Mojo",
+        "city": "Mojo",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Mojo",
+        "description": "Mojo",
+        "provice": null
+      },
+      "subStation3": {
+        "id": 6,
+        "stationName": "Zeway",
+        "city": "Zeway",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Zeway",
+        "description": "Zeway",
+        "provice": null
+      },
+      "subStation4": {
+        "id": 7,
+        "stationName": "Shashemene",
+        "city": "Shashemene",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Shashemene",
+        "description": "Shashemene",
+        "provice": null
+      },
+      "subStation5": {
+        "id": 8,
+        "stationName": "Alaba",
+        "city": "Alaba",
+        "region": "SNNPR",
+        "province": null,
+        "subcity": "Alaba",
+        "description": "Alaba",
+        "provice": null
+      },
+      "finalStation": {
+        "id": 2,
+        "stationName": "Arba Minch",
+        "city": "Arba Minch",
+        "region": "SNNPR",
+        "province": "Gamo",
+        "subcity": "Arba Minch",
+        "description": "Arba Mich Bus Station",
+        "provice": "Gamo"
+      }
+    },
+    "tripPackage": [],
+    "initialTime": "2014-01-01T12:00:00.000+00:00",
+    "finalTime": null,
+    "tripPeriod": 6,
+    "refreshmentBegin": null,
+    "refreshmentEnd": null,
+    "tripStatus": null,
+    "transportationMode": null,
+    "numberOfPassenger": 100
+  },
+  {
+    "id": 120,
+    "trans": null,
+    "route": {
+      "id": 1,
+      "routeName": "103",
+      "description": "Addis Ababa to Arba Minch via Shashemene",
+      "initialStation": {
+        "id": 3,
+        "stationName": "Megenagna 2",
+        "city": "Addis Ababa",
+        "region": "Addis Ababa",
+        "province": null,
+        "subcity": "Yeka",
+        "description": "Megenagna near Lem Hotel",
+        "provice": null
+      },
+      "subStation1": {
+        "id": 4,
+        "stationName": "DebreZiet",
+        "city": "DebreZiet",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "DebreZiet",
+        "description": "DebreZiet",
+        "provice": null
+      },
+      "subStation2": {
+        "id": 5,
+        "stationName": "Mojo",
+        "city": "Mojo",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Mojo",
+        "description": "Mojo",
+        "provice": null
+      },
+      "subStation3": {
+        "id": 6,
+        "stationName": "Zeway",
+        "city": "Zeway",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Zeway",
+        "description": "Zeway",
+        "provice": null
+      },
+      "subStation4": {
+        "id": 7,
+        "stationName": "Shashemene",
+        "city": "Shashemene",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Shashemene",
+        "description": "Shashemene",
+        "provice": null
+      },
+      "subStation5": {
+        "id": 8,
+        "stationName": "Alaba",
+        "city": "Alaba",
+        "region": "SNNPR",
+        "province": null,
+        "subcity": "Alaba",
+        "description": "Alaba",
+        "provice": null
+      },
+      "finalStation": {
+        "id": 2,
+        "stationName": "Arba Minch",
+        "city": "Arba Minch",
+        "region": "SNNPR",
+        "province": "Gamo",
+        "subcity": "Arba Minch",
+        "description": "Arba Mich Bus Station",
+        "provice": "Gamo"
+      }
+    },
+    "tripPackage": [
+      {
+        "id": 121,
+        "itemName": "the Alchemist",
+        "itemCategory": "BOOK",
+        "maxAllowed": 1,
+        "maxWeightAllowed": 1,
+        "maxNumAllowed": 1
+      },
+      {
+        "id": 122,
+        "itemName": "Burger",
+        "itemCategory": "FOOD",
+        "maxAllowed": 1,
+        "maxWeightAllowed": 1,
+        "maxNumAllowed": 1
+      },
+      {
+        "id": 123,
+        "itemName": "LUGGAGE",
+        "itemCategory": "LUGGAGE",
+        "maxAllowed": 1,
+        "maxWeightAllowed": 40,
+        "maxNumAllowed": 5
+      }
+    ],
+    "initialTime": "2014-01-01T12:00:00.000+00:00",
+    "finalTime": null,
+    "tripPeriod": 6,
+    "refreshmentBegin": null,
+    "refreshmentEnd": null,
+    "tripStatus": null,
+    "transportationMode": null,
+    "numberOfPassenger": 100
+  },
+  {
+    "id": 171,
+    "trans": {
+      "id": 172,
+      "vehicle": "Minibu Bus ",
+      "_plateNumber": null,
+      "owner": null,
+      "numberOfSeat": 25,
+      "transporationClass": 0,
+      "_mode": "BUS",
+      "trip": null,
+      "petAllowed": false,
+      "smokingAllowed": false,
+      "drinkingAllowed": false
+    },
+    "route": {
+      "id": 1,
+      "routeName": "103",
+      "description": "Addis Ababa to Arba Minch via Shashemene",
+      "initialStation": {
+        "id": 3,
+        "stationName": "Megenagna 2",
+        "city": "Addis Ababa",
+        "region": "Addis Ababa",
+        "province": null,
+        "subcity": "Yeka",
+        "description": "Megenagna near Lem Hotel",
+        "provice": null
+      },
+      "subStation1": {
+        "id": 4,
+        "stationName": "DebreZiet",
+        "city": "DebreZiet",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "DebreZiet",
+        "description": "DebreZiet",
+        "provice": null
+      },
+      "subStation2": {
+        "id": 5,
+        "stationName": "Mojo",
+        "city": "Mojo",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Mojo",
+        "description": "Mojo",
+        "provice": null
+      },
+      "subStation3": {
+        "id": 6,
+        "stationName": "Zeway",
+        "city": "Zeway",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Zeway",
+        "description": "Zeway",
+        "provice": null
+      },
+      "subStation4": {
+        "id": 7,
+        "stationName": "Shashemene",
+        "city": "Shashemene",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Shashemene",
+        "description": "Shashemene",
+        "provice": null
+      },
+      "subStation5": {
+        "id": 8,
+        "stationName": "Alaba",
+        "city": "Alaba",
+        "region": "SNNPR",
+        "province": null,
+        "subcity": "Alaba",
+        "description": "Alaba",
+        "provice": null
+      },
+      "finalStation": {
+        "id": 2,
+        "stationName": "Arba Minch",
+        "city": "Arba Minch",
+        "region": "SNNPR",
+        "province": "Gamo",
+        "subcity": "Arba Minch",
+        "description": "Arba Mich Bus Station",
+        "provice": "Gamo"
+      }
+    },
+    "tripPackage": [
+      {
+        "id": 173,
+        "itemName": "the Alchemist",
+        "itemCategory": "BOOK",
+        "maxAllowed": 1,
+        "maxWeightAllowed": 1,
+        "maxNumAllowed": 1
+      },
+      {
+        "id": 174,
+        "itemName": "Burger",
+        "itemCategory": "FOOD",
+        "maxAllowed": 1,
+        "maxWeightAllowed": 1,
+        "maxNumAllowed": 1
+      },
+      {
+        "id": 175,
+        "itemName": "LUGGAGE",
+        "itemCategory": "LUGGAGE",
+        "maxAllowed": 1,
+        "maxWeightAllowed": 40,
+        "maxNumAllowed": 5
+      }
+    ],
+    "initialTime": "2014-01-01T12:00:00.000+00:00",
+    "finalTime": null,
+    "tripPeriod": 6,
+    "refreshmentBegin": null,
+    "refreshmentEnd": null,
+    "tripStatus": null,
+    "transportationMode": null,
+    "numberOfPassenger": 100
+  },
+  {
+    "id": 140,
+    "trans": null,
+    "route": {
+      "id": 1,
+      "routeName": "103",
+      "description": "Addis Ababa to Arba Minch via Shashemene",
+      "initialStation": {
+        "id": 3,
+        "stationName": "Megenagna 2",
+        "city": "Addis Ababa",
+        "region": "Addis Ababa",
+        "province": null,
+        "subcity": "Yeka",
+        "description": "Megenagna near Lem Hotel",
+        "provice": null
+      },
+      "subStation1": {
+        "id": 4,
+        "stationName": "DebreZiet",
+        "city": "DebreZiet",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "DebreZiet",
+        "description": "DebreZiet",
+        "provice": null
+      },
+      "subStation2": {
+        "id": 5,
+        "stationName": "Mojo",
+        "city": "Mojo",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Mojo",
+        "description": "Mojo",
+        "provice": null
+      },
+      "subStation3": {
+        "id": 6,
+        "stationName": "Zeway",
+        "city": "Zeway",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Zeway",
+        "description": "Zeway",
+        "provice": null
+      },
+      "subStation4": {
+        "id": 7,
+        "stationName": "Shashemene",
+        "city": "Shashemene",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Shashemene",
+        "description": "Shashemene",
+        "provice": null
+      },
+      "subStation5": {
+        "id": 8,
+        "stationName": "Alaba",
+        "city": "Alaba",
+        "region": "SNNPR",
+        "province": null,
+        "subcity": "Alaba",
+        "description": "Alaba",
+        "provice": null
+      },
+      "finalStation": {
+        "id": 2,
+        "stationName": "Arba Minch",
+        "city": "Arba Minch",
+        "region": "SNNPR",
+        "province": "Gamo",
+        "subcity": "Arba Minch",
+        "description": "Arba Mich Bus Station",
+        "provice": "Gamo"
+      }
+    },
+    "tripPackage": [
+      {
+        "id": 141,
+        "itemName": "the Alchemist",
+        "itemCategory": "BOOK",
+        "maxAllowed": 1,
+        "maxWeightAllowed": 1,
+        "maxNumAllowed": 1
+      },
+      {
+        "id": 142,
+        "itemName": "Burger",
+        "itemCategory": "FOOD",
+        "maxAllowed": 1,
+        "maxWeightAllowed": 1,
+        "maxNumAllowed": 1
+      },
+      {
+        "id": 143,
+        "itemName": "LUGGAGE",
+        "itemCategory": "LUGGAGE",
+        "maxAllowed": 1,
+        "maxWeightAllowed": 40,
+        "maxNumAllowed": 5
+      }
+    ],
+    "initialTime": "2014-01-01T12:00:00.000+00:00",
+    "finalTime": null,
+    "tripPeriod": 6,
+    "refreshmentBegin": null,
+    "refreshmentEnd": null,
+    "tripStatus": null,
+    "transportationMode": null,
+    "numberOfPassenger": 100
+  },
+  {
+    "id": 144,
+    "trans": null,
+    "route": {
+      "id": 83,
+      "routeName": "103",
+      "description": "Addis Ababa to Arba Minch via Shashemene",
+      "initialStation": {
+        "id": 85,
+        "stationName": "Megenagna 2",
+        "city": "Addis Ababa",
+        "region": "Addis Ababa",
+        "province": null,
+        "subcity": "Yeka",
+        "description": "Megenagna near Lem Hotel",
+        "provice": null
+      },
+      "subStation1": {
+        "id": 86,
+        "stationName": "DebreZiet",
+        "city": "DebreZiet",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "DebreZiet",
+        "description": "DebreZiet",
+        "provice": null
+      },
+      "subStation2": {
+        "id": 87,
+        "stationName": "Mojo",
+        "city": "Mojo",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Mojo",
+        "description": "Mojo",
+        "provice": null
+      },
+      "subStation3": {
+        "id": 88,
+        "stationName": "Zeway",
+        "city": "Zeway",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Zeway",
+        "description": "Zeway",
+        "provice": null
+      },
+      "subStation4": {
+        "id": 89,
+        "stationName": "Shashemene",
+        "city": "Shashemene",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Shashemene",
+        "description": "Shashemene",
+        "provice": null
+      },
+      "subStation5": {
+        "id": 90,
+        "stationName": "Alaba",
+        "city": "Alaba",
+        "region": "SNNPR",
+        "province": null,
+        "subcity": "Alaba",
+        "description": "Alaba",
+        "provice": null
+      },
+      "finalStation": {
+        "id": 84,
+        "stationName": "Arba Minch",
+        "city": "Arba Minch",
+        "region": "SNNPR",
+        "province": "Gamo",
+        "subcity": "Arba Minch",
+        "description": "Arba Mich Bus Station",
+        "provice": "Gamo"
+      }
+    },
+    "tripPackage": [
+      {
+        "id": 145,
+        "itemName": "the Alchemist",
+        "itemCategory": "BOOK",
+        "maxAllowed": 1,
+        "maxWeightAllowed": 1,
+        "maxNumAllowed": 1
+      },
+      {
+        "id": 146,
+        "itemName": "Burger",
+        "itemCategory": "FOOD",
+        "maxAllowed": 1,
+        "maxWeightAllowed": 1,
+        "maxNumAllowed": 1
+      },
+      {
+        "id": 147,
+        "itemName": "LUGGAGE",
+        "itemCategory": "LUGGAGE",
+        "maxAllowed": 1,
+        "maxWeightAllowed": 40,
+        "maxNumAllowed": 5
+      }
+    ],
+    "initialTime": "2014-01-01T12:00:00.000+00:00",
+    "finalTime": null,
+    "tripPeriod": 6,
+    "refreshmentBegin": null,
+    "refreshmentEnd": null,
+    "tripStatus": null,
+    "transportationMode": null,
+    "numberOfPassenger": 100
+  },
+  {
+    "id": 156,
+    "trans": null,
+    "route": {
+      "id": 83,
+      "routeName": "103",
+      "description": "Addis Ababa to Arba Minch via Shashemene",
+      "initialStation": {
+        "id": 85,
+        "stationName": "Megenagna 2",
+        "city": "Addis Ababa",
+        "region": "Addis Ababa",
+        "province": null,
+        "subcity": "Yeka",
+        "description": "Megenagna near Lem Hotel",
+        "provice": null
+      },
+      "subStation1": {
+        "id": 86,
+        "stationName": "DebreZiet",
+        "city": "DebreZiet",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "DebreZiet",
+        "description": "DebreZiet",
+        "provice": null
+      },
+      "subStation2": {
+        "id": 87,
+        "stationName": "Mojo",
+        "city": "Mojo",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Mojo",
+        "description": "Mojo",
+        "provice": null
+      },
+      "subStation3": {
+        "id": 88,
+        "stationName": "Zeway",
+        "city": "Zeway",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Zeway",
+        "description": "Zeway",
+        "provice": null
+      },
+      "subStation4": {
+        "id": 89,
+        "stationName": "Shashemene",
+        "city": "Shashemene",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Shashemene",
+        "description": "Shashemene",
+        "provice": null
+      },
+      "subStation5": {
+        "id": 90,
+        "stationName": "Alaba",
+        "city": "Alaba",
+        "region": "SNNPR",
+        "province": null,
+        "subcity": "Alaba",
+        "description": "Alaba",
+        "provice": null
+      },
+      "finalStation": {
+        "id": 84,
+        "stationName": "Arba Minch",
+        "city": "Arba Minch",
+        "region": "SNNPR",
+        "province": "Gamo",
+        "subcity": "Arba Minch",
+        "description": "Arba Mich Bus Station",
+        "provice": "Gamo"
+      }
+    },
+    "tripPackage": [
+      {
+        "id": 157,
+        "itemName": "the Alchemist",
+        "itemCategory": "BOOK",
+        "maxAllowed": 1,
+        "maxWeightAllowed": 1,
+        "maxNumAllowed": 1
+      },
+      {
+        "id": 158,
+        "itemName": "Burger",
+        "itemCategory": "FOOD",
+        "maxAllowed": 1,
+        "maxWeightAllowed": 1,
+        "maxNumAllowed": 1
+      },
+      {
+        "id": 159,
+        "itemName": "LUGGAGE",
+        "itemCategory": "LUGGAGE",
+        "maxAllowed": 1,
+        "maxWeightAllowed": 40,
+        "maxNumAllowed": 5
+      }
+    ],
+    "initialTime": "2014-01-01T12:00:00.000+00:00",
+    "finalTime": null,
+    "tripPeriod": 6,
+    "refreshmentBegin": null,
+    "refreshmentEnd": null,
+    "tripStatus": null,
+    "transportationMode": null,
+    "numberOfPassenger": 100
+  },
+  {
+    "id": 190,
+    "trans": {
+      "id": 189,
+      "vehicle": "Bus ",
+      "_plateNumber": null,
+      "owner": {
+        "id": 11000,
+        "companyName": "Selam Bus",
+        "companyLogo": "NA"
+      },
+      "numberOfSeat": 50,
+      "transporationClass": 0,
+      "_mode": "BUS",
+      "trip": null,
+      "petAllowed": false,
+      "smokingAllowed": false,
+      "drinkingAllowed": false
+    },
+    "route": {
+      "id": 148,
+      "routeName": "103",
+      "description": "Addis Ababa to Arba Minch via Shashemene",
+      "initialStation": {
+        "id": 150,
+        "stationName": "Megenagna 2",
+        "city": "Addis Ababa",
+        "region": "Addis Ababa",
+        "province": null,
+        "subcity": "Yeka",
+        "description": "Megenagna near Lem Hotel",
+        "provice": null
+      },
+      "subStation1": {
+        "id": 151,
+        "stationName": "DebreZiet",
+        "city": "DebreZiet",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "DebreZiet",
+        "description": "DebreZiet",
+        "provice": null
+      },
+      "subStation2": {
+        "id": 152,
+        "stationName": "Mojo",
+        "city": "Mojo",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Mojo",
+        "description": "Mojo",
+        "provice": null
+      },
+      "subStation3": {
+        "id": 153,
+        "stationName": "Zeway",
+        "city": "Zeway",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Zeway",
+        "description": "Zeway",
+        "provice": null
+      },
+      "subStation4": {
+        "id": 154,
+        "stationName": "Shashemene",
+        "city": "Shashemene",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Shashemene",
+        "description": "Shashemene",
+        "provice": null
+      },
+      "subStation5": {
+        "id": 155,
+        "stationName": "Alaba",
+        "city": "Alaba",
+        "region": "SNNPR",
+        "province": null,
+        "subcity": "Alaba",
+        "description": "Alaba",
+        "provice": null
+      },
+      "finalStation": {
+        "id": 149,
+        "stationName": "Arba Minch",
+        "city": "Arba Minch",
+        "region": "SNNPR",
+        "province": "Gamo",
+        "subcity": "Arba Minch",
+        "description": "Arba Mich Bus Station",
+        "provice": "Gamo"
+      }
+    },
+    "tripPackage": [],
+    "initialTime": "2014-02-01T12:00:00.000+00:00",
+    "finalTime": "2014-02-02T06:00:00.000+00:00",
+    "tripPeriod": 6,
+    "refreshmentBegin": null,
+    "refreshmentEnd": null,
+    "tripStatus": null,
+    "transportationMode": null,
+    "numberOfPassenger": 100
+  },
+  {
+    "id": 193,
+    "trans": {
+      "id": 192,
+      "vehicle": "Bus ",
+      "_plateNumber": null,
+      "owner": {
+        "id": 11000,
+        "companyName": "Selam Bus",
+        "companyLogo": "NA"
+      },
+      "numberOfSeat": 50,
+      "transporationClass": 0,
+      "_mode": "BUS",
+      "trip": null,
+      "petAllowed": false,
+      "smokingAllowed": false,
+      "drinkingAllowed": false
+    },
+    "route": {
+      "id": 148,
+      "routeName": "103",
+      "description": "Addis Ababa to Arba Minch via Shashemene",
+      "initialStation": {
+        "id": 150,
+        "stationName": "Megenagna 2",
+        "city": "Addis Ababa",
+        "region": "Addis Ababa",
+        "province": null,
+        "subcity": "Yeka",
+        "description": "Megenagna near Lem Hotel",
+        "provice": null
+      },
+      "subStation1": {
+        "id": 151,
+        "stationName": "DebreZiet",
+        "city": "DebreZiet",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "DebreZiet",
+        "description": "DebreZiet",
+        "provice": null
+      },
+      "subStation2": {
+        "id": 152,
+        "stationName": "Mojo",
+        "city": "Mojo",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Mojo",
+        "description": "Mojo",
+        "provice": null
+      },
+      "subStation3": {
+        "id": 153,
+        "stationName": "Zeway",
+        "city": "Zeway",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Zeway",
+        "description": "Zeway",
+        "provice": null
+      },
+      "subStation4": {
+        "id": 154,
+        "stationName": "Shashemene",
+        "city": "Shashemene",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Shashemene",
+        "description": "Shashemene",
+        "provice": null
+      },
+      "subStation5": {
+        "id": 155,
+        "stationName": "Alaba",
+        "city": "Alaba",
+        "region": "SNNPR",
+        "province": null,
+        "subcity": "Alaba",
+        "description": "Alaba",
+        "provice": null
+      },
+      "finalStation": {
+        "id": 149,
+        "stationName": "Arba Minch",
+        "city": "Arba Minch",
+        "region": "SNNPR",
+        "province": "Gamo",
+        "subcity": "Arba Minch",
+        "description": "Arba Mich Bus Station",
+        "provice": "Gamo"
+      }
+    },
+    "tripPackage": [
+      {
+        "id": 119,
+        "itemName": "Burger",
+        "itemCategory": "FOOD",
+        "maxAllowed": 1,
+        "maxWeightAllowed": 1,
+        "maxNumAllowed": 1
+      }
+    ],
+    "initialTime": "2014-02-01T12:00:00.000+00:00",
+    "finalTime": "2014-02-02T06:00:00.000+00:00",
+    "tripPeriod": 6,
+    "refreshmentBegin": null,
+    "refreshmentEnd": null,
+    "tripStatus": null,
+    "transportationMode": null,
+    "numberOfPassenger": 100
+  },
+  {
+    "id": 195,
+    "trans": {
+      "id": 194,
+      "vehicle": "Bus ",
+      "_plateNumber": null,
+      "owner": {
+        "id": 11000,
+        "companyName": "Selam Bus",
+        "companyLogo": "NA"
+      },
+      "numberOfSeat": 50,
+      "transporationClass": 0,
+      "_mode": "BUS",
+      "trip": null,
+      "petAllowed": false,
+      "smokingAllowed": false,
+      "drinkingAllowed": false
+    },
+    "route": {
+      "id": 148,
+      "routeName": "103",
+      "description": "Addis Ababa to Arba Minch via Shashemene",
+      "initialStation": {
+        "id": 150,
+        "stationName": "Megenagna 2",
+        "city": "Addis Ababa",
+        "region": "Addis Ababa",
+        "province": null,
+        "subcity": "Yeka",
+        "description": "Megenagna near Lem Hotel",
+        "provice": null
+      },
+      "subStation1": {
+        "id": 151,
+        "stationName": "DebreZiet",
+        "city": "DebreZiet",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "DebreZiet",
+        "description": "DebreZiet",
+        "provice": null
+      },
+      "subStation2": {
+        "id": 152,
+        "stationName": "Mojo",
+        "city": "Mojo",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Mojo",
+        "description": "Mojo",
+        "provice": null
+      },
+      "subStation3": {
+        "id": 153,
+        "stationName": "Zeway",
+        "city": "Zeway",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Zeway",
+        "description": "Zeway",
+        "provice": null
+      },
+      "subStation4": {
+        "id": 154,
+        "stationName": "Shashemene",
+        "city": "Shashemene",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Shashemene",
+        "description": "Shashemene",
+        "provice": null
+      },
+      "subStation5": {
+        "id": 155,
+        "stationName": "Alaba",
+        "city": "Alaba",
+        "region": "SNNPR",
+        "province": null,
+        "subcity": "Alaba",
+        "description": "Alaba",
+        "provice": null
+      },
+      "finalStation": {
+        "id": 149,
+        "stationName": "Arba Minch",
+        "city": "Arba Minch",
+        "region": "SNNPR",
+        "province": "Gamo",
+        "subcity": "Arba Minch",
+        "description": "Arba Mich Bus Station",
+        "provice": "Gamo"
+      }
+    },
+    "tripPackage": [
+      {
+        "id": 11999,
+        "itemName": "Burger",
+        "itemCategory": "FOOD",
+        "maxAllowed": 1,
+        "maxWeightAllowed": 1,
+        "maxNumAllowed": 1
+      }
+    ],
+    "initialTime": "2014-02-01T12:00:00.000+00:00",
+    "finalTime": "2014-02-02T06:00:00.000+00:00",
+    "tripPeriod": 6,
+    "refreshmentBegin": null,
+    "refreshmentEnd": null,
+    "tripStatus": null,
+    "transportationMode": null,
+    "numberOfPassenger": 100
+  },
+  {
+    "id": 197,
+    "trans": {
+      "id": 196,
+      "vehicle": "Bus ",
+      "_plateNumber": null,
+      "owner": {
+        "id": 11000,
+        "companyName": "Selam Bus",
+        "companyLogo": "NA"
+      },
+      "numberOfSeat": 50,
+      "transporationClass": 0,
+      "_mode": "BUS",
+      "trip": null,
+      "petAllowed": false,
+      "smokingAllowed": false,
+      "drinkingAllowed": false
+    },
+    "route": {
+      "id": 148,
+      "routeName": "103",
+      "description": "Addis Ababa to Arba Minch via Shashemene",
+      "initialStation": {
+        "id": 150,
+        "stationName": "Megenagna 2",
+        "city": "Addis Ababa",
+        "region": "Addis Ababa",
+        "province": null,
+        "subcity": "Yeka",
+        "description": "Megenagna near Lem Hotel",
+        "provice": null
+      },
+      "subStation1": {
+        "id": 151,
+        "stationName": "DebreZiet",
+        "city": "DebreZiet",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "DebreZiet",
+        "description": "DebreZiet",
+        "provice": null
+      },
+      "subStation2": {
+        "id": 152,
+        "stationName": "Mojo",
+        "city": "Mojo",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Mojo",
+        "description": "Mojo",
+        "provice": null
+      },
+      "subStation3": {
+        "id": 153,
+        "stationName": "Zeway",
+        "city": "Zeway",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Zeway",
+        "description": "Zeway",
+        "provice": null
+      },
+      "subStation4": {
+        "id": 154,
+        "stationName": "Shashemene",
+        "city": "Shashemene",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Shashemene",
+        "description": "Shashemene",
+        "provice": null
+      },
+      "subStation5": {
+        "id": 155,
+        "stationName": "Alaba",
+        "city": "Alaba",
+        "region": "SNNPR",
+        "province": null,
+        "subcity": "Alaba",
+        "description": "Alaba",
+        "provice": null
+      },
+      "finalStation": {
+        "id": 149,
+        "stationName": "Arba Minch",
+        "city": "Arba Minch",
+        "region": "SNNPR",
+        "province": "Gamo",
+        "subcity": "Arba Minch",
+        "description": "Arba Mich Bus Station",
+        "provice": "Gamo"
+      }
+    },
+    "tripPackage": [],
+    "initialTime": "2014-02-01T12:00:00.000+00:00",
+    "finalTime": "2014-02-02T06:00:00.000+00:00",
+    "tripPeriod": 6,
+    "refreshmentBegin": null,
+    "refreshmentEnd": null,
+    "tripStatus": null,
+    "transportationMode": null,
+    "numberOfPassenger": 100
+  },
+  {
+    "id": 199,
+    "trans": {
+      "id": 198,
+      "vehicle": "Bus ",
+      "_plateNumber": null,
+      "owner": {
+        "id": 11000,
+        "companyName": "Selam Bus",
+        "companyLogo": "NA"
+      },
+      "numberOfSeat": 50,
+      "transporationClass": 0,
+      "_mode": "BUS",
+      "trip": null,
+      "petAllowed": false,
+      "smokingAllowed": false,
+      "drinkingAllowed": false
+    },
+    "route": {
+      "id": 148,
+      "routeName": "103",
+      "description": "Addis Ababa to Arba Minch via Shashemene",
+      "initialStation": {
+        "id": 150,
+        "stationName": "Megenagna 2",
+        "city": "Addis Ababa",
+        "region": "Addis Ababa",
+        "province": null,
+        "subcity": "Yeka",
+        "description": "Megenagna near Lem Hotel",
+        "provice": null
+      },
+      "subStation1": {
+        "id": 151,
+        "stationName": "DebreZiet",
+        "city": "DebreZiet",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "DebreZiet",
+        "description": "DebreZiet",
+        "provice": null
+      },
+      "subStation2": {
+        "id": 152,
+        "stationName": "Mojo",
+        "city": "Mojo",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Mojo",
+        "description": "Mojo",
+        "provice": null
+      },
+      "subStation3": {
+        "id": 153,
+        "stationName": "Zeway",
+        "city": "Zeway",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Zeway",
+        "description": "Zeway",
+        "provice": null
+      },
+      "subStation4": {
+        "id": 154,
+        "stationName": "Shashemene",
+        "city": "Shashemene",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Shashemene",
+        "description": "Shashemene",
+        "provice": null
+      },
+      "subStation5": {
+        "id": 155,
+        "stationName": "Alaba",
+        "city": "Alaba",
+        "region": "SNNPR",
+        "province": null,
+        "subcity": "Alaba",
+        "description": "Alaba",
+        "provice": null
+      },
+      "finalStation": {
+        "id": 149,
+        "stationName": "Arba Minch",
+        "city": "Arba Minch",
+        "region": "SNNPR",
+        "province": "Gamo",
+        "subcity": "Arba Minch",
+        "description": "Arba Mich Bus Station",
+        "provice": "Gamo"
+      }
+    },
+    "tripPackage": [],
+    "initialTime": "2014-02-01T12:00:00.000+00:00",
+    "finalTime": "2014-02-02T06:00:00.000+00:00",
+    "tripPeriod": 6,
+    "refreshmentBegin": null,
+    "refreshmentEnd": null,
+    "tripStatus": null,
+    "transportationMode": null,
+    "numberOfPassenger": 100
+  },
+  {
+    "id": 201,
+    "trans": {
+      "id": 200,
+      "vehicle": "Bus ",
+      "_plateNumber": null,
+      "owner": {
+        "id": 11001,
+        "companyName": "Selam Bus",
+        "companyLogo": "NA"
+      },
+      "numberOfSeat": 50,
+      "transporationClass": 0,
+      "_mode": "BUS",
+      "trip": null,
+      "petAllowed": false,
+      "smokingAllowed": false,
+      "drinkingAllowed": false
+    },
+    "route": {
+      "id": 148,
+      "routeName": "103",
+      "description": "Addis Ababa to Arba Minch via Shashemene",
+      "initialStation": {
+        "id": 150,
+        "stationName": "Megenagna 2",
+        "city": "Addis Ababa",
+        "region": "Addis Ababa",
+        "province": null,
+        "subcity": "Yeka",
+        "description": "Megenagna near Lem Hotel",
+        "provice": null
+      },
+      "subStation1": {
+        "id": 151,
+        "stationName": "DebreZiet",
+        "city": "DebreZiet",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "DebreZiet",
+        "description": "DebreZiet",
+        "provice": null
+      },
+      "subStation2": {
+        "id": 152,
+        "stationName": "Mojo",
+        "city": "Mojo",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Mojo",
+        "description": "Mojo",
+        "provice": null
+      },
+      "subStation3": {
+        "id": 153,
+        "stationName": "Zeway",
+        "city": "Zeway",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Zeway",
+        "description": "Zeway",
+        "provice": null
+      },
+      "subStation4": {
+        "id": 154,
+        "stationName": "Shashemene",
+        "city": "Shashemene",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Shashemene",
+        "description": "Shashemene",
+        "provice": null
+      },
+      "subStation5": {
+        "id": 155,
+        "stationName": "Alaba",
+        "city": "Alaba",
+        "region": "SNNPR",
+        "province": null,
+        "subcity": "Alaba",
+        "description": "Alaba",
+        "provice": null
+      },
+      "finalStation": {
+        "id": 149,
+        "stationName": "Arba Minch",
+        "city": "Arba Minch",
+        "region": "SNNPR",
+        "province": "Gamo",
+        "subcity": "Arba Minch",
+        "description": "Arba Mich Bus Station",
+        "provice": "Gamo"
+      }
+    },
+    "tripPackage": [],
+    "initialTime": "2014-02-01T12:00:00.000+00:00",
+    "finalTime": "2014-02-02T06:00:00.000+00:00",
+    "tripPeriod": 6,
+    "refreshmentBegin": null,
+    "refreshmentEnd": null,
+    "tripStatus": null,
+    "transportationMode": null,
+    "numberOfPassenger": 100
+  },
+  {
+    "id": 203,
+    "trans": {
+      "id": 202,
+      "vehicle": "Bus ",
+      "_plateNumber": null,
+      "owner": {
+        "id": 11001,
+        "companyName": "Selam Bus",
+        "companyLogo": "NA"
+      },
+      "numberOfSeat": 50,
+      "transporationClass": 0,
+      "_mode": "BUS",
+      "trip": null,
+      "petAllowed": false,
+      "smokingAllowed": false,
+      "drinkingAllowed": false
+    },
+    "route": {
+      "id": 148,
+      "routeName": "103",
+      "description": "Addis Ababa to Arba Minch via Shashemene",
+      "initialStation": {
+        "id": 150,
+        "stationName": "Megenagna 2",
+        "city": "Addis Ababa",
+        "region": "Addis Ababa",
+        "province": null,
+        "subcity": "Yeka",
+        "description": "Megenagna near Lem Hotel",
+        "provice": null
+      },
+      "subStation1": {
+        "id": 151,
+        "stationName": "DebreZiet",
+        "city": "DebreZiet",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "DebreZiet",
+        "description": "DebreZiet",
+        "provice": null
+      },
+      "subStation2": {
+        "id": 152,
+        "stationName": "Mojo",
+        "city": "Mojo",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Mojo",
+        "description": "Mojo",
+        "provice": null
+      },
+      "subStation3": {
+        "id": 153,
+        "stationName": "Zeway",
+        "city": "Zeway",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Zeway",
+        "description": "Zeway",
+        "provice": null
+      },
+      "subStation4": {
+        "id": 154,
+        "stationName": "Shashemene",
+        "city": "Shashemene",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Shashemene",
+        "description": "Shashemene",
+        "provice": null
+      },
+      "subStation5": {
+        "id": 155,
+        "stationName": "Alaba",
+        "city": "Alaba",
+        "region": "SNNPR",
+        "province": null,
+        "subcity": "Alaba",
+        "description": "Alaba",
+        "provice": null
+      },
+      "finalStation": {
+        "id": 149,
+        "stationName": "Arba Minch",
+        "city": "Arba Minch",
+        "region": "SNNPR",
+        "province": "Gamo",
+        "subcity": "Arba Minch",
+        "description": "Arba Mich Bus Station",
+        "provice": "Gamo"
+      }
+    },
+    "tripPackage": [],
+    "initialTime": "2014-02-01T12:00:00.000+00:00",
+    "finalTime": "2014-02-02T06:00:00.000+00:00",
+    "tripPeriod": 6,
+    "refreshmentBegin": null,
+    "refreshmentEnd": null,
+    "tripStatus": null,
+    "transportationMode": null,
+    "numberOfPassenger": 100
+  },
+  {
+    "id": 205,
+    "trans": {
+      "id": 204,
+      "vehicle": "Bus ",
+      "_plateNumber": null,
+      "owner": {
+        "id": 11001,
+        "companyName": "Selam Bus",
+        "companyLogo": "NA"
+      },
+      "numberOfSeat": 50,
+      "transporationClass": 0,
+      "_mode": "BUS",
+      "trip": null,
+      "petAllowed": false,
+      "smokingAllowed": false,
+      "drinkingAllowed": false
+    },
+    "route": {
+      "id": 148,
+      "routeName": "103",
+      "description": "Addis Ababa to Arba Minch via Shashemene",
+      "initialStation": {
+        "id": 150,
+        "stationName": "Megenagna 2",
+        "city": "Addis Ababa",
+        "region": "Addis Ababa",
+        "province": null,
+        "subcity": "Yeka",
+        "description": "Megenagna near Lem Hotel",
+        "provice": null
+      },
+      "subStation1": {
+        "id": 151,
+        "stationName": "DebreZiet",
+        "city": "DebreZiet",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "DebreZiet",
+        "description": "DebreZiet",
+        "provice": null
+      },
+      "subStation2": {
+        "id": 152,
+        "stationName": "Mojo",
+        "city": "Mojo",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Mojo",
+        "description": "Mojo",
+        "provice": null
+      },
+      "subStation3": {
+        "id": 153,
+        "stationName": "Zeway",
+        "city": "Zeway",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Zeway",
+        "description": "Zeway",
+        "provice": null
+      },
+      "subStation4": {
+        "id": 154,
+        "stationName": "Shashemene",
+        "city": "Shashemene",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Shashemene",
+        "description": "Shashemene",
+        "provice": null
+      },
+      "subStation5": {
+        "id": 155,
+        "stationName": "Alaba",
+        "city": "Alaba",
+        "region": "SNNPR",
+        "province": null,
+        "subcity": "Alaba",
+        "description": "Alaba",
+        "provice": null
+      },
+      "finalStation": {
+        "id": 149,
+        "stationName": "Arba Minch",
+        "city": "Arba Minch",
+        "region": "SNNPR",
+        "province": "Gamo",
+        "subcity": "Arba Minch",
+        "description": "Arba Mich Bus Station",
+        "provice": "Gamo"
+      }
+    },
+    "tripPackage": [],
+    "initialTime": "2014-02-01T12:00:00.000+00:00",
+    "finalTime": "2014-02-02T06:00:00.000+00:00",
+    "tripPeriod": 6,
+    "refreshmentBegin": null,
+    "refreshmentEnd": null,
+    "tripStatus": null,
+    "transportationMode": null,
+    "numberOfPassenger": 100
+  },
+  {
+    "id": 207,
+    "trans": {
+      "id": 206,
+      "vehicle": "Bus ",
+      "_plateNumber": null,
+      "owner": {
+        "id": 11001,
+        "companyName": "Selam Bus",
+        "companyLogo": "NA"
+      },
+      "numberOfSeat": 50,
+      "transporationClass": 0,
+      "_mode": "BUS",
+      "trip": null,
+      "petAllowed": false,
+      "smokingAllowed": false,
+      "drinkingAllowed": false
+    },
+    "route": {
+      "id": 148,
+      "routeName": "103",
+      "description": "Addis Ababa to Arba Minch via Shashemene",
+      "initialStation": {
+        "id": 150,
+        "stationName": "Megenagna 2",
+        "city": "Addis Ababa",
+        "region": "Addis Ababa",
+        "province": null,
+        "subcity": "Yeka",
+        "description": "Megenagna near Lem Hotel",
+        "provice": null
+      },
+      "subStation1": {
+        "id": 151,
+        "stationName": "DebreZiet",
+        "city": "DebreZiet",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "DebreZiet",
+        "description": "DebreZiet",
+        "provice": null
+      },
+      "subStation2": {
+        "id": 152,
+        "stationName": "Mojo",
+        "city": "Mojo",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Mojo",
+        "description": "Mojo",
+        "provice": null
+      },
+      "subStation3": {
+        "id": 153,
+        "stationName": "Zeway",
+        "city": "Zeway",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Zeway",
+        "description": "Zeway",
+        "provice": null
+      },
+      "subStation4": {
+        "id": 154,
+        "stationName": "Shashemene",
+        "city": "Shashemene",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Shashemene",
+        "description": "Shashemene",
+        "provice": null
+      },
+      "subStation5": {
+        "id": 155,
+        "stationName": "Alaba",
+        "city": "Alaba",
+        "region": "SNNPR",
+        "province": null,
+        "subcity": "Alaba",
+        "description": "Alaba",
+        "provice": null
+      },
+      "finalStation": {
+        "id": 149,
+        "stationName": "Arba Minch",
+        "city": "Arba Minch",
+        "region": "SNNPR",
+        "province": "Gamo",
+        "subcity": "Arba Minch",
+        "description": "Arba Mich Bus Station",
+        "provice": "Gamo"
+      }
+    },
+    "tripPackage": [],
+    "initialTime": "2014-02-01T12:00:00.000+00:00",
+    "finalTime": "2014-02-02T06:00:00.000+00:00",
+    "tripPeriod": 6,
+    "refreshmentBegin": null,
+    "refreshmentEnd": null,
+    "tripStatus": null,
+    "transportationMode": null,
+    "numberOfPassenger": 100
+  },
+  {
+    "id": 209,
+    "trans": {
+      "id": 208,
+      "vehicle": "Bus ",
+      "_plateNumber": null,
+      "owner": {
+        "id": 11001,
+        "companyName": "Selam Bus",
+        "companyLogo": "NA"
+      },
+      "numberOfSeat": 50,
+      "transporationClass": 0,
+      "_mode": "BUS",
+      "trip": null,
+      "petAllowed": false,
+      "smokingAllowed": false,
+      "drinkingAllowed": false
+    },
+    "route": {
+      "id": 148,
+      "routeName": "103",
+      "description": "Addis Ababa to Arba Minch via Shashemene",
+      "initialStation": {
+        "id": 150,
+        "stationName": "Megenagna 2",
+        "city": "Addis Ababa",
+        "region": "Addis Ababa",
+        "province": null,
+        "subcity": "Yeka",
+        "description": "Megenagna near Lem Hotel",
+        "provice": null
+      },
+      "subStation1": {
+        "id": 151,
+        "stationName": "DebreZiet",
+        "city": "DebreZiet",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "DebreZiet",
+        "description": "DebreZiet",
+        "provice": null
+      },
+      "subStation2": {
+        "id": 152,
+        "stationName": "Mojo",
+        "city": "Mojo",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Mojo",
+        "description": "Mojo",
+        "provice": null
+      },
+      "subStation3": {
+        "id": 153,
+        "stationName": "Zeway",
+        "city": "Zeway",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Zeway",
+        "description": "Zeway",
+        "provice": null
+      },
+      "subStation4": {
+        "id": 154,
+        "stationName": "Shashemene",
+        "city": "Shashemene",
+        "region": "Oromia",
+        "province": null,
+        "subcity": "Shashemene",
+        "description": "Shashemene",
+        "provice": null
+      },
+      "subStation5": {
+        "id": 155,
+        "stationName": "Alaba",
+        "city": "Alaba",
+        "region": "SNNPR",
+        "province": null,
+        "subcity": "Alaba",
+        "description": "Alaba",
+        "provice": null
+      },
+      "finalStation": {
+        "id": 149,
+        "stationName": "Arba Minch",
+        "city": "Arba Minch",
+        "region": "SNNPR",
+        "province": "Gamo",
+        "subcity": "Arba Minch",
+        "description": "Arba Mich Bus Station",
+        "provice": "Gamo"
+      }
+    },
+    "tripPackage": [
+      {
+        "id": 210,
+        "itemName": "Burger",
+        "itemCategory": "FOOD",
+        "maxAllowed": 1,
+        "maxWeightAllowed": 1,
+        "maxNumAllowed": 1
+      },
+      {
+        "id": 211,
+        "itemName": "the Alchemist",
+        "itemCategory": "BOOK",
+        "maxAllowed": 1,
+        "maxWeightAllowed": 1,
+        "maxNumAllowed": 1
+      }
+    ],
+    "initialTime": "2014-02-01T12:00:00.000+00:00",
+    "finalTime": "2014-02-02T06:00:00.000+00:00",
+    "tripPeriod": 6,
+    "refreshmentBegin": null,
+    "refreshmentEnd": null,
+    "tripStatus": null,
+    "transportationMode": null,
+    "numberOfPassenger": 100
+  }
+]

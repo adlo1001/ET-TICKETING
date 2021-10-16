@@ -39,8 +39,9 @@ export const TripsContextProvider = ({ children }) => {
           .then((results) => {
             setIsLoading(false);
             setTrips(results);
+            console.log(trips);
             
-        
+    
           })  
           .catch((err) => {
             setIsLoading(false);
@@ -56,12 +57,12 @@ export const TripsContextProvider = ({ children }) => {
 
 
     const tripsRequest=useCallback(()=>{
-      fetch('http://192.168.1.67:8080/trips')
+      //fetch('http://192.168.1.67:8080/trip/trips')
+      fetch('http://192.168.1.67:8080/tickets')
       .then(response =>response.json())
       .then(data=>
         {setData(data)}).catch((error)=>setError(error));
         return new Promise((resolve, reject)=>{
-          console.log(data);
           if(!data) {
               reject("Not Found");
           }
