@@ -11,7 +11,7 @@ import {
 export const MStationsContext = createContext();
 
 export const MStationsContextProvider = ({ children }) => {
-  const [keyword, setKeyword] = useState("trip");
+  const [keyword, setKeyword] = useState("Arba Minch");
   const [keyword1, setKeyword1] = useState("station1");
   const [keyword2, setKeyword2] = useState("station2");
   const [mstations, setMStations] = useState(null);

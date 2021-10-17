@@ -8,12 +8,11 @@ import camelize from "camelize";
     return new Promise((resolve, reject)=>{
      const mock=mocks["Megenagna 01, Adama 03"];
      const _mock = mocks["me, ar"];
-
     
         if(!mock  ) {
             reject("Not Found");
         }
-        else if(trip==="trip")
+        else if(trip==="Arba Minch")
         resolve(_mock);
         else resolve(_mock);
 

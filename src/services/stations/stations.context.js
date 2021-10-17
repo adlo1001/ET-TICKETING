@@ -21,14 +21,17 @@ export const TripsContextProvider = ({ children }) => {
   const[data, setData] = useState(null);
 
 
+
   const retrieveStations = (mstat) => {
     setIsLoading(true);
     setTrips([]);
     setTimeout(() => {
-      if(mstat=="trip") stationsRequest(mstat)
+      if(mstat=="Araba Minch") stationsRequest(mstat)
         .then((results) => {
           setIsLoading(false);
           setTrips(results);
+          console.log(trips);
+
         })  
         .catch((err) => {
           setIsLoading(false);
@@ -39,13 +42,12 @@ export const TripsContextProvider = ({ children }) => {
           .then((results) => {
             setIsLoading(false);
             setTrips(results);
-            console.log(trips);
-            
-    
+            //console.log(trips);
           })  
           .catch((err) => {
             setIsLoading(false);
             setError(err)
+
           });
     }, 2000);
   };
@@ -54,14 +56,12 @@ export const TripsContextProvider = ({ children }) => {
 
   }, [mstations]);
  
-
-
     const tripsRequest=useCallback(()=>{
       //fetch('http://192.168.1.67:8080/trip/trips')
       fetch('http://192.168.1.67:8080/tickets')
       .then(response =>response.json())
       .then(data=>
-        {setData(data)}).catch((error)=>setError(error));
+        {setData(data)}).catch((error)=>{setError(error);console.log(error)});
         return new Promise((resolve, reject)=>{
           if(!data) {
               reject("Not Found");
@@ -73,7 +73,8 @@ export const TripsContextProvider = ({ children }) => {
       },[]);
    useEffect(()=>{tripsRequest()},[]);
   
-  
+     
+    
 
   return (
     <TripsContext.Provider
