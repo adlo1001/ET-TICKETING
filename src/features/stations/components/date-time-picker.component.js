@@ -114,7 +114,6 @@ return (
           onChange={onChange}
         /></Section>
       <DateShow>Departure Date: {tmp}</DateShow>
-        
 
         </View>
         

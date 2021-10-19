@@ -56,7 +56,7 @@ export const MStationsContextProvider = ({ children }) => {
   };
    
     const fetchData=useCallback(()=>{
-      fetch('http://192.168.1.67:8080/stations')
+      fetch('http://192.168.1.66:8080/stations')
       .then(response =>response.json())
       .then(data=>
         {setStationList(data); setData(data);}).catch((err)=>console.log(err))
@@ -64,7 +64,7 @@ export const MStationsContextProvider = ({ children }) => {
         return new Promise((resolve, reject)=>{
           
           if(!data) {
-            reject("Not Found");
+            reject("Stations Not Found");
         }
   
         resolve(data);

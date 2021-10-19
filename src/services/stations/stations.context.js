@@ -19,18 +19,20 @@ export const TripsContextProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const mstations = useContext(MStationsContext);
   const[data, setData] = useState(null);
-
+  const [initial, setInitial]=useState("Megenagna");
+  const [final_, setFinal_]=useState("Arba Minch");
+  const [boarding, setBoarding]=useState("2021-10-18 15:00:00");
 
 
   const retrieveStations = (mstat) => {
     setIsLoading(true);
     setTrips([]);
     setTimeout(() => {
-      if(mstat=="Araba Minch") stationsRequest(mstat)
+      if(mstat=="Arba Minch") 
+      stationsRequest(mstat)
         .then((results) => {
           setIsLoading(false);
           setTrips(results);
-          console.log(trips);
 
         })  
         .catch((err) => {
@@ -56,24 +58,27 @@ export const TripsContextProvider = ({ children }) => {
 
   }, [mstations]);
  
-    const tripsRequest=useCallback(()=>{
-      //fetch('http://192.168.1.67:8080/trip/trips')
-      fetch('http://192.168.1.67:8080/tickets')
+    const tripsRequest=useCallback((_initial,_final,_boarding_time)=>{
+     // fetch('http://192.168.1.66:8080/tickets')
+     //_initial="Megenagna";
+     //_boarding_time="2021-10-18%2015:00:00"
+     //_final="Arba Minch";
+      fetch('http://192.168.1.66:8080/ticketsQuery/?_initial='+ _initial +'&_boarding_time=2021-10-18%2015:00:00&_final='+_final)
+      //fetch('http://192.168.1.66:8080/ticketsQuery/?_initial=Megenagna&_boarding_time=2021-10-18%2015:00:00&_final=Arba%20Minch')
       .then(response =>response.json())
       .then(data=>
         {setData(data)}).catch((error)=>{setError(error);console.log(error)});
         return new Promise((resolve, reject)=>{
           if(!data) {
-              reject("Not Found");
+              reject("Tickets Not Found");
           }
           resolve(data);
   
       });  
 
       },[]);
-   useEffect(()=>{tripsRequest()},[]);
-  
-     
+   useEffect(()=>{tripsRequest(initial,final_, boarding)},[mstations]);
+
     
 
   return (
@@ -81,6 +86,7 @@ export const TripsContextProvider = ({ children }) => {
       value={{
         trips,
         isLoading,
+        onTripsSearch:tripsRequest,
         error,
       }}
     >

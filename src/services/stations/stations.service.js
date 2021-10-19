@@ -10,7 +10,7 @@ import camelize from "camelize";
      const _mock = mocks["me, ar"];
     
         if(!mock  ) {
-            reject("Not Found");
+            reject("Local Not Found");
         }
         else if(trip==="Arba Minch")
         resolve(_mock);

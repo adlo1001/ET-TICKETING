@@ -1,6 +1,6 @@
 import React, { useState,useContext,useCallback, useEffect } from "react";
 import { Searchbar,Text, View,Button } from "react-native-paper";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, ScrollView } from "react-native";
 import styled from "styled-components/native";
 import { MStationsContext } from "../../../services/station/mstations.context";
 import { AntDesign } from "@expo/vector-icons";
@@ -92,9 +92,10 @@ export const Search = ({_station, val1, val2}) => {
       /> 
 
  
+{isShown&&<ScrollView>
 {filteredStations1
           .map(station => (
-      isShown&&
+     
       <Item>
       {/*<Image source={{ uri: station.photos[0] }} /> */}
       <TouchableOpacity onPress={() =>{
@@ -113,7 +114,7 @@ export const Search = ({_station, val1, val2}) => {
       
       
       ))
-      }
+      }</ScrollView>}
     </SearchContainer>:
     <SearchContainer>
      <SearchBarBar
@@ -133,9 +134,10 @@ export const Search = ({_station, val1, val2}) => {
 
       /> 
 
+{isShown&&<ScrollView>
     {filteredStations2
           .map(station => (
-      isShown&&
+    
       <Item>
       {/*<Image source={{ uri: station.photos[0] }} /> */}
       <TouchableOpacity onPress={() =>{
@@ -154,7 +156,7 @@ export const Search = ({_station, val1, val2}) => {
       
       
       ))
-      }
+      }</ScrollView>}
     </SearchContainer>
 
   );

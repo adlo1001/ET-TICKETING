@@ -95,7 +95,7 @@ export const TripInfoScreen = ({navigation,route} ) => {
 
   const [initialStation, setInitialStation] = React.useState(route.params.initialStation);
   const [finalStation, setFinalStation] = React.useState(route.params.finalStation);
-  const {isLoading, error, stations} = useContext(TripsContext);
+  const {isLoading, error, stations, onTripsSearch} = useContext(TripsContext);
   const [isToggled, setIsToggled] = useState(false);
  
   return (
@@ -117,6 +117,7 @@ export const TripInfoScreen = ({navigation,route} ) => {
 <CustDateTimePicker/>
 <ThirdContainer>
 <ChooseButton onPress={()=>{
+onTripsSearch(initialStation,finalStation,'2021-10-18 15:00:00')
  if(finalStation!=null)
   if(initialStation!=null)
   navigation.navigate('Trip',{destination:finalStation,boarding:initialStation})}}>Find Transportation
