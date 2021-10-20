@@ -8,12 +8,14 @@ import camelize from "camelize";
     return new Promise((resolve, reject)=>{
      const mock=mocks["Megenagna 01, Adama 03"];
      const _mock = mocks["me, ar"];
+     const _mock_ = mocks["me, ad"];
     
         if(!mock  ) {
             reject("Local Not Found");
         }
         else if(trip==="Arba Minch")
         resolve(_mock);
+        else if(trip==="not found") resolve(_mock_);
         else resolve(_mock);
 
     });   

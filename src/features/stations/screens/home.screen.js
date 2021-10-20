@@ -21,14 +21,12 @@ padding-bottom:450px;
 `;
 
 
-
 export const HomeScreen = ({navigation} ) => {
   const {isLoading, error, stations} = useContext(TripsContext);
   const {isAuthenticated, onLogout} = useContext(AuthenticationContext);
   
 
   return (
-    
     <AccountBackground>
     {isLoading&&<Loading color={Colors.blue800} />}
     <Search navigation={navigation} initalStation="Addis Ababa" finalStation="Unknown location"/>

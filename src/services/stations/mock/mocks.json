@@ -2106,5 +2106,142 @@
         },
         "expiry_date": "2021-11-03T12:00:00.000+00:00"
       }
+    ],
+    "trip8":[
+      {
+        "id": 999999,
+        "ticketNumber": "999999",
+        "refNumber": "999999",
+        "numberOfAdults": 1,
+        "numberOfKids": 1,
+        "numberOfInfants": 0,
+        "numberOfDisabled": 0,
+        "issueDate": "1976-11-01T12:00:00.000+00:00",
+        "status": "BOOKED",
+        "grossPriceAmnt": 999999,
+        "taxesAmnt": 0,
+        "otherAmnt": 0,
+        "trip": {
+          "id": 93,
+          "trans": {
+            "id": 16,
+            "vehicle": "Bus ",
+            "_plateNumber": null,
+            "owner": {
+              "id": 11007,
+              "companyName": "not found",
+              "companyLogo": "NA"
+            },
+            "numberOfSeat": 50,
+            "transporationClass": 0,
+            "_mode": "BUS",
+            "petAllowed": false,
+            "smokingAllowed": false,
+            "drinkingAllowed": false
+          },
+          "route": {
+            "id": 41,
+            "routeName": "103",
+            "description": "Ticket Not Found! Try another search",
+            "initialStation": {
+              "id": 3,
+              "stationName": "not found",
+              "city": "unknown ",
+              "region": "unknown",
+              "province": null,
+              "subcity": "unknown",
+              "description": "not found",
+              "provice": null
+            },
+            "subStation1": {
+              "id": 4,
+              "stationName": "not found",
+              "city": "not found",
+              "region": "not found",
+              "province": null,
+              "subcity": "not found",
+              "description": "not found",
+              "provice": null
+            },
+            "subStation2": {
+              "id": 5,
+              "stationName": "not found",
+              "city": "not found",
+              "region": "not found",
+              "province": "not found",
+              "subcity": "not found",
+              "description": "not found",
+              "provice": "not found"
+            },
+           "subStation3": {
+              "id": 6,
+              "stationName": "not found",
+              "city": "not found",
+              "region": "not found",
+              "province": "not found",
+              "subcity": "not found",
+              "description": "not found",
+              "provice": "not found"
+            },
+           "subStation4": {
+              "id": 4,
+              "stationName": "not found",
+              "city": "not found",
+              "region": "not found",
+              "province": "not found",
+              "subcity": "not found",
+              "description": "not found",
+              "provice": "not found"
+            },
+            "subStation5": {
+              "id": 5,
+              "stationName": "not found",
+              "city": "not found",
+              "region": "not found",
+              "province": "not found",
+              "subcity": "not found",
+              "description": "not found",
+              "provice": "not found"
+            },
+            "finalStation": {
+              "id": 17,
+              "stationName": "not found",
+              "city": "not found",
+              "region": "not found",
+              "province": "not found",
+              "subcity": "not found",
+              "description": "not found",
+              "provice": "not found"
+            }
+          },
+          "tripPackage": [
+            {
+              "id": 94,
+              "itemName": "not found",
+              "itemCategory": "not found",
+              "maxAllowed": 1,
+              "maxWeightAllowed": 1,
+              "maxNumAllowed": 1
+            },
+            {
+              "id": 95,
+              "itemName": "not found",
+              "itemCategory": "not found",
+              "maxAllowed": 1,
+              "maxWeightAllowed": 1,
+              "maxNumAllowed": 1
+            }
+          ],
+          "initialTime": "1976-11-01T12:00:00.000+00:00",
+          "finalTime": "1976-11-02T06:00:00.000+00:00",
+          "tripPeriod": 6,
+          "refreshmentBegin": null,
+          "refreshmentEnd": null,
+          "tripStatus": null,
+          "transportationMode": null,
+          "numberOfPassenger": 100
+        },
+        "expiry_date": "1976-11-03T12:00:00.000+00:00"
+      }
     ]
 }

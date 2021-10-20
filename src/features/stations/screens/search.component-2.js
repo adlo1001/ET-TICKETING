@@ -33,7 +33,7 @@ const Item = styled.View`
 export const Search = ({_station, val1, val2}) => {
   
   const {keyword1, keyword2, search, keyword ,mstations,type, stationList } = useContext(MStationsContext);
-  const [ searchKeyword1, setSearchKeyword1 ] = useState("Addis Ababa");
+  const [ searchKeyword1, setSearchKeyword1 ] = useState("Megenagna 2");
   const [ searchKeyword2, setSearchKeyword2 ] = useState(keyword2);
   const [destinationQuery, setDestinationQuery] = useState(val2);
   const [boardingQuery, setBoardingQuery] = useState(val1);

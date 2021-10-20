@@ -5,6 +5,7 @@ import { FlatList, TouchableOpacity, View} from "react-native";
 import { StationsInfoCard } from "../../stations/components/stations-info-card.component";
 import { SafeArea } from "../components/utility/safe-area.component";
 import  {TripsContext}  from "../../../services/stations/stations.context";
+import { MStationsContext } from "../../../services/station/mstations.context";
 import { ActivityIndicator, Colors } from 'react-native-paper';
 import { Spacer } from "../../../features/stations/components/spacer/spacer.component";
 import {Card, Button, Text,TextInput} from "react-native-paper";
@@ -96,8 +97,10 @@ export const TripInfoScreen = ({navigation,route} ) => {
   const [initialStation, setInitialStation] = React.useState(route.params.initialStation);
   const [finalStation, setFinalStation] = React.useState(route.params.finalStation);
   const {isLoading, error, stations, onTripsSearch} = useContext(TripsContext);
-  const [isToggled, setIsToggled] = useState(false);
+  const {boardingTime} = useContext(MStationsContext);
  
+
+  //console.log(boardingTime);
   return (
   
   <SafeArea >
@@ -117,7 +120,7 @@ export const TripInfoScreen = ({navigation,route} ) => {
 <CustDateTimePicker/>
 <ThirdContainer>
 <ChooseButton onPress={()=>{
-onTripsSearch(initialStation,finalStation,'2021-10-18 15:00:00')
+onTripsSearch(initialStation,finalStation,boardingTime);//'2021-10-18 15:00:00');
  if(finalStation!=null)
   if(initialStation!=null)
   navigation.navigate('Trip',{destination:finalStation,boarding:initialStation})}}>Find Transportation

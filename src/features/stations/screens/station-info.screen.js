@@ -1,14 +1,12 @@
 
-import React ,{useContext, useState} from "react";
+import React ,{useContext, useEffect, useState} from "react";
 import styled from "styled-components/native";
 import { FlatList, TouchableOpacity, View, } from "react-native";
 import { StationsInfoCard } from "../../stations/components/stations-info-card.component";
 import { SafeArea } from "../components/utility/safe-area.component";
 import  {TripsContext}  from "../../../services/stations/stations.context";
 import { ActivityIndicator, Colors } from 'react-native-paper';
-import { FavouriteBarHolder } from "../../../components/favourites/fouvarites-bar.component";
 import { Spacer } from "../../../features/stations/components/spacer/spacer.component";
-import { FavouritesContext } from "../../../services/favourites/favourites.context";
 import { FavouritesBar } from "../../../components/favourites/fouvarites-bar.component";
 
 
@@ -45,10 +43,7 @@ export const StationsScreen = ({navigation, route} ) => {
 
   const {isLoading, error, trips} = useContext(TripsContext);
   const [isToggled, setIsToggled] = useState(false);
-  const [initialStation, setInitialStation] = React.useState(route.params.initialStation);
-  const [finalStation, setFinalStation] = React.useState(route.params.finalStation);
 
-  //console.log(trips);
   return (
   <SafeArea >
     {isLoading&&(

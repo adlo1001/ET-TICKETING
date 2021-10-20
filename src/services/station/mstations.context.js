@@ -1,10 +1,10 @@
 import {MStationsRequest,MStationsRequest2, MStationsTransform} from "./mstations.service";
 import React,{useEffect,useCallback} from "react";
-
+import DateTimePicker from '@react-native-community/datetimepicker';
 import {
   useState,
   createContext,
-  useMemo,
+  useMemo
 } from "react";
 
 
@@ -14,10 +14,11 @@ export const MStationsContextProvider = ({ children }) => {
   const [keyword, setKeyword] = useState("Arba Minch");
   const [keyword1, setKeyword1] = useState("station1");
   const [keyword2, setKeyword2] = useState("station2");
+  const [boardingTime, setBoardingTime]=useState(new String(new Date()));
   const [mstations, setMStations] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [stationList, setStationList]=useState([]);
 
 
@@ -27,7 +28,6 @@ export const MStationsContextProvider = ({ children }) => {
     else if(id==2) {setKeyword1(searchKeyword);setKeyword(null);setKeyword2(null)}
     else if (id==3){setKeyword2(searchKeyword);setKeyword(null);setKeyword1(null)}
    
-
 
     MStationsRequest(keyword&&keyword.toLowerCase()||keyword1&&keyword1.toLowerCase()||keyword2&&keyword2.toLowerCase())
       .then((result) => {
@@ -54,6 +54,10 @@ export const MStationsContextProvider = ({ children }) => {
    
        
   };
+
+  const onChooseTime = (_time) =>  {
+  setBoardingTime(_time); 
+  };
    
     const fetchData=useCallback(()=>{
       fetch('http://192.168.1.66:8080/stations')
@@ -64,6 +68,7 @@ export const MStationsContextProvider = ({ children }) => {
         return new Promise((resolve, reject)=>{
           
           if(!data) {
+
             reject("Stations Not Found");
         }
   
@@ -82,6 +87,8 @@ export const MStationsContextProvider = ({ children }) => {
         isLoading,
         error,
         search: onSearch,
+        chooseTime:onChooseTime,
+        boardingTime,
         keyword,
         keyword1,
         keyword2,

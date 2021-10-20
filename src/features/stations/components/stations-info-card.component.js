@@ -5,55 +5,38 @@ import {Favourite} from "../../../components/favourites/favourite.component";
 import {PayButton} from "../../../components/pay/pay.component";
 import {Book} from "../../../components/booked/book.component";
 
-export const StationsInfoCard = ({ trips = {} ,image, navigation}) => {
-  const {
-        id=null,
-        name='',
-        route= null,
-        tripTitle='',
-        initialTime="2014-01-01T12:00:00.000+00:00",
-        finalTime = "2014-01-02T12:00:00.000+00:00",
-        tripPeriod=6.0,
-        grossPriceAmnt=400.0,
-        priceKids =200.0,
-        transportationMode=null,
-        icon = '',
-        photos = ['https://picsum.photos/700'],
-        address = 'some address',
-        StationInfo = '',
-        isOpenNow = true,
-        rating = '2',
-        isSeatAvailable = true
-      } = trips;
-  const ratingArray = Array.from(new Array(Math.floor(rating)));
+
+
+export const StationsInfoCard = ({ trips = {}, navigation}) => {
   const [isLoading, setIsLoading]=useState(false);
-  
-  //console.log("...." + image);
-  
   return (
     <StationCard elevation={2} >
       
       <StationCardTitle
-        key={name}
         title={"From: "+trips.trip.route.initialStation.city +" To: "+ trips.trip.route.finalStation.city}
         subtitle= {trips.trip.route.description}
       />
-      {/*<StationCardCover source={{ uri: "" }} /> */}
-      {<StationCardCover source={{ uri: "http://www.yegnatimes.com/wp-content/uploads/2020/07/Golden-Bus-Ticket-Office.jpg" }} />}
+   {(trips.trip.trans.owner.id==11001)&&<StationCardCover source={require("../../../../assets/buses/selam_bus.jpg")} />}
+   {(trips.trip.trans.owner.id==11002)&&<StationCardCover source={require("../../../../assets/buses/abay_bus.jpg")} />}
+   {(trips.trip.trans.owner.id==11003)&&<StationCardCover source={require("../../../../assets/buses/geda_bus.jpg")} />}
+   {(trips.trip.trans.owner.id==11004)&&<StationCardCover source={require("../../../../assets/buses/golden_bus.jpg")} />}
+   {(trips.trip.trans.owner.id==11005)&&<StationCardCover source={require("../../../../assets/buses/habesha_bus.jpg")} />}
+   {(trips.trip.trans.owner.id==11006)&&<StationCardCover source={require("../../../../assets/buses/oda_bus.jpg")} />}
+   {(trips.trip.trans.owner.id==11007)&&<StationCardCover source={require("../../../../assets/buses/selam_bus.jpg")} />}
+   {(trips.trip.trans.owner.id==11008)&&<StationCardCover source={require("../../../../assets/buses/yegna_bus.jpg")} />}
+      {(trips.trip.trans.owner.id==11009)&&<StationCardCover source={require("../../../../assets/buses/zemen_bus.jpg")} />}
+
       
       <Info>
       <Text variant="label" >Price:{trips.grossPriceAmnt+" Birr"}</Text>
       <Text variant="label" >
         Boarding: {   new Date(trips.trip.initialTime).toLocaleTimeString('en-US',{ hour: '2-digit', minute: '2-digit' }) +"  "+ new Date(trips.trip.initialTime).toLocaleDateString('en-GB')}
-      
       </Text>
         <Section>
 
           <SectionEnd>
           <Book trips={trips} navigation={navigation}/>
-             {isSeatAvailable && (
               <Text variant="error"> SEAT AVAILABLE </Text>
-            )}
           </SectionEnd> 
         </Section>
       </Info>

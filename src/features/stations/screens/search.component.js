@@ -106,7 +106,7 @@ export const Search = (isFavouritesToggled, onFavouritesToggled) => {
     <SearchContainer>
       <FrontImageHolder3 >
       <FrontImageHolder2 >
-<FrontImageHolder1 >
+    <FrontImageHolder1 >
     <FrontImage  size={64}  /></FrontImageHolder1></FrontImageHolder2></FrontImageHolder3>
 
       <TitleCustom>
@@ -133,8 +133,6 @@ export const Search = (isFavouritesToggled, onFavouritesToggled) => {
 {isShown&&<ScrollView>
    {filteredStations
           .map(station => (
-      
-      
       <Item>
       {/*<Image source={{ uri: station.photos[0] }} /> */}
       <TouchableOpacity onPress={() =>{
