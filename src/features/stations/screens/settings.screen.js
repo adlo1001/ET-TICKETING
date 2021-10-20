@@ -19,7 +19,7 @@ const Loading = styled(ActivityIndicator)`
 margin-left:-25px;
 `;
 const Container = styled(View)`
-top:50px;
+top:10px;
 width:100%;
 height:100%;
 justify-content: center;
@@ -30,10 +30,8 @@ background-color:${(props) => props.theme.colors.brand.primary};
 
 
 export const SettingsScreen = ({navigation} ) => {
-  const {isLoading, error, stations} = useContext(StationsContext);
   const {isAuthenticated, onLogout} = useContext(AuthenticationContext);
   
-
   return (
 <SafeArea>
     <Container>

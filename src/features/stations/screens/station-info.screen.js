@@ -44,6 +44,7 @@ export const StationsScreen = ({navigation, route} ) => {
   const {isLoading, error, trips} = useContext(TripsContext);
   const [isToggled, setIsToggled] = useState(false);
 
+
   return (
   <SafeArea >
     {isLoading&&(

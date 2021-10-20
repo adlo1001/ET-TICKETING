@@ -31,15 +31,15 @@ export const TripsContextProvider = ({ children }) => {
     stationsRequest("not found")
     .then((results) => {
       setIsLoading(false);
+      console.log("---------------------------------->");
       setTrips(results);
-
     })  
   }
 
-  const retrieveStations = (mstat) => {
 
+  const retrieveStations = (mstat) => {
     setIsLoading(true);
-    setTrips(null);
+    //setTrips(null);
     setTimeout(() => {
     if(mstat=="Arba Minch") 
       stationsRequest(mstat)
@@ -54,24 +54,8 @@ export const TripsContextProvider = ({ children }) => {
 
         });
         else
-        if(!keyword1 &&keyword2){
+        if(initial!=null && final_!=null)
         tripsRequest(initial,final_, boardingTime)
-          .then((result) => {
-            setIsLoading(false);
-            setTrips(result);
-            console.log("hi2");
-            if(trips==null)
-            retrieveTripNotFound()
-            .then((results)=>{
-              setTrips(results);
-              console.log("hi4");
-            })
-          })  
-          .catch((err) => {
-            setIsLoading(false);
-            setError(err)
-
-          });}
     }, 2000);
   
   };
@@ -80,24 +64,23 @@ export const TripsContextProvider = ({ children }) => {
     setFinal_(keyword2);
     retrieveStations(mstations.keyword);
   }, [mstations,keyword1, keyword2, boardingTime]);
-``
-
 
     const tripsRequest=useCallback((_initial,_final,boardingTime)=>{
-      console.log('http://192.168.1.66:8080/ticketsQuery/?_initial='+ _initial +'&_boarding_time='+boardingTime+'&_final='+_final);
       fetch('http://192.168.1.66:8080/ticketsQuery/?_initial='+ _initial +'&_boarding_time='+boardingTime+'&_final='+_final)
         .then(response =>response.json())
       .then(data=>
         {
-      setData(data); })
-      .catch((error)=>{setError(error);console.log(error)});
+      setIsLoading(false);
+      setData(data);
+      if(data!="")setTrips(data);
+      
+    })
+      .catch((error)=>{setError(error);});
+      
         return new Promise((resolve, reject)=>{
-          if(!data) {
-              reject('Trips not found!');
-          }
-       
-          resolve(data);
-  
+          if(data=="") {         
+            trips&&retrieveTripNotFound();}
+
       });  
     
       },[]);
