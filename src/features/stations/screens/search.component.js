@@ -2,13 +2,14 @@ import React, { useState,useContext,useCallback, useEffect } from "react";
 import { Searchbar,Text, View,Button } from "react-native-paper";
 import { TouchableOpacity,ScrollView } from "react-native";
 import styled from "styled-components/native";
-import { MStationsContext } from "../../../services/station/mstations.context";
+import { StationsContext } from "../../../services/station/stations.context";
 import { AntDesign } from "@expo/vector-icons";
 import { Avatar } from 'react-native-paper';
 import {TripInfoScreen} from "../../stations/components/trip-info.component";
 import { useNavigation } from '@react-navigation/native';
 import { StationsInfoCard } from "../components/stations-info-card.component";
 import { CompactStationInfo } from "./compact-station-info.screen";
+
 
 const SearchBarBar = styled(Searchbar)`
  margin-left:auto;
@@ -79,7 +80,7 @@ const Item = styled.View`
 
 export const Search = (isFavouritesToggled, onFavouritesToggled) => {
   
-  const { keyword, search ,mstations,type, stationList } = useContext(MStationsContext);
+  const { keyword, search ,mstations,type, stationList } = useContext(StationsContext);
   const [ searchKeyword, setSearchKeyword ] = useState(keyword);
   const [destinationQuery, setDestinationQuery] = useState("");
   const [isShown, setIsShown] = useState(false);

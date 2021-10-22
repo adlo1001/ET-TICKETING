@@ -6,8 +6,8 @@ import { theme } from "./src/infrastructure/theme";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SafeArea } from "./src/features/stations/components/utility/safe-area.component";
 import { Ionicons, FontAwesome} from '@expo/vector-icons';
-import { TripsContextProvider } from "./src/services/stations/stations.context";
-import { MStationsContextProvider } from "./src/services/station/mstations.context";
+import { TripsContextProvider } from "./src/services/trips/trips.context";
+import { StationsContextProvider } from "./src/services/station/stations.context";
 import { Navigation } from "./src/infrastructure/navigation"; 
 import {
   useFonts as useOswald,
@@ -18,6 +18,7 @@ import { FavouritesContextProvider } from "./src/services/favourites/favourites.
 import { BookedContextProvider } from "./src/services/booked/booked.context";
 import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
 import * as firebase from "firebase";
+import { TicketsContextProvider } from "./src/services/trips/tickets.context";
 
 
 
@@ -69,17 +70,18 @@ export default function App() {
   return (
     <>
     <ThemeProvider theme ={theme}>
+      <TicketsContextProvider>
     <AuthenticationContextProvider>
       <BookedContextProvider>
       <FavouritesContextProvider>
-      <MStationsContextProvider>
+      <StationsContextProvider>
       <TripsContextProvider>
      <Navigation/>
     </TripsContextProvider>
-    </MStationsContextProvider>
+    </StationsContextProvider>
     </FavouritesContextProvider>
     </BookedContextProvider>
-    </AuthenticationContextProvider>
+    </AuthenticationContextProvider></TicketsContextProvider>
       </ThemeProvider>      
       <ExpoStatusBar style="auto" />
     </>

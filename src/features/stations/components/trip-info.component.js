@@ -4,8 +4,8 @@ import styled from "styled-components/native";
 import { FlatList, TouchableOpacity, View} from "react-native";
 import { StationsInfoCard } from "../../stations/components/stations-info-card.component";
 import { SafeArea } from "../components/utility/safe-area.component";
-import  {TripsContext}  from "../../../services/stations/stations.context";
-import { MStationsContext } from "../../../services/station/mstations.context";
+import  {TripsContext}  from "../../../services/trips/trips.context";
+import { StationsContext } from "../../../services/station/stations.context";
 import { ActivityIndicator, Colors } from 'react-native-paper';
 import { Spacer } from "../../../features/stations/components/spacer/spacer.component";
 import {Card, Button, Text,TextInput} from "react-native-paper";
@@ -97,7 +97,7 @@ export const TripInfoScreen = ({navigation,route} ) => {
   const [initialStation, setInitialStation] = React.useState(route.params.initialStation);
   const [finalStation, setFinalStation] = React.useState(route.params.finalStation);
   const {isLoading, error, stations, onTripsSearch} = useContext(TripsContext);
-  const {boardingTime} = useContext(MStationsContext);
+  const {boardingTime} = useContext(StationsContext);
  
 
   //console.log(boardingTime);

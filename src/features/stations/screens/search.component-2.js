@@ -2,7 +2,7 @@ import React, { useState,useContext,useCallback, useEffect } from "react";
 import { Searchbar,Text, View,Button } from "react-native-paper";
 import { TouchableOpacity, ScrollView } from "react-native";
 import styled from "styled-components/native";
-import { MStationsContext } from "../../../services/station/mstations.context";
+import { StationsContext } from "../../../services/station/stations.context";
 import { AntDesign } from "@expo/vector-icons";
 import { Avatar } from 'react-native-paper';
 import {TripInfoScreen} from "../components/trip-info.component";
@@ -32,7 +32,7 @@ const Item = styled.View`
 
 export const Search = ({_station, val1, val2}) => {
   
-  const {keyword1, keyword2, search, keyword ,mstations,type, stationList } = useContext(MStationsContext);
+  const {keyword1, keyword2, search, keyword ,mstations,type, stationList } = useContext(StationsContext);
   const [ searchKeyword1, setSearchKeyword1 ] = useState("Megenagna 2");
   const [ searchKeyword2, setSearchKeyword2 ] = useState(keyword2);
   const [destinationQuery, setDestinationQuery] = useState(val2);

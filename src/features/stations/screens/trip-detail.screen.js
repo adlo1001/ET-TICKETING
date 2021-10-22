@@ -14,7 +14,6 @@ export const TripDetailScreen = ({route})=>{
     const [finalStationExpanded, setFinalStationExpanded] = useState(false);  
 
 const trip = route.params.station;
-
 return (
     <SafeArea>
         <StationsInfoCard trips={trip} />

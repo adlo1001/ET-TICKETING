@@ -1,4 +1,4 @@
-import {stationsRequest,tripsRequest, stationsTransform} from "./stations.service";
+import {stationsRequest,tripsRequest, stationsTransform} from "./trips.service";
 import React from "react";
 import {
   useState,
@@ -7,8 +7,7 @@ import {
   useContext,
   useEffect
 } from "react"; 
-import { MStationsContext } from "../station/mstations.context";
-import { colors } from "../../infrastructure/theme/colors";
+import { StationsContext } from "../station/stations.context";
 
 
 export const TripsContext = createContext();
@@ -18,11 +17,11 @@ export const TripsContextProvider = ({ children }) => {
   const [alltrips, setAllTrips] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const mstations = useContext(MStationsContext);
+  const mstations = useContext(StationsContext);
   const[data, setData] = useState(null);
   const[allData, setAllData] = useState(null);
   //const [boarding, setBoarding]=useState("2021-10-18 15:00:00");
-  const {boardingTime,chooseTime, keyword1, keyword2 } = useContext(MStationsContext);
+  const {boardingTime,chooseTime, keyword1, keyword2 } = useContext(StationsContext);
   const [initial, setInitial]=useState(keyword1);
   const [final_, setFinal_]=useState(keyword2);
   
@@ -31,7 +30,6 @@ export const TripsContextProvider = ({ children }) => {
     stationsRequest("not found")
     .then((results) => {
       setIsLoading(false);
-      console.log("---------------------------------->");
       setTrips(results);
     })  
   }
@@ -66,7 +64,7 @@ export const TripsContextProvider = ({ children }) => {
   }, [mstations,keyword1, keyword2, boardingTime]);
 
     const tripsRequest=useCallback((_initial,_final,boardingTime)=>{
-      fetch('http://192.168.1.66:8080/ticketsQuery/?_initial='+ _initial +'&_boarding_time='+boardingTime+'&_final='+_final)
+      fetch('http://192.168.1.67:8080/ticketsQuery/?_initial='+ _initial +'&_boarding_time='+boardingTime+'&_final='+_final)
         .then(response =>response.json())
       .then(data=>
         {

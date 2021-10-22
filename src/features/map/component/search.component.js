@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Searchbar,Text, View  } from "react-native-paper";
 import styled from "styled-components/native";
-import { MStationsContext } from "../../../services/station/mstations.context";
+import { StationsContext } from "../../../services/station/stations.context";
 
 const SearchContainer = styled.View`
   padding: 16px;
@@ -24,7 +24,7 @@ background-color: white;
 `;
 
 export const Search = () => {
-  const { keyword, search } = useContext(MStationsContext);
+  const { keyword, search } = useContext(StationsContext);
   const [ searchKeyword, setSearchKeyword ] = useState(keyword);
    
   useEffect(()=>{ setSearchKeyword(keyword)},[keyword]);

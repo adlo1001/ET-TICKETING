@@ -4,7 +4,7 @@ import styled from "styled-components/native";
 import { FlatList, TouchableOpacity, View, } from "react-native";
 import { StationsInfoCard } from "../../stations/components/stations-info-card.component";
 import { SafeArea } from "../components/utility/safe-area.component";
-import  {TripsContext}  from "../../../services/stations/stations.context";
+import  {TripsContext}  from "../../../services/trips/trips.context";
 import { ActivityIndicator, Colors } from 'react-native-paper';
 import { Spacer } from "../../../features/stations/components/spacer/spacer.component";
 import { FavouritesBar } from "../../../components/favourites/fouvarites-bar.component";
@@ -43,7 +43,7 @@ export const StationsScreen = ({navigation, route} ) => {
 
   const {isLoading, error, trips} = useContext(TripsContext);
   const [isToggled, setIsToggled] = useState(false);
-
+ 
 
   return (
   <SafeArea >

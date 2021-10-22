@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 import {Button, StyleSheet} from "react-native";
 import { FlatList, TouchableOpacity, View, } from "react-native";
 import { SafeArea } from "../components/utility/safe-area.component";
-import  {TripsContext}  from "../../../services/stations/stations.context";
+import  {TripsContext}  from "../../../services/trips/trips.context";
 import { ActivityIndicator, Colors } from 'react-native-paper';
 import {Search} from "./search.component"
 import { AccountBackground } from "../../account/components/account.styles";

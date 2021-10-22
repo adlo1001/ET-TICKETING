@@ -25,8 +25,6 @@ export const Book = (trip) => {
 
  const navigation = useNavigation();
     const isBooked = booked.find((r) => r.placeId === trip.id);
-
-    
     return (
     <BookContainer>
       <IconButton
@@ -34,7 +32,9 @@ export const Book = (trip) => {
       color={colors.brand.primary}
       size={48}
       onPress={() => {
-      navigation.navigate(PaymentScreen);
+  
+      navigation.navigate("PaymentScreen",{ticket:trip.trips.ticketNumber,id:trip.trips.id},);
+
   
       }}/></BookContainer>
       

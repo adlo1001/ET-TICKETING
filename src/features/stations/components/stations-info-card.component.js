@@ -11,7 +11,6 @@ export const StationsInfoCard = ({ trips = {}, navigation}) => {
   const [isLoading, setIsLoading]=useState(false);
   return (
     <StationCard elevation={2} >
-      
       <StationCardTitle
         title={"From: "+trips.trip.route.initialStation.city +" To: "+ trips.trip.route.finalStation.city}
         subtitle= {trips.trip.route.description}
@@ -25,8 +24,6 @@ export const StationsInfoCard = ({ trips = {}, navigation}) => {
    {(trips.trip.trans.owner.id==11007)&&<StationCardCover source={require("../../../../assets/buses/selam_bus.jpg")} />}
    {(trips.trip.trans.owner.id==11008)&&<StationCardCover source={require("../../../../assets/buses/yegna_bus.jpg")} />}
       {(trips.trip.trans.owner.id==11009)&&<StationCardCover source={require("../../../../assets/buses/zemen_bus.jpg")} />}
-
-      
       <Info>
       <Text variant="label" >Price:{trips.grossPriceAmnt+" Birr"}</Text>
       <Text variant="label" >

@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import { Text } from "../../../components/typography/text-component";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { MStationsContext } from "../../../services/station/mstations.context";
+import { StationsContext } from "../../../services/station/stations.context";
 const CompactImage = styled.Image`
   border-radius: 10px;
   width: 120px;
@@ -30,7 +30,7 @@ const isAndroid = Platform.OS === "android";
 export const CompactStationInfo = ({ station, id}) => {
   const Image = isAndroid ? CompactWebview : CompactImage;
   const [isItemSelected, setIsItemSelected]= useState(false);
-  const { keyword, search } = useContext(MStationsContext);
+  const { keyword, search } = useContext(StationsContext);
   const [ searchKeyword, setSearchKeyword ] = useState(keyword);
   const navigation= useNavigation();
 

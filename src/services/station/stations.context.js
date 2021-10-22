@@ -1,4 +1,4 @@
-import {MStationsRequest,MStationsRequest2, MStationsTransform} from "./mstations.service";
+import {MStationsRequest,MStationsRequest2, MStationsTransform} from "./stations.service";
 import React,{useEffect,useCallback} from "react";
 import DateTimePicker from '@react-native-community/datetimepicker';
 import {
@@ -8,9 +8,9 @@ import {
 } from "react";
 
 
-export const MStationsContext = createContext();
+export const StationsContext = createContext();
 
-export const MStationsContextProvider = ({ children }) => {
+export const StationsContextProvider = ({ children }) => {
   const [keyword, setKeyword] = useState("Arba Minch");
   const [keyword1, setKeyword1] = useState("station1");
   const [keyword2, setKeyword2] = useState("station2");
@@ -60,7 +60,7 @@ export const MStationsContextProvider = ({ children }) => {
   };
    
     const fetchData=useCallback(()=>{
-      fetch('http://192.168.1.66:8080/stations')
+      fetch('http://192.168.1.67:8080/stations')
       .then(response =>response.json())
       .then(data=>
         {setStationList(data); setData(data);}).catch((err)=>console.log(err))
@@ -81,7 +81,7 @@ export const MStationsContextProvider = ({ children }) => {
 
       useEffect(()=>{fetchData()},[]);
   return (
-    <MStationsContext.Provider
+    <StationsContext.Provider
       value={{
         mstations,
         isLoading,
@@ -97,6 +97,6 @@ export const MStationsContextProvider = ({ children }) => {
       }}
     >
       {children}
-    </MStationsContext.Provider>
+    </StationsContext.Provider>
   );
 };

@@ -4,7 +4,7 @@ import { ScrollView, View,Text,  Platform } from "react-native";
 import styled from "styled-components/native";
 import DateTimePicker from '@react-native-community/datetimepicker';
 import {colors} from "../../../infrastructure/theme/colors";
-import { MStationsContext } from "../../../services/station/mstations.context";
+import { StationsContext } from "../../../services/station/stations.context";
 
 
 const PaymentContainer = styled(View)`
@@ -76,7 +76,7 @@ export const CustDateTimePicker = ()=>{
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
   const [tmp, setTmp] = useState(new String (new Date()));
-  const {boardingTime,chooseTime } = useContext(MStationsContext);
+  const {boardingTime,chooseTime } = useContext(StationsContext);
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
     setShow(Platform.OS === 'ios');

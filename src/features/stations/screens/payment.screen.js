@@ -1,4 +1,4 @@
-import React ,{useState} from "react";
+import React ,{useState, useContext} from "react";
 import { SafeArea } from "../components/utility/safe-area.component";
 import { List,TextInput,Card, IconButton, Colors,ActivityIndicator  } from "react-native-paper";
 import { ScrollView, View } from "react-native";
@@ -9,6 +9,8 @@ import { PaymentScreen2 } from "../../../components/pay/pay.component";
 import { CustDateTimePicker } from "../components/date-time-picker.component";
 import { colors } from "../../../infrastructure/theme/colors";
 import { Text } from "../../../components/typography/text-component";
+import { TicketsContext } from "../../../services/trips/tickets.context";
+import { TripsContext } from "../../../services/trips/trips.context";
 
 
 const PaymentContainer = styled(View)`
@@ -34,13 +36,13 @@ background-color:${(props) => props.theme.colors.bg.primary};
 `;
 
 
-export const PaymentScreen = ({route})=>{
+export const PaymentScreen = ({navigation,route})=>{
 
-    const navigation = useNavigation();
     const [initialStationExpanded, setInitialStationExpanded] = useState(false);
     const [lunchExpanded, setLunchExpanded] = useState(false);
     const [dinnerExpanded, setDinnerExpanded] = useState(false);
     const [finalStationExpanded, setFinalStationExpanded] = useState(false);  
+    const {onPayTicket, onBookTicket}=useContext(TicketsContext);
 
     const [name, setName] = React.useState('');
     const [fname, setFname] = React.useState('');
@@ -57,6 +59,7 @@ export const PaymentScreen = ({route})=>{
 return (
     <SafeArea>
       <PaymentContainer>
+        <ScrollView>
       <Spacer>
           <CusTextInput
          label="Name"
@@ -73,7 +76,7 @@ return (
     </Spacer>
     
     <Spacer>
-          <CusTextInput
+        <CusTextInput
          label="Father's Name"
          value={fname}
          underlineColor={colors.brand.primary}
@@ -81,6 +84,7 @@ return (
          outlineColor={colors.brand.primary}
          onChangeText={fname => setFname(fname)}
     />
+    
       <Spacer size="large">
             <Text variant="error">{error2}</Text>
           </Spacer>
@@ -135,12 +139,15 @@ return (
       else if (!email) setError4("Please enter email!");
       else if (!email.includes("@")) {setError4("Please enter valid email!");setEmail("");}
       else if (!noPass) setError5("Please enter number of Passengers!");
-      else if (isNaN(noPass)) setError5("Please enter valid number!");
+      else if (isNaN(noPass)) setError5("Ple  ase enter valid number!");
       else if(name&&fname&&phone&&email&&noPass)
-      navigation.navigate(PaymentScreen2);  
+      {
+      onBookTicket([route.params.id,route.params.ticket,name, fname, phone, email,noPass]);
+      navigation.navigate(PaymentScreen2);  }
     }}
   /></Spacer>
   </PaymentButtonContainer>
+  </ScrollView>
  </PaymentContainer>
     </SafeArea>
 );
