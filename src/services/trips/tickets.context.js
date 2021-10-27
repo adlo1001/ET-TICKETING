@@ -11,39 +11,39 @@ export const TicketsContext = createContext();
 export const TicketsContextProvider=({children})=>{
   const[tmpdata, setTmpData] = useState(null);
   const [error, setError] = useState(null);
+  const [response, setResponse] = useState(null);
    
 
     const bookTicket=(passengerInfo)=>{
-        addPassenger(passengerInfo);
-        updateTicket(passengerInfo[0], 1);
+        addPassenger(passengerInfo).then((response)=>{setResponse("SUCCESS")}).catch((error)=>{setError(error);setResponse("ERROR")});
+        updateTicket(passengerInfo[0]);
     }
 
     const payTicket=(passengerInfo)=>{
-        console.log(passengerInfo);
+        //console.log(passengerInfo);
     }
 
-    const updateTicket=async(id,arg)=>{
-
-      try {    
-        const response = await fetch('http://192.168.1.67:8080/tickets/'+id);  
-        const _data = await response.json();   
-        setTmpData(_data);
-         } 
-      catch (error) {    console.error(error);  };
-
+    const updateTicket=async(id)=>{
 
       //tmpdata.ticket.status="PENDING";
-      fetch('http://192.168.1.67:8080/tickets/', 
-      { method: 'POST', 
+      fetch('http://192.168.1.67:8080/tickets/'+id, 
+      { method: 'PATCH', 
         headers: {    Accept: 'application/json',    'Content-Type': 'application/json'  }, 
-        body: JSON.stringify({   
-         tmpdata
-       })});
-
-
+     });
     }
+
+     const getTicket=async(id)=>{
+
+      //tmpdata.ticket.status="PENDING";
+      fetch('http://192.168.1.67:8080/tickets/'+id, 
+      { method: 'GET', 
+        headers: {    Accept: 'application/json',    'Content-Type': 'application/json'  }, 
+     });
+    }
+    
+
     const addPassenger=(_pass)=>{
-      fetch('http://192.168.1.67:8080/passengers/', 
+      return  fetch('http://192.168.1.67:8080/passengers/', 
       {  method: 'POST',  
          headers: {    Accept: 'application/json',    'Content-Type': 'application/json'  },  
          body: JSON.stringify({    
@@ -72,14 +72,18 @@ export const TicketsContextProvider=({children})=>{
           
           }        
             })});
-
-    }
+    
+          }
 
     return <TicketsContext.Provider
 
       value={{
+        error,
+        response,
         onBookTicket:bookTicket,
         onPayTicket:payTicket,
+        onGetTicket:getTicket,
+
       
       }}>
    {children}

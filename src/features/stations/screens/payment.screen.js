@@ -20,7 +20,7 @@ background-color:${(props) => props.theme.colors.bg.primary};
 ;
 `;
 const Loading = styled(ActivityIndicator)`
-margin-left:-25px;
+flex:1;
 `;
 
 const CusTextInput = styled(TextInput)`
@@ -42,7 +42,9 @@ export const PaymentScreen = ({navigation,route})=>{
     const [lunchExpanded, setLunchExpanded] = useState(false);
     const [dinnerExpanded, setDinnerExpanded] = useState(false);
     const [finalStationExpanded, setFinalStationExpanded] = useState(false);  
-    const {onPayTicket, onBookTicket}=useContext(TicketsContext);
+    const [isLoading , setIsLoading]=useState(false);
+    const {onGetTicket,onPayTicket, onBookTicket}=useContext(TicketsContext);
+    
 
     const [name, setName] = React.useState('');
     const [fname, setFname] = React.useState('');
@@ -58,7 +60,9 @@ export const PaymentScreen = ({navigation,route})=>{
 
 return (
     <SafeArea>
+      
       <PaymentContainer>
+      
         <ScrollView>
       <Spacer>
           <CusTextInput
@@ -76,6 +80,7 @@ return (
     </Spacer>
     
     <Spacer>
+      {isLoading&&<Loading color={Colors.blue800}/>}
         <CusTextInput
          label="Father's Name"
          value={fname}
@@ -88,6 +93,7 @@ return (
       <Spacer size="large">
             <Text variant="error">{error2}</Text>
           </Spacer>
+          
     
     </Spacer><Spacer>
           <CusTextInput
@@ -129,7 +135,7 @@ return (
      <PaymentButtonContainer>
        <Spacer>
  <IconButton
-    icon="cart-arrow-right"  
+    icon="page-next-outline"  
     color={colors.brand.primary}
     size={48}
     onPress={() => {       
@@ -142,10 +148,19 @@ return (
       else if (isNaN(noPass)) setError5("Ple  ase enter valid number!");
       else if(name&&fname&&phone&&email&&noPass)
       {
-      onBookTicket([route.params.id,route.params.ticket,name, fname, phone, email,noPass]);
-      navigation.navigate(PaymentScreen2);  }
+      setIsLoading(true);
+      setTimeout(() => {
+        onBookTicket([route.params.id,route.params.ticket,name, fname, phone, email,noPass]);
+        setIsLoading(false)
+        !isLoading&&navigation.navigate("PaymentScreen2",{ticket:route.params.ticket, id:route.params.id});  
+      }, 2000);
+      
+     
+    }
     }}
-  /></Spacer>
+  />
+  </Spacer>
+  
   </PaymentButtonContainer>
   </ScrollView>
  </PaymentContainer>
