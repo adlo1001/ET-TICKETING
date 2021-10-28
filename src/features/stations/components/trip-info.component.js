@@ -123,7 +123,7 @@ export const TripInfoScreen = ({navigation,route} ) => {
 onTripsSearch(initialStation,finalStation,boardingTime);//'2021-10-18 15:00:00');
  if(finalStation!=null)
   if(initialStation!=null)
-  navigation.navigate('Trip',{destination:finalStation,boarding:initialStation})}}>Find Transportation
+  navigation.navigate('Trip',{destination:finalStation,boarding:initialStation,customer:"new1"})}}>Find Transportation
 </ChooseButton>
 </ThirdContainer>
   </SafeArea>

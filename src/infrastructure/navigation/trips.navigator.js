@@ -28,6 +28,7 @@ export const TripsNavigator = () => {
       <TripStack.Screen
         name="Trip"
         component={TripScreen}
+        initialParams={{ customer: "newnew" }}
       />
        <TripStack.Screen
         name="TripDetail"

@@ -9,6 +9,7 @@ import {Book} from "../../../components/booked/book.component";
 
 export const StationsInfoCard = ({ trips = {}, navigation}) => {
   const [isLoading, setIsLoading]=useState(false);
+  
   return (
     <StationCard elevation={2} >
       <StationCardTitle

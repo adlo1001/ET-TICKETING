@@ -62,12 +62,18 @@ export const PaymentScreen2 = ({navigation, route})=>{
 
     const {onGetTicket,error, response}=useContext(TicketsContext);
 
-
 return (
     <SafeArea>
-
-    <Spacer>
-    <CusTextTitle >Success! </CusTextTitle></Spacer>
+  
+    {route.params.ticket!=="ticket-"?<View>
+    
+    {!!response&&
+    <View>
+     {response==="SUCCESS"?<View>
+    <Spacer> 
+    <CusTextTitle >Success! </CusTextTitle>
+  
+    </Spacer>
     <Spacer>
     <CusTextTitle>You have Booked!
     </CusTextTitle>
@@ -85,18 +91,34 @@ return (
      Remeber any tickets bought within two hours of boarding are not guaranteed.
     
     </CusTextOtherOther>
-    </Spacer> 
+    </Spacer>
+
      <PaymentButtonContainer>  
        <Spacer>
  <AuthButton
     icon="check-box-outline"
     size={24}
     mode="contained"
-    onPress={() => {
+    onPress={() => {navigation.navigate("Home");
     console.log("Pressed!");
     }}
   /></Spacer>
   </PaymentButtonContainer>
+  </View>:
+    <CusTextOtherOther variant="error" >
+    Ticket Booking Failed! Please try again.
+    </CusTextOtherOther>
+    }
+  
+  </View>}
+  
+  </View>:
+  
+  <CusTextOtherOther variant="error" >
+  Payments are to be done at banks. Please book your tickets and contact banks directly. Please pay within 2 hours of booking.
+  </CusTextOtherOther>
+  
+  }
     </SafeArea>
 );
 };

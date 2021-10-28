@@ -58,12 +58,12 @@ export const TripsContextProvider = ({ children }) => {
   
   };
   useEffect(() => {
-    setInitial(keyword1);
-    setFinal_(keyword2);
     retrieveStations(mstations.keyword);
   }, [mstations,keyword1, keyword2, boardingTime]);
 
     const tripsRequest=useCallback((_initial,_final,boardingTime)=>{
+      setInitial(_initial);
+      setFinal_(_final);
       fetch('http://192.168.1.67:8080/ticketsQuery/?_initial='+ _initial +'&_boarding_time='+boardingTime+'&_final='+_final)
         .then(response =>response.json())
       .then(data=>
@@ -108,6 +108,8 @@ export const TripsContextProvider = ({ children }) => {
   return (
     <TripsContext.Provider
       value={{
+        initial,
+        final_,
         trips,
         isLoading,
         onTripsSearch:tripsRequest,
