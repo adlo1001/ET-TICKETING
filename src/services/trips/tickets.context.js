@@ -26,7 +26,7 @@ export const TicketsContextProvider=({children})=>{
     const updateTicket=async(id)=>{
 
       //tmpdata.ticket.status="PENDING";
-      fetch('http://192.168.1.67:8080/tickets/'+id, 
+      fetch('http://196.189.91.112:8080/ett/tickets/'+id, 
       { method: 'PATCH', 
         headers: {    Accept: 'application/json',    'Content-Type': 'application/json'  }, 
      });
@@ -35,7 +35,7 @@ export const TicketsContextProvider=({children})=>{
      const getTicket=async(id)=>{
 
       //tmpdata.ticket.status="PENDING";
-      fetch('http://192.168.1.67:8080/tickets/'+id, 
+      fetch('http://196.189.91.112:8080/ett/tickets/'+id, 
       { method: 'GET', 
         headers: {    Accept: 'application/json',    'Content-Type': 'application/json'  }, 
      });
@@ -43,7 +43,7 @@ export const TicketsContextProvider=({children})=>{
     
 
     const addPassenger=(_pass)=>{
-      return  fetch('http://192.168.1.67:8080/passengers/', 
+      return  fetch('http://196.189.91.112:8080/ett/passengers/', 
       {  method: 'POST',  
          headers: {    Accept: 'application/json',    'Content-Type': 'application/json'  },  
          body: JSON.stringify({    
@@ -88,6 +88,4 @@ export const TicketsContextProvider=({children})=>{
       }}>
    {children}
     </TicketsContext.Provider>
-
-
 }

@@ -14,19 +14,22 @@ export const StationsContextProvider = ({ children }) => {
   const [keyword, setKeyword] = useState("Arba Minch");
   const [keyword1, setKeyword1] = useState("station1");
   const [keyword2, setKeyword2] = useState("station2");
+  const [keyword3, setKeyword3] = useState("All");
   const [boardingTime, setBoardingTime]=useState(new String(new Date()));
   const [mstations, setMStations] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [data, setData] = useState([]);
   const [stationList, setStationList]=useState([]);
+  const [busList, setBusList]=useState([]);
 
 
   const onSearch = (searchKeyword,id) => {
     setIsLoading(true);
     if(id==1){setKeyword(searchKeyword);setKeyword1(null);setKeyword2(null)}
-    else if(id==2) {setKeyword1(searchKeyword);setKeyword(null);setKeyword2(null)}
-    else if (id==3){setKeyword2(searchKeyword);setKeyword(null);setKeyword1(null)}
+    else if(id==2) {setKeyword1(searchKeyword);setKeyword(null);setKeyword2(null);setKeyword3(null);}
+    else if (id==3){setKeyword2(searchKeyword);setKeyword(null);setKeyword1(null);setKeyword3(null);}
+    else if (id==4){setKeyword3(searchKeyword);setKeyword(null);setKeyword1(null);setKeyword2(null);}
    
 
     MStationsRequest(keyword&&keyword.toLowerCase()||keyword1&&keyword1.toLowerCase()||keyword2&&keyword2.toLowerCase())
@@ -58,9 +61,9 @@ export const StationsContextProvider = ({ children }) => {
   const onChooseTime = (_time) =>  {
   setBoardingTime(_time); 
   };
-   
+
     const fetchData=useCallback(()=>{
-      fetch('http://192.168.1.67:8080/stations')
+      fetch('http://196.189.91.112:8080/ett/stations')
       .then(response =>response.json())
       .then(data=>
         {setStationList(data); setData(data);}).catch((err)=>console.log(err))
@@ -79,7 +82,28 @@ export const StationsContextProvider = ({ children }) => {
     
       },[]);
 
-      useEffect(()=>{fetchData()},[]);
+         
+    const fetchBusCompany=useCallback(()=>{
+      fetch('http://196.189.91.112:8080/ett/company')
+      .then(response =>response.json())
+      .then(data=>
+        {setBusList(data);}).catch((err)=>console.log(err))
+
+        return new Promise((resolve, reject)=>{
+          
+          if(!data) {
+
+            reject("Bus Not Found");
+        }
+  
+        resolve(data);
+        }
+          
+          );
+    
+      },[]);
+
+      useEffect(()=>{fetchData();fetchBusCompany();},[]);
   return (
     <StationsContext.Provider
       value={{
@@ -92,8 +116,10 @@ export const StationsContextProvider = ({ children }) => {
         keyword,
         keyword1,
         keyword2,
+        keyword3,
         type: onType,
         stationList,
+        busList,
       }}
     >
       {children}

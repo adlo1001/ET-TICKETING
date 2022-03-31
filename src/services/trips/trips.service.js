@@ -3,7 +3,7 @@ import React,{useState,useCallback, useEffect} from "react";
 import camelize from "camelize";
 
 //const trip="Megenagna 01, Adama 03";
-  export const stationsRequest=(trip)=>{
+  export const emptyTripsRequest=(trip)=>{
 
     return new Promise((resolve, reject)=>{
      const mock=mocks["Megenagna 01, Adama 03"];

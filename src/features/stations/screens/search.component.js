@@ -11,6 +11,9 @@ import { StationsInfoCard } from "../components/stations-info-card.component";
 import { CompactStationInfo } from "./compact-station-info.screen";
 
 
+const Scroll = styled(ScrollView)`
+height:50%;
+`;
 const SearchBarBar = styled(Searchbar)`
  margin-left:auto;
  margin-right:auto;
@@ -80,7 +83,7 @@ const Item = styled.View`
 
 export const Search = (isFavouritesToggled, onFavouritesToggled) => {
   
-  const { keyword, search ,mstations,type, stationList } = useContext(StationsContext);
+  const { keyword, search ,mstations,type, stationList,busList } = useContext(StationsContext);
   const [ searchKeyword, setSearchKeyword ] = useState(keyword);
   const [destinationQuery, setDestinationQuery] = useState("");
   const [isShown, setIsShown] = useState(false);
@@ -91,17 +94,17 @@ export const Search = (isFavouritesToggled, onFavouritesToggled) => {
     useEffect(()=>{ search(searchKeyword,1);type();
     },[]);
   
-  
+
     const filteredStations = stationList.filter(
       item => {
-        return (
+        return searchKeyword&&(
           item.stationName.toLowerCase().includes(searchKeyword.toLowerCase()) ||
           item.city.toLowerCase().includes(searchKeyword.toLowerCase()) ||
           item.subcity.toLowerCase().includes(searchKeyword.toLowerCase())
         )
       }
-    )
-
+    ).sort((a, b) => a.stationName > b.stationName ? 1 : -1);
+    filteredStations
     return (
     
     <SearchContainer>
@@ -131,7 +134,7 @@ export const Search = (isFavouritesToggled, onFavouritesToggled) => {
 
         /> 
 
-{isShown&&<ScrollView>
+{isShown&&<Scroll>
    {filteredStations
           .map(station => (
       <Item>
@@ -151,7 +154,7 @@ export const Search = (isFavouritesToggled, onFavouritesToggled) => {
     </Item>
       ))
       } 
-</ScrollView>}
+</Scroll>}
     </SearchContainer>
 
   );

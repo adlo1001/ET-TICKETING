@@ -1,8 +1,7 @@
 
 import React ,{useContext, useState} from "react";
 import styled from "styled-components/native";
-import { FlatList, TouchableOpacity, View} from "react-native";
-import { StationsInfoCard } from "../../stations/components/stations-info-card.component";
+import {View} from "react-native";
 import { SafeArea } from "../components/utility/safe-area.component";
 import  {TripsContext}  from "../../../services/trips/trips.context";
 import { StationsContext } from "../../../services/station/stations.context";
@@ -11,8 +10,6 @@ import { Spacer } from "../../../features/stations/components/spacer/spacer.comp
 import {Card, Button, Text,TextInput} from "react-native-paper";
 import { colors } from "../../../infrastructure/theme/colors";
 import { CustDateTimePicker } from "./date-time-picker.component";
-import {PaymentScreen} from "../screens/payment.screen";
-import { StationsScreen as TripScreen } from "../../../features/stations/screens/station-info.screen";
 import {Search} from "../screens/search.component-2";
 
 const TitleCustom=styled.Text`
@@ -39,16 +36,21 @@ padding-left:10px;
 `;
 
 const SecondContainer = styled(View)`
-padding-top:20px;
+padding-top:0px;
 padding-left:10px;
 
-z-index: 9;
 `;
+
+const ThirdContainer = styled(View)`
+padding-top:0px;
+padding-left:10px;
+`;
+
 const Loading = styled(ActivityIndicator)`
 margin-left:-25px;
 `;
 
-const ThirdContainer = styled(View)`
+const FourthContainer = styled(View)`
 position:absolute;
 bottom:20px;
 padding-left:10px;
@@ -87,20 +89,16 @@ padding:${(props) => props.theme.space[3]};
 background-color:${(props) => props.theme.colors.bg.primary};
 `;
 
-const CustomCardTitle=styled(Card.Title)`
-color:red;
-`;
-
 
 export const TripInfoScreen = ({navigation,route} ) => {
 
   const [initialStation, setInitialStation] = React.useState(route.params.initialStation);
   const [finalStation, setFinalStation] = React.useState(route.params.finalStation);
+  const [busCompany, setBusCompany] = React.useState("All");
   const {isLoading, error, stations, onTripsSearch} = useContext(TripsContext);
-  const {boardingTime} = useContext(StationsContext);
+  const {boardingTime,keyword3} = useContext(StationsContext);
+  
  
-
-  //console.log(boardingTime);
   return (
   
   <SafeArea >
@@ -115,19 +113,22 @@ export const TripInfoScreen = ({navigation,route} ) => {
     <Search _station="destination" 
     val={finalStation}/>
     </SecondContainer>
+    <ThirdContainer> 
+    <Search _station="bus" 
+    val={busCompany}/>
+    </ThirdContainer>
 
 
 <CustDateTimePicker/>
-<ThirdContainer>
+<FourthContainer>
 <ChooseButton onPress={()=>{
-onTripsSearch(initialStation,finalStation,boardingTime);//'2021-10-18 15:00:00');
+  if(initialStation!="station1" &&finalStation!="station2")
+  onTripsSearch(initialStation,finalStation,boardingTime,keyword3);
  if(finalStation!=null)
   if(initialStation!=null)
-  navigation.navigate('Trip',{destination:finalStation,boarding:initialStation,customer:"new1"})}}>Find Transportation
+  navigation.navigate('Trip',{destination:finalStation,boarding:initialStation,customer:"new1",bus:keyword3})}}>Find Transportation
 </ChooseButton>
-</ThirdContainer>
+</FourthContainer>
   </SafeArea>
 );
 };
-
-

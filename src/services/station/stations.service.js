@@ -8,7 +8,7 @@ import { useState,useCallback } from "react";
    
     return new Promise((resolve, reject)=>{
       const stationMock= stations[searchTerm];
- 
+
         if(!stations) {
             reject("Not Found");
         }
@@ -22,7 +22,7 @@ export const MStationsRequest2=()=>{
   const fetchdata=useCallback(()=>{
     const[data, setData] = useState(null);
     const[err,setErr] = useState();
-    fetch('http://192.168.1.67:8080/stations')
+    fetch('http://192.168.1.171:8080/stations')
     .then(response =>response.json())
     .then(data=>
       {setData(data)}).catch((error)=>setErr(error));

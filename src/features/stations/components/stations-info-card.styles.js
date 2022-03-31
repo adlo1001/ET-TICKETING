@@ -6,6 +6,7 @@ import { SvgXml } from "react-native-svg";
 export const StationCard = styled(Card)`
 background-color:${(props) =>props.theme.colors.bg.primary};
 margin-bottom: ${(props) => props.theme.space[3]};
+subtitleNumberOflines:{};
 
 `;
 
@@ -16,7 +17,10 @@ background-color:${(props) => props.theme.colors.bg.primary};
 
 export const StationCardTitle=styled(Card.Title)`
 color:red;
+
 `;
+
+
 
 export const Address = styled(Text)`
 font-family:${(props) => props.theme.fonts.body};

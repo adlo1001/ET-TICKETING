@@ -29,7 +29,7 @@ export const HomeScreen = ({navigation} ) => {
   return (
     <AccountBackground>
     {isLoading&&<Loading color={Colors.blue800} />}
-    <Search navigation={navigation} initalStation="Addis Ababa" finalStation="Unknown location"/>
+    <Search navigation={navigation} initalStation="Addis Ababa" finalStation="Unknown location" busCompany="All"/>
     </AccountBackground>
   
   

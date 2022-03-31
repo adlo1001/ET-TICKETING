@@ -49,7 +49,7 @@ margin-left:-25px;
 
 export const StationsScreen = ({navigation, route} ) => {
 
-  const {isLoading, error, trips, initial, final_} = useContext(TripsContext);
+  const {isLoading, error, trips} = useContext(TripsContext);
   const [isToggled, setIsToggled] = useState(false);
   const [customer, setCustomer]=useState(route.params.customer);
 

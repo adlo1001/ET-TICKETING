@@ -1036,7 +1036,7 @@
         "numberOfDisabled": 0,
         "issueDate": "2021-11-01T12:00:00.000+00:00",
         "status": "BOOKED",
-        "grossPriceAmnt": 475,
+        "grossPriceAmnt": 999999,
         "taxesAmnt": 0,
         "otherAmnt": 0,
         "trip": {
@@ -1171,7 +1171,7 @@
         "numberOfDisabled": 0,
         "issueDate": "2021-11-01T12:00:00.000+00:00",
         "status": "BOOKED",
-        "grossPriceAmnt": 475,
+        "grossPriceAmnt": 999999,
         "taxesAmnt": 0,
         "otherAmnt": 0,
         "trip": {
@@ -1306,7 +1306,7 @@
         "numberOfDisabled": 0,
         "issueDate": "2021-11-01T12:00:00.000+00:00",
         "status": "BOOKED",
-        "grossPriceAmnt": 475,
+        "grossPriceAmnt": 999999,
         "taxesAmnt": 0,
         "otherAmnt": 0,
         "trip": {
@@ -1441,7 +1441,7 @@
         "numberOfDisabled": 0,
         "issueDate": "2021-11-01T12:00:00.000+00:00",
         "status": "BOOKED",
-        "grossPriceAmnt": 475,
+        "grossPriceAmnt": 999999,
         "taxesAmnt": 0,
         "otherAmnt": 0,
         "trip": {
@@ -1576,7 +1576,7 @@
         "numberOfDisabled": 0,
         "issueDate": "2021-11-01T12:00:00.000+00:00",
         "status": "BOOKED",
-        "grossPriceAmnt": 475,
+        "grossPriceAmnt": 999999,
         "taxesAmnt": 0,
         "otherAmnt": 0,
         "trip": {
@@ -1711,7 +1711,7 @@
         "numberOfDisabled": 0,
         "issueDate": "2021-11-01T12:00:00.000+00:00",
         "status": "BOOKED",
-        "grossPriceAmnt": 475,
+        "grossPriceAmnt": 999999,
         "taxesAmnt": 0,
         "otherAmnt": 0,
         "trip": {
@@ -1846,7 +1846,7 @@
         "numberOfDisabled": 0,
         "issueDate": "2021-11-01T12:00:00.000+00:00",
         "status": "BOOKED",
-        "grossPriceAmnt": 475,
+        "grossPriceAmnt": 999999,
         "taxesAmnt": 0,
         "otherAmnt": 0,
         "trip": {
@@ -1981,7 +1981,7 @@
         "numberOfDisabled": 0,
         "issueDate": "2021-11-01T12:00:00.000+00:00",
         "status": "BOOKED",
-        "grossPriceAmnt": 475,
+        "grossPriceAmnt": 999999,
         "taxesAmnt": 0,
         "otherAmnt": 0,
         "trip": {
@@ -2117,7 +2117,7 @@
         "numberOfInfants": 0,
         "numberOfDisabled": 0,
         "issueDate": "1976-11-01T12:00:00.000+00:00",
-        "status": "BOOKED",
+        "status": "NOT FOUND",
         "grossPriceAmnt": 999999,
         "taxesAmnt": 0,
         "otherAmnt": 0,
@@ -2146,8 +2146,8 @@
             "initialStation": {
               "id": 3,
               "stationName": "not found",
-              "city": "unknown ",
-              "region": "unknown",
+              "city": "not found ",
+              "region": "not found",
               "province": null,
               "subcity": "unknown",
               "description": "not found",

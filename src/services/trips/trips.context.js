@@ -1,4 +1,4 @@
-import {stationsRequest,tripsRequest, stationsTransform} from "./trips.service";
+import {emptyTripsRequest,tripsRequest, stationsTransform} from "./trips.service";
 import React from "react";
 import {
   useState,
@@ -21,13 +21,14 @@ export const TripsContextProvider = ({ children }) => {
   const[data, setData] = useState(null);
   const[allData, setAllData] = useState(null);
   //const [boarding, setBoarding]=useState("2021-10-18 15:00:00");
-  const {boardingTime,chooseTime, keyword1, keyword2 } = useContext(StationsContext);
+  const {boardingTime,chooseTime, keyword1, keyword2, keyword3 } = useContext(StationsContext);
   const [initial, setInitial]=useState(keyword1);
   const [final_, setFinal_]=useState(keyword2);
-  
+  const [bus_, setbus_]=useState(keyword3);
+
   const retrieveTripNotFound=()=>{
     setIsLoading(true);
-    stationsRequest("not found")
+    emptyTripsRequest("not found")
     .then((results) => {
       setIsLoading(false);
       setTrips(results);
@@ -40,7 +41,7 @@ export const TripsContextProvider = ({ children }) => {
     //setTrips(null);
     setTimeout(() => {
     if(mstat=="Arba Minch") 
-      stationsRequest(mstat)
+    emptyTripsRequest(mstat)
         .then((results) => {
           setIsLoading(false);
           setTrips(results);
@@ -51,26 +52,32 @@ export const TripsContextProvider = ({ children }) => {
           setError(err);
 
         });
-        else
-        if(initial!=null && final_!=null)
-        tripsRequest(initial,final_, boardingTime)
+        //else
+        //if(initial!=null && final_!=null)
+        //tripsRequest(initial,final_, boardingTime,bus_)
     }, 2000);
   
   };
   useEffect(() => {
     retrieveStations(mstations.keyword);
-  }, [mstations,keyword1, keyword2, boardingTime]);
+  }, [mstations,keyword1, keyword2, boardingTime,keyword3]);
 
-    const tripsRequest=useCallback((_initial,_final,boardingTime)=>{
+    const tripsRequest=useCallback((_initial,_final,boardingTime,_bus )=>{
       setInitial(_initial);
       setFinal_(_final);
-      fetch('http://192.168.1.67:8080/ticketsQuery/?_initial='+ _initial +'&_boarding_time='+boardingTime+'&_final='+_final)
+      setbus_(_bus);
+      console.log('http://196.189.91.112:8080/ett/ticketsQuery/?_initial='+ _initial +'&_boarding_time='+boardingTime+'&_final='+_final+'&_bus='+_bus);
+      if(_initial!="station1"&&_final!="station2")
+      fetch('http://196.189.91.112:8080/ett/ticketsQuery/?_initial='+ _initial +'&_boarding_time='+boardingTime+'&_final='+_final + '&_bus='+_bus)
         .then(response =>response.json())
       .then(data=>
         {
       setIsLoading(false);
       setData(data);
       if(data!="")setTrips(data);
+      else {
+        retrieveTripNotFound();
+      }
       
     })
       .catch((error)=>{setError(error);});
@@ -110,6 +117,7 @@ export const TripsContextProvider = ({ children }) => {
       value={{
         initial,
         final_,
+        bus_,
         trips,
         isLoading,
         onTripsSearch:tripsRequest,
