@@ -6,7 +6,7 @@ import {
   TransitionPresets,
 } from "@react-navigation/stack";
 
-import { StationsScreen as TripScreen } from "../../features/stations/screens/station-info.screen";
+import { StationsScreen as TripScreen } from "../../features/stations/screens/trips-info.screen";
 import { TripDetailScreen } from "../../features/stations/screens/trip-detail.screen";
 import { PaymentScreen } from "../../features/stations/screens/payment.screen";
 import { Book } from "../../components/booked/book.component";

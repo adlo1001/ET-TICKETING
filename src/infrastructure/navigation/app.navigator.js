@@ -66,7 +66,6 @@ export const AppNavigator = () => (
       <Tab.Screen name="Tickets" component={TripsNavigator} />
       <Tab.Screen name="My Page" component={AccountNavigator} />
       <Tab.Screen name="Map" component={MapScreen} />
-      <Tab.Screen name="Settings"  component={SettingsScreen} />
       <Tab.Screen name="Help"  component={SettingsScreen} />
     </Tab.Navigator>
 

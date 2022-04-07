@@ -37,11 +37,12 @@ export const Search = ({_station, val1, val2}) => {
   const [ searchKeyword3, setSearchKeyword3 ] = useState(keyword3);
   const [isShown, setIsShown] = useState(false);
   const [isItemSelected, setIsItemSelected]= useState(false);
+  //const [busComponies, setBusComponies]=useState();
 
     useEffect(()=>{ 
       setSearchKeyword2(keyword);
      // setSearchKeyword3(keyword3);
-     console.log("keyword"+ searchKeyword3);
+     //console.log("keyword"+ searchKeyword3);
       if({_station}._station==="boarding")
                       {search(searchKeyword1,2); }
                     else if({_station}._station==="destination") 
@@ -83,7 +84,14 @@ export const Search = ({_station, val1, val2}) => {
         )
       }
     ).sort((a, b) => a.companyName > b.companyName ? 1 : -1);
-  
+    
+    const busCompanies = [...filteredStations3, {
+      "companyLogo": "http://",
+      "companyName": " All",
+      "id": -1,
+    },].sort((a, b) => a.companyName > b.companyName ? 1 : -1);
+
+
     return (
     (_station==="boarding"&&_station!="bus")? <SearchContainer > 
      <SearchBarBar
@@ -197,7 +205,7 @@ export const Search = ({_station, val1, val2}) => {
       /> 
 
 {isShown&&<Scroll>
-    {filteredStations3
+    {busCompanies
           .map(station => (
     
       <Item>

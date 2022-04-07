@@ -41,6 +41,17 @@ font-weight:${(props) => props.theme.fontWeights.bold};
 font-size: ${(props) => props.theme.fontSizes.h4};
 `;
 
+
+const TextCustom=styled.Text`
+color:${(props) => props.theme.colors.text.inverse};
+text-align: left;
+padding-left:0px;
+padding-bottom:0px;
+background-color:rgba(255,255,255,0);
+font-weight:${(props) => props.theme.fontWeights.bold};
+font-size: ${(props) => props.theme.fontSizes.body};
+`;
+
 const FrontImageHolder1 = styled.View`
  
   background-color:red;
@@ -145,11 +156,11 @@ export const Search = (isFavouritesToggled, onFavouritesToggled) => {
        setIsShown(false);
       }
         }>
-      {isItemSelected ? <Text center variant="label2" numberOfLines={3}>
+      {isItemSelected ? <TextCustom center variant="label2" numberOfLines={2}>
         {station.stationName}  
-      </Text>: <Text center variant="label" numberOfLines={3}>
+      </TextCustom>: <TextCustom center variant="label" numberOfLines={2}>
         {station.stationName}  
-      </Text>}
+      </TextCustom>}
       </TouchableOpacity>
     </Item>
       ))

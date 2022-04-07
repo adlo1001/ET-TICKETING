@@ -19,7 +19,7 @@ export const TripsContextProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const mstations = useContext(StationsContext);
   const[data, setData] = useState(null);
-  const[allData, setAllData] = useState(null);
+  //const[allData, setAllData] = useState(null);
   //const [boarding, setBoarding]=useState("2021-10-18 15:00:00");
   const {boardingTime,chooseTime, keyword1, keyword2, keyword3 } = useContext(StationsContext);
   const [initial, setInitial]=useState(keyword1);
@@ -63,12 +63,13 @@ export const TripsContextProvider = ({ children }) => {
   }, [mstations,keyword1, keyword2, boardingTime,keyword3]);
 
     const tripsRequest=useCallback((_initial,_final,boardingTime,_bus )=>{
-      setInitial(_initial);
-      setFinal_(_final);
-      setbus_(_bus);
-      console.log('http://196.189.91.112:8080/ett/ticketsQuery/?_initial='+ _initial +'&_boarding_time='+boardingTime+'&_final='+_final+'&_bus='+_bus);
+      setInitial(_initial.trim());
+      setFinal_(_final.trim());
+      setbus_(_bus.trim());
+
+      console.log('http://196.189.91.112:8080/ett/ticketsQuery/?_initial='+ _initial +'&_boarding_time='+boardingTime+'&_final='+_final+'&_bus='+bus_);
       if(_initial!="station1"&&_final!="station2")
-      fetch('http://196.189.91.112:8080/ett/ticketsQuery/?_initial='+ _initial +'&_boarding_time='+boardingTime+'&_final='+_final + '&_bus='+_bus)
+      fetch('http://196.189.91.112:8080/ett/ticketsQuery/?_initial='+ _initial +'&_boarding_time='+boardingTime+'&_final='+_final + '&_bus='+bus_)
         .then(response =>response.json())
       .then(data=>
         {
@@ -85,24 +86,22 @@ export const TripsContextProvider = ({ children }) => {
         return new Promise((resolve, reject)=>{
           if(data=="") {         
             trips&&retrieveTripNotFound();}
-
       });  
-    
       },[]);
     
 
    
-      {/*
+      
    const allTripsRequest=useCallback(()=>{
-    fetch('http://192.168.1.66:8080/tickets')
+    fetch('http://196.189.91.112:8080/ett/tickets')
    .then(response =>response.json())
     .then(_data=>
-      {setAllData(_data)}).catch((error)=>{setError(error);console.log(error)});
+      {setAllTrips(_data);}).catch((error)=>{setError(error);console.log(error)});
       return new Promise((resolve, reject)=>{
-        if(!allData) {
+        if(!alltrips) {
             reject("Tickets Not Found2");
         }
-        resolve(allData);
+        resolve(alltrips);
 
     });  
 
@@ -110,7 +109,7 @@ export const TripsContextProvider = ({ children }) => {
 
 
     useEffect(()=>{
-    allTripsRequest()},[]);*/}
+    allTripsRequest()},[]);
 
   return (
     <TripsContext.Provider
@@ -119,6 +118,7 @@ export const TripsContextProvider = ({ children }) => {
         final_,
         bus_,
         trips,
+        alltrips,
         isLoading,
         onTripsSearch:tripsRequest,
         error,

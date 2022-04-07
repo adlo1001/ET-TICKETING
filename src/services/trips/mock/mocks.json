@@ -2145,8 +2145,8 @@
             "description": "Ticket Not Found! Try another search",
             "initialStation": {
               "id": 3,
-              "stationName": "not found",
-              "city": "not found ",
+              "stationName": "...",
+              "city": ". . . ",
               "region": "not found",
               "province": null,
               "subcity": "unknown",
@@ -2205,8 +2205,8 @@
             },
             "finalStation": {
               "id": 17,
-              "stationName": "not found",
-              "city": "not found",
+              "stationName": "...",
+              "city": ". . .",
               "region": "not found",
               "province": "not found",
               "subcity": "not found",
